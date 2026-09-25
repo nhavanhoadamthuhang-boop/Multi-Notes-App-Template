@@ -15,6 +15,8 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -385,7 +387,7 @@ fun VoiceRecorderContent(
 
     // Convenient testing templates if using fallback
     if (isUsingFallback && !isRecording) {
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = "Chọn mẫu dịch nhanh (Hỗ trợ giả lập/test):",
             style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
@@ -393,22 +395,37 @@ fun VoiceRecorderContent(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Left
         )
+        Spacer(modifier = Modifier.height(4.dp))
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .horizontalScroll(rememberScrollState())
                 .padding(vertical = 4.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             val templates = listOf(
                 "Họp phòng ban sáng thứ hai",
                 "Mua sữa, táo và bánh mì",
-                "Ý kiến về đại biểu Quốc hội Nhân dân Việt Nam",
-                "Ý tưởng ứng dụng ghi chú cực hay"
+                "Ý kiến đóng góp ý tưởng ghi chú",
+                "Ghi chú nhắc nhở công việc ngày mai"
             )
             templates.forEach { tmpl ->
                 SuggestionChip(
                     onClick = { transcribedText = tmpl },
-                    label = { Text(tmpl, fontSize = 11.sp) }
+                    label = {
+                        Text(
+                            text = tmpl,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Medium,
+                            maxLines = 1,
+                            overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
+                        )
+                    },
+                    shape = RoundedCornerShape(16.dp),
+                    colors = SuggestionChipDefaults.suggestionChipColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f)
+                    )
                 )
             }
         }

@@ -84,7 +84,7 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
 ### 7. Ghi Âm Ghi Chú & Dịch Giọng Nói Trực Tiếp (Voice Note Recorder)
 - **Giao diện Ghi âm Hiện đại**: Bổ sung công cụ ghi âm giọng nói linh hoạt (`VoiceRecordDialog`) với nút Micro tròn màu tím nổi bật, đồng hồ đếm thời gian thực (`00:03`), cùng hướng dẫn thao tác *"Chạm vào Micro để bắt đầu ghi âm"*.
 - **Chuyển đổi Giọng nói thành Văn bản linh hoạt**: Tự động nhận diện và chuyển ngữ giọng nói trực tiếp vào khung nhập liệu *"Bản dịch giọng nói (Có thể chỉnh sửa)"* với tiêu đề tự động theo thời điểm ghi âm (như `Ghi chú giọng nói lúc 15:11`).
-- **Nút mẫu kiểm thử nhanh (Quick Presets for Testing)**: Hỗ trợ hai phím tắt mẫu sẵn có cho thao tác giả lập kiểm thử nhanh: *"Họp phòng ban sáng thứ hai"* và *"Mua sữa, táo và bánh mì"*.
+- **Nút Mẫu Kiểm Thử Dạng Dải Cuộn Ngang (Horizontal Scroll Presets)**: Tối ưu hóa dải nút mẫu giả lập dịch nhanh (*"Họp phòng ban sáng thứ hai"*, *"Mua sữa, táo và bánh mì"*, v.v.) với thiết kế cuộn ngang mượt mà `horizontalScroll`, giữ nguyên tỷ lệ bo tròn 16.dp, hiển thị 1 dòng chữ đồng nhất không bị kéo giãn hay dồn hàng.
 
 ### 8. Thiết Kế Đẹp Mắt & Bố Cục Thích Ứng (Adaptive Layout)
 - **Kiến trúc thích ứng 4 chuẩn màn hình**: Tự động nhận diện không gian để chuyển đổi hiển thị tối ưu từ Điện thoại (Single-pane), Máy tính bảng (Master-Detail chia đôi màn hình), Laptop (Tối ưu biên lề) đến Desktop (3 cột song song chuyên nghiệp).

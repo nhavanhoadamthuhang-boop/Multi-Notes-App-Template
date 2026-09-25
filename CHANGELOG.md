@@ -6,6 +6,16 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 
 ---
 
+## [1.2.6] - 2026-09-25
+
+### 🎙️ Fixed Voice Recorder Quick Presets Layout (Khắc Phục Bố Cục Nút Mẫu Dịch Nhanh Ghi Âm)
+- **Tóm tắt & Khắc phục giao diện nút mẫu dịch nhanh (`VoiceRecorderDialog.kt`)**:
+  - Sửa lỗi nút mẫu kiểm thử thứ hai (`"Mua sữa, táo và bánh mì"`) bị dồn ép thành hộp xám rất cao gồm 3 dòng chữ, làm mất cân đối trầm trọng so với các nút xung quanh.
+  - Chuyển đổi dải nút mẫu sang hàng cuộn ngang linh hoạt `Row(modifier = Modifier.horizontalScroll(rememberScrollState()))`.
+  - Giới hạn chữ hiển thị trên 1 dòng đơn `maxLines = 1` cùng hiệu ứng `TextOverflow.Ellipsis`, đảm bảo toàn bộ các chip mẫu (*"Họp phòng ban sáng thứ hai"*, *"Mua sữa, táo và bánh mì"*, v.v.) có cùng chiều cao đồng nhất, bo tròn 16.dp tinh tế.
+
+---
+
 ## [1.2.5] - 2026-09-25
 
 ### 🎨 Fixed Check-In Banner Layout & UI Proportions (Sửa Lỗi Bố Cục Thẻ Điểm Danh)
