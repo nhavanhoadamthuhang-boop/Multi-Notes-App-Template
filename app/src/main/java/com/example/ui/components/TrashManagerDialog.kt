@@ -759,7 +759,7 @@ private fun TrashCommentsList(
                             onClick = onRestoreAllComments,
                             contentPadding = PaddingValues(horizontal = 6.dp, vertical = 2.dp)
                         ) {
-                            Text("Khôi phục hết", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                            Text("Khôi phục tất cả", fontSize = 11.sp, fontWeight = FontWeight.Bold)
                         }
                         TextButton(
                             onClick = onEmptyTrashComments,
