@@ -1135,17 +1135,19 @@ fun DiamondStoreDialog(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Column {
+                        Column(modifier = Modifier.weight(1f, fill = false)) {
                             Text(
                                 text = "Số dư hiện tại",
                                 style = MaterialTheme.typography.labelSmall,
-                                color = MaterialTheme.colorScheme.onPrimaryContainer
+                                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                                maxLines = 1
                             )
                             Text(
-                                text = "${numberFormatter.format(rewardState.totalDiamonds)} kim cương",
-                                style = MaterialTheme.typography.titleLarge,
+                                text = "${numberFormatter.format(rewardState.totalDiamonds)} 💎",
+                                style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.ExtraBold,
-                                color = MaterialTheme.colorScheme.onPrimaryContainer
+                                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                                maxLines = 1
                             )
                         }
 

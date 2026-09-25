@@ -15,6 +15,8 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
   - Thêm thẻ bộ lọc riêng biệt cho chủ đề **"Ẩm thực đường phố"** với tông màu cam đặc trưng (`#FFF3E0` / `#E65100`).
 
 ### 🎨 Fixed & Improved Layout (Cải tiến & Tối ưu Bố Cục Giao Diện)
+- **Tối Ưu Hóa Thẻ Số Dư Cửa Hàng (`DiamondTrackerComponents.kt`)**:
+  - Chuyển đổi nhãn hiển thị số dư từ `"kim cương"` sang ký hiệu `"💎"` kết hợp ràng buộc `weight(1f, fill = false)` và `maxLines = 1`, loại bỏ hoàn toàn hiện tượng ngắt dòng thô của nút *"Lịch sử"* và tiêu đề gói trên thẻ số dư.
 - **Tối Ưu Hóa Bố Cục Bảng Xếp Hạng (`LeaderboardDialog.kt`)**:
   - Giới hạn `maxLines = 1` và bổ sung ràng buộc co giãn trọng số (`weight(1f, fill = false)`) cho thẻ thứ hạng người dùng (`myUserRank`) và các hàng danh sách thành viên (`LeaderboardUserRow`), ngăn chặn hoàn toàn hiện tượng ngắt dòng thô (như tách số lượng `2.400` và `cmt` thành 2 dòng riêng biệt).
 - **Tối Ưu Hóa Nút Kích Hoạt Gói Mua (`StorePackageCard`)**:
