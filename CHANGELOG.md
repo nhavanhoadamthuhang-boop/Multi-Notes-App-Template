@@ -6,6 +6,17 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 
 ---
 
+## [1.2.2] - 2026-09-25
+
+### ✨ Expanded Sample Data to 160 Items (Nâng Kho Mẫu Lên 160 Mẫu)
+- **Mở rộng kho dữ liệu từ 144 mẫu lên 160 mẫu phong phú**:
+  - **Ẩm thực đường phố Việt Nam**: Tích hợp các món ăn đặc sản miền Trung gồm *Mì Quảng Quảng Nam* và *Cao Lầu Hội An*.
+  - **Chủ đề mới "Tiểu sử lãnh đạo Việt Nam"**: Thêm danh mục tư liệu lịch sử về các vị lãnh đạo tiền bối kiệt xuất (*Chủ tịch Hồ Chí Minh, Đại tướng Võ Nguyên Giáp, Cố Tổng Bí thư Nguyễn Văn Linh, Cố Thủ tướng Phạm Văn Đồng, Cố Tổng Bí thư Lê Duẩn*).
+  - Thêm thẻ bộ lọc riêng biệt cho danh mục *"Tiểu sử lãnh đạo Việt Nam"* với tông màu đỏ trang trọng (`#FFEBEE` / `#C62828`).
+  - Cơ cấu kho mẫu chuẩn gồm 55 Ghi chú mẫu, 53 Bình luận mẫu và 52 Phản hồi mẫu.
+
+---
+
 ## [1.2.1] - 2026-09-25
 
 ### 🏷️ Category Renaming & Data Refinement (Đổi Tên Danh Mục & Chuẩn Hóa Mẫu Dữ Liệu)

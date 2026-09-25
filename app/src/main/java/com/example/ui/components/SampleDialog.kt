@@ -53,10 +53,10 @@ sealed class SampleItem {
 }
 
 object SamplesProvider {
-    fun generate144Samples(): List<SampleItem> {
+    fun generate160Samples(): List<SampleItem> {
         val list = mutableListOf<SampleItem>()
 
-        // 1. Generate 48 Notes (22 Du lịch Việt Nam, 20 Du lịch nước Nga, 6 Ẩm thực đường phố Việt Nam)
+        // 1. Generate 55 Notes (22 Du lịch VN, 20 Du lịch Nga, 8 Ẩm thực đường phố, 5 Tiểu sử lãnh đạo)
         val vnNotes = listOf(
             Triple("Hành trình khám phá Hà Giang mộng mơ", "Khám phá dốc Thẩm Mã, cột cờ Lũng Cú và dòng sông Nho Quế xanh biếc thơ mộng. Thời điểm lý tưởng nhất là mùa hoa tam giác mạch từ tháng 10 đến tháng 12.", "Hà Giang, Tây Bắc"),
             Triple("Review chi tiết Sapa 3 ngày 2 đêm", "Chinh phục đỉnh Fansipan - nóc nhà Đông Dương bằng cáp treo, check-in bản Cát Cát của người H’Mông, thưởng thức đồ nướng Sapa thơm phức trong sương mờ.", "Sapa, Lào Cai"),
@@ -111,10 +111,20 @@ object SamplesProvider {
             Triple("Bún Bò ở Thừa Thiên Huế - Hương vị đậm đà xứ Cố đô", "Sợi bún toàn mềm dẻo trong nước dùng sóng sánh màu dầu điều thơm nức sả ớt, ăn kèm huyết luộc, giò heo, chả cua và đĩa rau sống bắp chuối thái mỏng.", "Thừa Thiên Huế"),
             Triple("Cơm Tấm Sài Gòn - Sườn bì chả mỡ hành", "Hạt cơm tấm thơm dẻo ăn kèm miếng sườn nướng mỡ hành đậm đà, bì chả giòn sần sật, trứng ốp la lòng đào và chén nước mắm kẹo ớt hiểm.", "Sài Gòn"),
             Triple("Bánh Xèo Miền Tây - Giòn rụm ngập tràn nhân tôm thịt", "Bánh xèo vàng ươm thơm lừng nước cốt dừa, nhân tôm đất, thịt ba chỉ và giá đỗ. Cuộn cùng bánh tráng, rau rừng chấm nước mắm tỏi ớt chua ngọt.", "Miền Tây"),
-            Triple("Cà Phê Trứng Hà Nội - Sóng sánh vị béo ngậy ngọt ngào", "Lớp kem trứng đánh bông mịn như mây béo ngậy đắng nhẹ quyện cùng cà phê phin đậm đà thơm nức, thức uống biểu tượng của thủ đô.", "Hà Nội")
+            Triple("Cà Phê Trứng Hà Nội - Sóng sánh vị béo ngậy ngọt ngào", "Lớp kem trứng đánh bông mịn như mây béo ngậy đắng nhẹ quyện cùng cà phê phin đậm đà thơm nức, thức uống biểu tượng của thủ đô.", "Hà Nội"),
+            Triple("Mì Quảng Quảng Nam - Món ăn hồn túy xứ Quảng", "Sợi mì Quảng vàng tươi đậm đà nước dùng ninh từ tôm, thịt heo, gà hoặc ếch. Ăn kèm bánh tráng nướng giòn rụm, đậu phụng rang thơm phức và đĩa rau sống đắng, bắp chuối, rau húng tươi ngon.", "Quảng Nam"),
+            Triple("Cao Lầu Hội An - Đậm đà phong vị phố cổ", "Sợi cao lầu vàng óng dẻo dai chế biến với nước giếng Cả Bá cổ kính, ăn kèm thịt xá xíu đậm đà, tóp mỡ giòn tan và rau đắng Trà Quế mát lành.", "Hội An, Quảng Nam")
         )
 
-        // Add 48 Notes
+        val leaderNotes = listOf(
+            Triple("Chủ tịch Hồ Chí Minh - Vị lãnh tụ kính yêu của dân tộc", "Sinh năm 1890 tại Kim Liên, Nam Đàn, Nghệ An. Bác Hồ là người anh hùng giải phóng dân tộc, danh nhân văn hóa thế giới, đã ra đi tìm đường cứu nước năm 1911 và đọc Bản Tuyên ngôn Độc lập khai sinh nước Việt Nam Dân chủ Cộng hòa ngày 2/9/1945.", "Nghệ An, Hà Nội"),
+            Triple("Đại tướng Võ Nguyên Giáp - Người anh cả của QĐND Việt Nam", "Vị tướng tài ba thiên tài quân sự, chỉ huy trực tiếp chiến dịch Điện Biên Phủ 1954 lừng lẫy năm châu, chấn động địa cầu và chiến dịch Hồ Chí Minh lịch sử năm 1975 giải phóng hoàn toàn miền Nam, thống nhất đất nước.", "Quảng Bình, Hà Nội"),
+            Triple("Cố Tổng Bí thư Nguyễn Văn Linh - Người mở đường Đổi Mới", "Nhà lãnh đạo kiên trung, sáng tạo, gắn liền với công cuộc Đổi Mới đất nước từ Đại hội VI (1986) với những bài viết nổi tiếng 'Những việc cần làm ngay' mang lại luồng sinh khí mới cho nền kinh tế xã hội.", "Hưng Yên, TPHCM"),
+            Triple("Cố Thủ tướng Phạm Văn Đồng - Nhà ngoại giao xuất sắc", "Người học trò xuất sắc của Chủ tịch Hồ Chí Minh, Thủ tướng tại vị lâu nhất Việt Nam (1955-1987). Ông là nhà văn hóa, nhà ngoại giao kiệt xuất, Trưởng đoàn đàm phán Hiệp định Giơ-ne-vơ 1954.", "Quảng Ngãi, Hà Nội"),
+            Triple("Cố Tổng Bí thư Lê Duẩn - Lãnh đạo kiên cường cách mạng", "Nhà lý luận xuất sắc, chiến sĩ cách mạng kiên trung có đóng góp to lớn vào đường lối chỉ đạo cuộc kháng chiến chống Mỹ cứu nước, giải phóng miền Nam thống nhất Tổ quốc.", "Quảng Trị, Hà Nội")
+        )
+
+        // Add 55 Notes
         var noteIdCounter = 1
         vnNotes.forEach { (title, desc, place) ->
             list.add(
@@ -145,12 +155,23 @@ object SamplesProvider {
                     title = title,
                     content = desc,
                     category = "Ẩm thực đường phố Việt Nam",
-                    tags = "#amthuc, #streetfood, #${place.lowercase().replace(" ", "")}"
+                    tags = "#amthuc, #miquang, #${place.lowercase().replace(" ", "").replace(",", "")}"
+                )
+            )
+        }
+        leaderNotes.forEach { (title, desc, place) ->
+            list.add(
+                SampleItem.Note(
+                    id = noteIdCounter++,
+                    title = title,
+                    content = desc,
+                    category = "Tiểu sử lãnh đạo Việt Nam",
+                    tags = "#lichsu, #lanhdao, #${place.lowercase().replace(" ", "").replace(",", "")}"
                 )
             )
         }
 
-        // 2. Generate 48 Comments (24 VN, 20 Russia, 4 Ẩm thực)
+        // 2. Generate 53 Comments (22 VN, 20 Russia, 6 Ẩm thực, 5 Lãnh đạo)
         val commentTemplates = listOf(
             "Cảnh đẹp quá! Mình nhất định phải đến đây một lần trong đời.",
             "Bài viết rất chi tiết, cảm ơn bạn đã chia sẻ kinh nghiệm quý giá này nhé!",
@@ -178,8 +199,11 @@ object SamplesProvider {
             "Món ăn đường phố này ngon đỉnh cao, ngập tràn hương vị béo ngậy đậm đà khó cưỡng!",
             "Giá thành cực kỳ bình dân sinh viên, chủ quán lại siêu vui tính nhiệt tình nữa!",
             "Nước dùng đậm vị thanh ngọt tự nhiên, ăn một lần là nghiện luôn cả tuần!",
-            "Bún bò ở Thừa Thiên Huế ngon hơn thật tuyệt vời",
-            "Du lịch cáp treo lên đỉnh núi Bà Đen ở tỉnh Tây Ninh, Việt Nam thật tuyệt vời!"
+            "Mì Quảng Quảng Nam ăn kèm bánh tráng nướng giòn rụm và đậu phụng rang thơm nức thật sự là mỹ vị xứ Quảng!",
+            "Du lịch cáp treo lên đỉnh núi Bà Đen ở tỉnh Tây Ninh, Việt Nam thật tuyệt vời!",
+            "Thật tự hào và biết ơn những cống hiến hy sinh vĩ đại của các vị lãnh đạo tiền bối đối với nền độc lập tự do của Tổ quốc!",
+            "Bài viết tổng hợp tiểu sử rất trang trọng và xúc động, giúp thế hệ trẻ hiểu rõ hơn về lịch sử hào hùng của dân tộc.",
+            "Tự hào về lịch sử vẻ vang của Việt Nam dưới sự chỉ đạo kiệt xuất của các bậc lãnh tụ kính yêu!"
         )
 
         val authors = listOf(
@@ -190,7 +214,7 @@ object SamplesProvider {
         )
 
         var commentIdCounter = 1
-        for (i in 0 until 24) {
+        for (i in 0 until 22) {
             val vnNoteTitle = vnNotes[i % vnNotes.size].first
             list.add(
                 SampleItem.Comment(
@@ -214,20 +238,32 @@ object SamplesProvider {
                 )
             )
         }
-        for (i in 0 until 4) {
+        for (i in 0 until 6) {
             val foodTitle = streetFoodNotes[i % streetFoodNotes.size].first
             list.add(
                 SampleItem.Comment(
                     id = commentIdCounter++,
                     author = authors[(i + 10) % authors.size],
-                    content = "Trải nghiệm ẩm thực [${foodTitle}]: ${commentTemplates[23 + i]}",
+                    content = "Trải nghiệm ẩm thực [${foodTitle}]: ${commentTemplates[23 + (i % 4)]}",
                     noteTitle = foodTitle,
                     category = "Ẩm thực đường phố Việt Nam"
                 )
             )
         }
+        for (i in 0 until 5) {
+            val leaderTitle = leaderNotes[i % leaderNotes.size].first
+            list.add(
+                SampleItem.Comment(
+                    id = commentIdCounter++,
+                    author = authors[(i + 15) % authors.size],
+                    content = "Tư liệu lịch sử [${leaderTitle}]: ${commentTemplates[28 + (i % 3)]}",
+                    noteTitle = leaderTitle,
+                    category = "Tiểu sử lãnh đạo Việt Nam"
+                )
+            )
+        }
 
-        // 3. Generate 48 Replies (24 VN, 20 Russia, 4 Ẩm thực)
+        // 3. Generate 52 Replies (22 VN, 20 Russia, 5 Ẩm thực, 5 Lãnh đạo)
         val replyTemplates = listOf(
             "Đúng vậy bạn ơi, đi một lần là nhớ mãi luôn đó!",
             "Chi phí tự túc hết tầm 3-5 triệu thôi nè, khá là tiết kiệm.",
@@ -248,19 +284,18 @@ object SamplesProvider {
             "Cảm giác được hít thở bầu không khí trong lành ở đây thật sự rất sảng khoái.",
             "Cứ chuẩn bị tâm lý thoải mái và một chiếc điện thoại đầy pin để chụp ảnh nhé!",
             "Đúng rồi bạn, người dân cực kỳ thân thiện, nhiệt tình chỉ đường lắm luôn.",
-            "Vào mùa cạn nước suối Nặm Thoong nông và chảy rất êm ả, trong vắt nên trẻ em bơi lội và tắm mát dã ngoại cực kỳ an toàn nha, tuy nhiên tránh đi vào những ngày mưa lũ nước sẽ dâng cao và chảy xiết hơn!",
-            "Dạ đúng ạ, được dâng hương tưởng nhớ người anh hùng nhỏ tuổi trước tượng đài trang nghiêm lộng gió thật sự vô cùng xúc động và tự hào!",
-            "Phú Yên cực kỳ hoang sơ và bình dị luôn đó bạn ơi, chi phí lại vô cùng rẻ nữa!",
-            "Khu vực di tích rất trang nghiêm tôn kính nên không được phép dựng lều ăn uống đâu ạ, nhưng bạn có thể dã ngoại ở bãi cỏ xanh bên ngoài hoặc gần bờ suối nhỏ bên thung lũng rất thoáng nhé.",
-            "Đúng luôn bạn ơi, quán mở bán từ sáng sớm tới tận khuya nên ghé lúc nào cũng nóng hổi thơm ngon!",
+            "Vào mùa cạn nước suối Nặm Thoong nông và chảy rất êm ả, trong vắt nên trẻ em bơi lội và tắm mát dã ngoại cực kỳ an toàn nha!",
+            "Dạ đúng ạ, được dâng hương tưởng nhớ người anh hùng nhỏ tuổi trước tượng đài trang nghiêm lộng gió thật sự vô cùng xúc động!",
+            "Phú Yên cực kỳ hoang sơ và bình dị luôn đó bạn ơi!",
             "Thêm chút quẩy giòn và chút ớt chưng cay nồng nữa là xuất sắc không còn gì bằng nha!",
             "Chuẩn vị gia truyền lâu năm luôn, lần nào ra đây mình cũng phải ăn 2 tô mới đã!",
-            "Quá ngon miệng nhưng Bún bò ở Thừa Thiên Huế rất vui vẻ luôn!",
-            "Du lịch Sapa, đỉnh đèo Fansipan nóc nhà cao 3143 mét luôn!"
+            "Chuẩn luôn bạn ơi, Mì Quảng ăn cùng bánh tráng nướng giòn và đĩa rau sống Trà Quế thì chuẩn vị xứ Quảng nhất!",
+            "Đúng vậy ạ, truyền thống lịch sử hào hùng của dân tộc luôn là niềm tự hào lớn lao cho các thế hệ mai sau!",
+            "Tự hào truyền thống cách mạng Việt Nam, đời đời ghi nhớ công ơn các anh hùng liệt sĩ và lãnh đạo tiền bối!"
         )
 
         var replyIdCounter = 1
-        for (i in 0 until 24) {
+        for (i in 0 until 22) {
             val parentAuthor = authors[i % authors.size]
             list.add(
                 SampleItem.Reply(
@@ -284,15 +319,27 @@ object SamplesProvider {
                 )
             )
         }
-        for (i in 0 until 4) {
+        for (i in 0 until 5) {
             val parentAuthor = authors[(i + 10) % authors.size]
             list.add(
                 SampleItem.Reply(
                     id = replyIdCounter++,
                     author = authors[(i + 12) % authors.size],
-                    content = "Trả lời @$parentAuthor: ${replyTemplates[23 + i]}",
-                    parentCommentContent = commentTemplates[23 + i],
+                    content = "Trả lời @$parentAuthor: ${replyTemplates[22 + (i % 3)]}",
+                    parentCommentContent = commentTemplates[23 + (i % 3)],
                     category = "Ẩm thực đường phố Việt Nam"
+                )
+            )
+        }
+        for (i in 0 until 5) {
+            val parentAuthor = authors[(i + 15) % authors.size]
+            list.add(
+                SampleItem.Reply(
+                    id = replyIdCounter++,
+                    author = authors[(i + 18) % authors.size],
+                    content = "Trả lời @$parentAuthor: ${replyTemplates[25 + (i % 2)]}",
+                    parentCommentContent = commentTemplates[28 + (i % 2)],
+                    category = "Tiểu sử lãnh đạo Việt Nam"
                 )
             )
         }
@@ -306,10 +353,10 @@ fun SampleDialog(
     onImportNote: (title: String, content: String, category: String, tags: String) -> Unit,
     onDismiss: () -> Unit
 ) {
-    val allSamples = remember { SamplesProvider.generate144Samples() }
+    val allSamples = remember { SamplesProvider.generate160Samples() }
     var searchQuery by remember { mutableStateOf("") }
-    var selectedCategoryFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga", "Ẩm thực đường phố Việt Nam"
-    var selectedTypeFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Ghi chú", "Bình luận", "Phản hồi"
+    var selectedCategoryFilter by remember { mutableStateOf("Tất cả") }
+    var selectedTypeFilter by remember { mutableStateOf("Tất cả") }
 
     val filteredSamples = remember(searchQuery, selectedCategoryFilter, selectedTypeFilter) {
         allSamples.filter { item ->
@@ -334,6 +381,13 @@ fun SampleDialog(
                         is SampleItem.Note -> item.category == "Ẩm thực đường phố Việt Nam"
                         is SampleItem.Comment -> item.category == "Ẩm thực đường phố Việt Nam"
                         is SampleItem.Reply -> item.category == "Ẩm thực đường phố Việt Nam"
+                    }
+                }
+                "Tiểu sử lãnh đạo Việt Nam" -> {
+                    when (item) {
+                        is SampleItem.Note -> item.category == "Tiểu sử lãnh đạo Việt Nam"
+                        is SampleItem.Comment -> item.category == "Tiểu sử lãnh đạo Việt Nam"
+                        is SampleItem.Reply -> item.category == "Tiểu sử lãnh đạo Việt Nam"
                     }
                 }
                 else -> true
@@ -399,12 +453,12 @@ fun SampleDialog(
                         )
                         Column {
                             Text(
-                                text = "144 mẫu ghi chú, bình luận và phản hồi",
+                                text = "160 mẫu ghi chú, bình luận và phản hồi",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / 144",
+                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / 160",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -468,7 +522,13 @@ fun SampleDialog(
                                     .horizontalScroll(rememberScrollState()),
                                 horizontalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
-                                listOf("Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga", "Ẩm thực đường phố Việt Nam").forEach { cat ->
+                                listOf(
+                                    "Tất cả",
+                                    "Du lịch Việt Nam",
+                                    "Du lịch nước Nga",
+                                    "Ẩm thực đường phố Việt Nam",
+                                    "Tiểu sử lãnh đạo Việt Nam"
+                                ).forEach { cat ->
                                     FilterChip(
                                         selected = selectedCategoryFilter == cat,
                                         onClick = { selectedCategoryFilter = cat },
@@ -616,6 +676,7 @@ fun SampleNoteCard(
                             "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
                             "Du lịch nước Nga" -> Color(0xFFE3F2FD)
                             "Ẩm thực đường phố Việt Nam" -> Color(0xFFFFF3E0)
+                            "Tiểu sử lãnh đạo Việt Nam" -> Color(0xFFFFEBEE)
                             else -> Color(0xFFE8F5E9)
                         }
                     ) {
@@ -627,6 +688,7 @@ fun SampleNoteCard(
                                 "Du lịch Việt Nam" -> Color(0xFF2E7D32)
                                 "Du lịch nước Nga" -> Color(0xFF1565C0)
                                 "Ẩm thực đường phố Việt Nam" -> Color(0xFFE65100)
+                                "Tiểu sử lãnh đạo Việt Nam" -> Color(0xFFC62828)
                                 else -> Color(0xFF2E7D32)
                             },
                             modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
@@ -717,6 +779,7 @@ fun SampleCommentCard(
                         "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
                         "Du lịch nước Nga" -> Color(0xFFE3F2FD)
                         "Ẩm thực đường phố Việt Nam" -> Color(0xFFFFF3E0)
+                        "Tiểu sử lãnh đạo Việt Nam" -> Color(0xFFFFEBEE)
                         else -> Color(0xFFE8F5E9)
                     }
                 ) {
@@ -728,6 +791,7 @@ fun SampleCommentCard(
                             "Du lịch Việt Nam" -> Color(0xFF2E7D32)
                             "Du lịch nước Nga" -> Color(0xFF1565C0)
                             "Ẩm thực đường phố Việt Nam" -> Color(0xFFE65100)
+                            "Tiểu sử lãnh đạo Việt Nam" -> Color(0xFFC62828)
                             else -> Color(0xFF2E7D32)
                         },
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
@@ -800,6 +864,7 @@ fun SampleReplyCard(
                         "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
                         "Du lịch nước Nga" -> Color(0xFFE3F2FD)
                         "Ẩm thực đường phố Việt Nam" -> Color(0xFFFFF3E0)
+                        "Tiểu sử lãnh đạo Việt Nam" -> Color(0xFFFFEBEE)
                         else -> Color(0xFFE8F5E9)
                     }
                 ) {
@@ -811,6 +876,7 @@ fun SampleReplyCard(
                             "Du lịch Việt Nam" -> Color(0xFF2E7D32)
                             "Du lịch nước Nga" -> Color(0xFF1565C0)
                             "Ẩm thực đường phố Việt Nam" -> Color(0xFFE65100)
+                            "Tiểu sử lãnh đạo Việt Nam" -> Color(0xFFC62828)
                             else -> Color(0xFF2E7D32)
                         },
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
