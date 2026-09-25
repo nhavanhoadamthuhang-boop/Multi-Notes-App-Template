@@ -6,6 +6,25 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 
 ---
 
+## [1.2.1] - 2026-09-25
+
+### 🏷️ Category Renaming & Data Refinement (Đổi Tên Danh Mục & Chuẩn Hóa Mẫu Dữ Liệu)
+- **Đổi tên danh mục "Ẩm thực đường phố" thành "Ẩm thực đường phố Việt Nam"**:
+  - Cập nhật đồng bộ và nhất quán tên danh mục, nhãn bộ lọc `FilterChip`, logic lọc mẫu `matchesCategory` cũng như thẻ màu nhận diện trên các giao diện `SampleNoteCard`, `SampleCommentCard` và `SampleReplyCard` trong `SampleDialog.kt`.
+- **Mở rộng kho dữ liệu mẫu lên 144 mẫu toàn diện**:
+  - Cấu trúc lại kho mẫu gồm 48 Ghi chú, 48 Bình luận và 48 Phản hồi mẫu trải dài qua 3 chủ đề lớn: *Du lịch Việt Nam*, *Du lịch nước Nga* và *Ẩm thực đường phố Việt Nam*.
+
+### 🛠️ Build & Environment Maintenance (Khắc Phục Biên Dịch & Môi Trường)
+- **Tạo tệp cấu hình môi trường**:
+  - Bổ sung `/.env` và `/.env.example` tương thích với cấu hình Secrets Gradle Plugin.
+- **Sửa lỗi cú pháp & đồng bộ mã nguồn**:
+  - Khắc phục lỗi đóng ngoặc kép chuỗi ký tự trong `SampleDialog.kt` và cập nhật hàm khởi tạo mẫu `generate144Samples()`.
+
+### 📦 Release Artifacts (Tệp Bản Dựng)
+- Biên dịch và cập nhật tệp APK thử nghiệm mới nhất (`33.8 MB`) tại đường dẫn `apk-download/apk-debug.apk`.
+
+---
+
 ## [1.2.0] - 2026-09-25
 
 ### ✨ Added (Thêm mới)
