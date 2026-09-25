@@ -505,7 +505,7 @@ class DiamondRewardManager(context: Context) {
             .putInt(KEY_TOTAL_DIAMONDS, newTotalDiamonds)
             .apply()
 
-        recordTransaction("Nạp Kim Cương (+$amount 💎)", amount, DiamondTransactionType.TOP_UP)
+        recordTransaction("Mua Kim Cương (+$amount 💎)", amount, DiamondTransactionType.TOP_UP)
         updateState()
     }
 
