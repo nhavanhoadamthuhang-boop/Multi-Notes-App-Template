@@ -56,7 +56,7 @@ object SamplesProvider {
     fun generate144Samples(): List<SampleItem> {
         val list = mutableListOf<SampleItem>()
 
-        // 1. Generate 48 Notes (22 VN, 20 Russia, 6 Ẩm thực đường phố)
+        // 1. Generate 48 Notes (22 Du lịch Việt Nam, 20 Du lịch nước Nga, 6 Ẩm thực đường phố Việt Nam)
         val vnNotes = listOf(
             Triple("Hành trình khám phá Hà Giang mộng mơ", "Khám phá dốc Thẩm Mã, cột cờ Lũng Cú và dòng sông Nho Quế xanh biếc thơ mộng. Thời điểm lý tưởng nhất là mùa hoa tam giác mạch từ tháng 10 đến tháng 12.", "Hà Giang, Tây Bắc"),
             Triple("Review chi tiết Sapa 3 ngày 2 đêm", "Chinh phục đỉnh Fansipan - nóc nhà Đông Dương bằng cáp treo, check-in bản Cát Cát của người H’Mông, thưởng thức đồ nướng Sapa thơm phức trong sương mờ.", "Sapa, Lào Cai"),
