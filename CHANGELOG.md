@@ -15,6 +15,14 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
   - Thêm thẻ bộ lọc riêng biệt cho chủ đề **"Ẩm thực đường phố"** với tông màu cam đặc trưng (`#FFF3E0` / `#E65100`).
 
 ### 🎨 Fixed & Improved Layout (Cải tiến & Tối ưu Bố Cục Giao Diện)
+- **Thiết Kế Lại Bố Cục Bảng Xếp Hạng (`LeaderboardDialog.kt`)**:
+  - Tích hợp **Khối Bục Bảng Vàng (Top 3 Podium View)** dành cho Top 1 (Vàng - Trung tâm), Top 2 (Bạc - Trái) và Top 3 (Đồng - Phải) với biểu tượng cúp vinh danh, tên thành viên và số lượng Kim Cương trực quan.
+  - Tối ưu hóa Thẻ thứ hạng cá nhân (`#Rank Badge`) rực rỡ kèm nút "Tăng hạng" mở nhanh Cửa hàng.
+  - Sắp xếp danh sách thứ hạng thành viên (#4 trở đi) với đường viền bo góc mượt mà và thông số tương tác đầy đủ (*Ghi chú, Cmt, Streak*).
+- **Thiết Kế Lại Bố Cục Cửa Hàng Gói Mua (`DiamondTrackerComponents.kt` - `StorePackageCard`)**:
+  - Chuyển đổi khối thông số gói mua thành **Bảng Lưới 2 Cột (2-column Feature Grid)** hiển thị rõ ràng từng hạn mức (*Bình luận/ngày, Ghi chú/ngày, Tốc độ/phút, Thùng rác retention, Dung lượng GB*).
+  - Thêm thanh tiến trình dung lượng lưu trữ (`LinearProgressIndicator`) sắc nét.
+  - Tối ưu hóa Nút Kích Hoạt Gói Mua full-width với nhãn trạng thái *"Kích hoạt gói"* hoặc *"Cần thêm X 💎"*.
 - **Tối ưu hóa Bố cục Hộp thoại Mẫu Dữ Liệu (`SampleDialog.kt`)**:
   - Gom khối bộ lọc (*Chủ đề* & *Loại mẫu*) vào một khung `Surface` bo góc 16.dp hiện đại.
   - Tích hợp dải chip cuộn ngang (`horizontalScroll`) giúp các nút bộ lọc hiển thị vừa vặn, không bị co kéo hay tràn lề trên mọi kích thước màn hình.

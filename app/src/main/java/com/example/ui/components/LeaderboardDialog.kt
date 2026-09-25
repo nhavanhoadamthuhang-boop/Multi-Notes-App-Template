@@ -168,6 +168,14 @@ fun LeaderboardDialog(
                     }
                 }
 
+                // Top 3 Podium Cards
+                if (rankedUsers.size >= 3) {
+                    Top3PodiumView(
+                        topUsers = rankedUsers.take(3),
+                        numberFormatter = numberFormatter
+                    )
+                }
+
                 // Current User Rank Banner Card
                 Surface(
                     shape = RoundedCornerShape(14.dp),
@@ -230,15 +238,16 @@ fun LeaderboardDialog(
                 Spacer(modifier = Modifier.height(2.dp))
 
                 Text(
-                    text = "TOP CAO THỦ CỘNG ĐỒNG",
+                    text = "DANH SÁCH THÀNH VIÊN (#4+)",
                     style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
                     letterSpacing = 0.5.sp
                 )
 
-                // User Rank Items List
-                rankedUsers.forEach { user ->
+                // User Rank Items List (#4 and onwards if Top 3 shown on Podium)
+                val remainingUsers = if (rankedUsers.size >= 3) rankedUsers.drop(3) else rankedUsers
+                remainingUsers.forEach { user ->
                     LeaderboardUserRow(user = user, numberFormatter = numberFormatter)
                 }
             }
@@ -438,6 +447,135 @@ private fun LeaderboardUserRow(
                     style = MaterialTheme.typography.labelSmall,
                     fontSize = 9.sp,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun Top3PodiumView(
+    topUsers: List<LeaderboardUser>,
+    numberFormatter: NumberFormat
+) {
+    if (topUsers.size < 3) return
+
+    val first = topUsers[0]
+    val second = topUsers[1]
+    val third = topUsers[2]
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalAlignment = Alignment.Bottom
+    ) {
+        // Rank #2 (Silver)
+        PodiumPillar(
+            user = second,
+            rank = 2,
+            height = 110.dp,
+            accentColor = TrophySilver,
+            numberFormatter = numberFormatter,
+            modifier = Modifier.weight(1f)
+        )
+
+        // Rank #1 (Gold - Tallest & Center)
+        PodiumPillar(
+            user = first,
+            rank = 1,
+            height = 135.dp,
+            accentColor = TrophyGold,
+            numberFormatter = numberFormatter,
+            modifier = Modifier.weight(1f)
+        )
+
+        // Rank #3 (Bronze)
+        PodiumPillar(
+            user = third,
+            rank = 3,
+            height = 95.dp,
+            accentColor = TrophyBronze,
+            numberFormatter = numberFormatter,
+            modifier = Modifier.weight(1f)
+        )
+    }
+}
+
+@Composable
+private fun PodiumPillar(
+    user: LeaderboardUser,
+    rank: Int,
+    height: androidx.compose.ui.unit.Dp,
+    accentColor: Color,
+    numberFormatter: NumberFormat,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier
+    ) {
+        // User Name & Badge
+        Text(
+            text = user.name.split(" ").firstOrNull() ?: user.name,
+            style = MaterialTheme.typography.labelMedium,
+            fontWeight = FontWeight.Bold,
+            maxLines = 1,
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.onSurface
+        )
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(2.dp)
+        ) {
+            Icon(Icons.Default.Diamond, contentDescription = null, tint = DiamondGold, modifier = Modifier.size(12.dp))
+            Text(
+                text = numberFormatter.format(user.diamonds),
+                fontSize = 10.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.primary
+            )
+        }
+
+        Spacer(modifier = Modifier.height(6.dp))
+
+        // Pillar Card
+        Surface(
+            shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp, bottomStart = 8.dp, bottomEnd = 8.dp),
+            color = accentColor.copy(alpha = 0.2f),
+            border = BorderStroke(1.5.dp, accentColor),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(height)
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(6.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(36.dp)
+                        .background(accentColor, CircleShape),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.EmojiEvents,
+                        contentDescription = null,
+                        tint = Color.White,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = "#$rank",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = accentColor
                 )
             }
         }

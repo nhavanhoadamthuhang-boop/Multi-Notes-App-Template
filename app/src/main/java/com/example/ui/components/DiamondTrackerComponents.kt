@@ -1440,13 +1440,13 @@ private fun StorePackageCard(
 
     Card(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(14.dp),
+        shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = if (isActive) accentColor.copy(alpha = 0.12f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f)
+            containerColor = if (isActive) accentColor.copy(alpha = 0.14f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.35f)
         ),
         border = BorderStroke(
             width = if (isActive) 2.dp else 1.dp,
-            color = if (isActive) accentColor else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.6f)
+            color = if (isActive) accentColor else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
         )
     ) {
         Column(
@@ -1455,7 +1455,7 @@ private fun StorePackageCard(
                 .padding(14.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            // Header
+            // Header: Title & Status Badge
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
@@ -1463,11 +1463,11 @@ private fun StorePackageCard(
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
                     Box(
                         modifier = Modifier
-                            .size(34.dp)
+                            .size(38.dp)
                             .background(accentColor.copy(alpha = 0.2f), CircleShape),
                         contentAlignment = Alignment.Center
                     ) {
@@ -1475,37 +1475,43 @@ private fun StorePackageCard(
                             imageVector = icon,
                             contentDescription = null,
                             tint = accentColor,
-                            modifier = Modifier.size(20.dp)
+                            modifier = Modifier.size(22.dp)
                         )
                     }
                     Column {
                         Text(
                             text = tier.title,
                             style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold
+                            fontWeight = FontWeight.ExtraBold
                         )
-                        Text(
-                            text = "Chi phí: ${numberFormatter.format(tier.diamondPrice)} kim cương",
-                            style = MaterialTheme.typography.bodySmall,
-                            fontWeight = FontWeight.Bold,
-                            color = accentColor
-                        )
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        ) {
+                            Icon(Icons.Default.Diamond, contentDescription = null, tint = accentColor, modifier = Modifier.size(13.dp))
+                            Text(
+                                text = if (tier.diamondPrice == 0) "Miễn phí hoàn toàn" else "${numberFormatter.format(tier.diamondPrice)} Kim Cương",
+                                style = MaterialTheme.typography.labelMedium,
+                                fontWeight = FontWeight.Bold,
+                                color = accentColor
+                            )
+                        }
                     }
                 }
 
                 if (isActive) {
                     Surface(
-                        shape = RoundedCornerShape(8.dp),
+                        shape = RoundedCornerShape(10.dp),
                         color = accentColor
                     ) {
                         Row(
-                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.spacedBy(4.dp)
                         ) {
                             Icon(Icons.Default.Check, contentDescription = null, tint = Color.White, modifier = Modifier.size(14.dp))
                             Text(
-                                text = "Đang kích hoạt",
+                                text = "Đang áp dụng",
                                 fontSize = 11.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = Color.White
@@ -1515,135 +1521,138 @@ private fun StorePackageCard(
                 }
             }
 
-            // Benefits breakdown
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.5f), RoundedCornerShape(10.dp))
-                    .padding(10.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
+            // Benefits Grid Block
+            Surface(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(12.dp),
+                color = MaterialTheme.colorScheme.surface.copy(alpha = 0.6f),
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
             ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                Column(
+                    modifier = Modifier.padding(10.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    Icon(Icons.Default.Diamond, contentDescription = null, tint = accentColor, modifier = Modifier.size(16.dp))
-                    Text(
-                        text = "Chi phí gói: ${numberFormatter.format(tier.diamondPrice)} Kim Cương",
-                        style = MaterialTheme.typography.bodySmall,
-                        fontWeight = FontWeight.Bold,
-                        color = accentColor
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-                    Icon(Icons.Default.Forum, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(16.dp))
-                    Text(
-                        text = "Giới hạn đăng: ${numberFormatter.format(tier.maxDailyComments)} bình luận & phản hồi/ngày",
-                        style = MaterialTheme.typography.bodySmall,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-                    Icon(Icons.Default.Speed, contentDescription = null, tint = MaterialTheme.colorScheme.secondary, modifier = Modifier.size(16.dp))
-                    Text(
-                        text = "Giới hạn tốc độ: ${tier.maxCommentsPerMinute} bình luận và phản hồi/phút",
-                        style = MaterialTheme.typography.bodySmall,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-                    Icon(Icons.Default.Comment, contentDescription = null, tint = MaterialTheme.colorScheme.tertiary, modifier = Modifier.size(16.dp))
-                    Text(
-                        text = "Theo dõi ${numberFormatter.format(tier.commentsPerPage)} bình luận/trang",
-                        style = MaterialTheme.typography.bodySmall,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-                    Icon(Icons.Default.NoteAdd, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(16.dp))
-                    Text(
-                        text = "Giới hạn: ${numberFormatter.format(tier.maxDailyNotes)} ghi chú/ngày",
-                        style = MaterialTheme.typography.bodySmall,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                }
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-                    Icon(Icons.Default.AutoDelete, contentDescription = null, tint = Color(0xFFE65100), modifier = Modifier.size(16.dp))
-                    Text(
-                        text = "Theo dõi thùng rác đã xóa gần đây trong vòng ${tier.trashRetentionDays} ngày trước khi bị xóa vĩnh viễn",
-                        style = MaterialTheme.typography.bodySmall,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                }
-                Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(6.dp)
-                    ) {
-                        Icon(Icons.Default.Storage, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(16.dp))
-                        Text(
-                            text = "Giới hạn dung lượng: ${numberFormatter.format(tier.maxStorageGB)} GB",
-                            style = MaterialTheme.typography.bodySmall,
-                            fontWeight = FontWeight.SemiBold
+                    // Feature Grid Row 1
+                    Row(modifier = Modifier.fillMaxWidth()) {
+                        Row(
+                            modifier = Modifier.weight(1f),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Icon(Icons.Default.Forum, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(15.dp))
+                            Text(
+                                text = "${numberFormatter.format(tier.maxDailyComments)} cmt/ngày",
+                                style = MaterialTheme.typography.bodySmall,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Row(
+                            modifier = Modifier.weight(1f),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Icon(Icons.Default.NoteAdd, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(15.dp))
+                            Text(
+                                text = "${numberFormatter.format(tier.maxDailyNotes)} ghi chú/ngày",
+                                style = MaterialTheme.typography.bodySmall,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+
+                    // Feature Grid Row 2
+                    Row(modifier = Modifier.fillMaxWidth()) {
+                        Row(
+                            modifier = Modifier.weight(1f),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Icon(Icons.Default.Speed, contentDescription = null, tint = MaterialTheme.colorScheme.secondary, modifier = Modifier.size(15.dp))
+                            Text(
+                                text = "${tier.maxCommentsPerMinute} cmt/phút",
+                                style = MaterialTheme.typography.bodySmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
+                        Row(
+                            modifier = Modifier.weight(1f),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Icon(Icons.Default.AutoDelete, contentDescription = null, tint = Color(0xFFE65100), modifier = Modifier.size(15.dp))
+                            Text(
+                                text = "Thùng rác ${tier.trashRetentionDays} ngày",
+                                style = MaterialTheme.typography.bodySmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
+                    }
+
+                    // Storage Progress Bar Row
+                    Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                Icon(Icons.Default.Storage, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(15.dp))
+                                Text(
+                                    text = "Dung lượng lưu trữ:",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            }
+                            Text(
+                                text = "${numberFormatter.format(tier.maxStorageGB)} GB",
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = accentColor
+                            )
+                        }
+                        LinearProgressIndicator(
+                            progress = { (tier.maxStorageGB.toFloat() / 1024f).coerceIn(0.01f, 1f) },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(6.dp)
+                                .clip(RoundedCornerShape(3.dp))
+                                .testTag("progress_package_storage_${tier.id}"),
+                            color = accentColor,
+                            trackColor = accentColor.copy(alpha = 0.15f)
                         )
                     }
-                    LinearProgressIndicator(
-                        progress = { (tier.maxStorageGB.toFloat() / 1024f).coerceIn(0.01f, 1f) },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(5.dp)
-                            .clip(RoundedCornerShape(2.5.dp))
-                            .testTag("progress_package_storage_${tier.id}"),
-                        color = accentColor,
-                        trackColor = accentColor.copy(alpha = 0.15f)
-                    )
                 }
             }
 
-            // Action Buttons
+            // Action Button
             if (!isActive) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                Button(
+                    onClick = onActivate,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(44.dp),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (canAfford) accentColor else MaterialTheme.colorScheme.secondary
+                    )
                 ) {
-                    Button(
-                        onClick = onActivate,
-                        modifier = Modifier.weight(1f),
-                        shape = RoundedCornerShape(10.dp),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = if (canAfford) accentColor else MaterialTheme.colorScheme.secondary
-                        )
-                    ) {
-                        Icon(
-                            imageVector = if (canAfford) Icons.Default.CheckCircle else Icons.Default.Diamond,
-                            contentDescription = null,
-                            modifier = Modifier.size(16.dp)
-                        )
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Text(
-                            text = if (canAfford)
-                                "Dùng ${numberFormatter.format(tier.diamondPrice)} kim cương kích hoạt"
-                            else
-                                "Mua gói (${numberFormatter.format(tier.diamondPrice)} kim cương)",
-                            fontSize = 12.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
+                    Icon(
+                        imageVector = if (canAfford) Icons.Default.CheckCircle else Icons.Default.Diamond,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = if (canAfford)
+                            "Kích hoạt gói (${numberFormatter.format(tier.diamondPrice)} 💎)"
+                        else
+                            "Cần thêm ${numberFormatter.format(tier.diamondPrice - userDiamonds)} 💎 để mua",
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                 }
             }
         }
