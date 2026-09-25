@@ -73,17 +73,19 @@ class StreakManager(context: Context) {
 
         val levelName = when {
             currentStreak >= 30 -> "Huyền Thoại Ghi Chú"
+            currentStreak >= 28 -> "Huyền Thoại Bình Luận & Phản Hồi"
             currentStreak >= 14 -> "Bậc Thầy Kiên Trì"
             currentStreak >= 7 -> "Chuyên Gia Thói Quản"
             currentStreak >= 3 -> "Ngọn Lửa Bùng Cháy"
             currentStreak >= 1 -> "Khởi Đầu Tốt Đẹp"
-            else -> "Chưa Khởi Động"
+            else -> "Chưa Được Khởi Động"
         }
 
         val nextMilestone = when {
             currentStreak < 3 -> 3
             currentStreak < 7 -> 7
             currentStreak < 14 -> 14
+            currentStreak < 28 -> 28
             currentStreak < 30 -> 30
             else -> currentStreak + 10
         }
