@@ -146,6 +146,8 @@ private val DEFAULT_SUGGESTED_CATEGORIES = listOf(
     "Tài chính",
     "Dự án",
     "Du lịch Việt Nam",
+    "Du lịch nước Nga",
+    "Họp báo",
     "aNotepad"
 )
 
@@ -223,9 +225,9 @@ fun NoteListScreen(
                     context, uri, favoriteNotes
                 )
                 if (success) {
-                    Toast.makeText(context, "Đã xuất danh sách Yêu thích ra PDF thành công", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Đã xuất danh sách Yêu thích ra tệp tin PDF thành công", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(context, "Lỗi khi xuất PDF danh sách Yêu thích", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Lỗi khi xuất tệp tin PDF danh sách Yêu thích", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -561,7 +563,7 @@ fun NoteListScreen(
 
                             // Xuất các Ghi chú Yêu thích ra PDF
                             DropdownMenuItem(
-                                text = { Text("Xuất Yêu thích ra PDF (⭐)") },
+                                text = { Text("Xuất Yêu thích ra tệp tin PDF") },
                                 leadingIcon = {
                                     Icon(
                                         imageVector = Icons.Default.Star,
@@ -1252,7 +1254,7 @@ fun NoteListScreen(
             },
             title = {
                 Text(
-                    text = "Thông báo giới hạn",
+                    text = "Thông báo",
                     fontWeight = FontWeight.Bold
                 )
             },
