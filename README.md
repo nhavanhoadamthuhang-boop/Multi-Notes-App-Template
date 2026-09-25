@@ -21,10 +21,10 @@
 - **Giao Diện Trực Quan**: Huy hiệu phân loại vàng sữa **⭐ YÊU THÍCH** và **⭐ SAO** được thiết kế nổi bật, chuyên nghiệp.
 
 ### 3. Kho 140 Mẫu Ghi Chú, Bình Luận & Phản Hồi (Du Lịch & Ẩm Thực Đường Phố)
-- **Bộ dữ liệu mẫu đa dạng**: Gồm 48 ghi chú, 46 bình luận và 46 phản hồi mẫu (Tổng cộng **140 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về nhiều chủ đề địa danh & ẩm thực:
+- **Bộ dữ liệu mẫu đa dạng**: Gồm 48 ghi chú, 48 bình luận và 48 phản hồi mẫu (Tổng cộng **144 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về nhiều chủ đề địa danh & ẩm thực:
   - **Du lịch Việt Nam**: Khám phá danh lam thắng cảnh nổi tiếng như Sapa, Hà Giang, Vịnh Hạ Long, Hội An, Phú Quốc,... đặc biệt là thông tin chi tiết về **Khu du lịch sinh thái Suối Nặm Thoong (Cao Bằng)** hoang sơ thơ mộng và **Khu di tích lịch sử anh hùng Kim Đồng (Cao Bằng)** linh thiêng hào hùng.
   - **Du lịch nước Nga**: Chiêm ngưỡng kiến trúc kiệt tác như Điện Kremlin (Moscow), Cung điện Mùa đông (Saint Petersburg), Hồ Baikal (Siberia), săn cực quang kỳ vĩ tại Murmansk,...
-  - **Ẩm thực đường phố Việt Nam**: Khám phá văn hóa ẩm thực độc đáo như **Phở Gánh Hà Nội**, **Bánh Mì Sài Gòn**, **Bún Bò Huế**, **Cơm Tấm Sài Gòn**, **Bánh Xèo Miền Tây**, **Cà Phê Trứng Hà Nội**,...
+  - **Ẩm thực đường phố Việt Nam**: Khám phá văn hóa ẩm thực độc đáo như **Phở Gánh Hà Nội**, **Bánh Mì Sài Gòn**, **Bún Bò ở Thừa Thiên Huế**, **Cơm Tấm Sài Gòn**, **Bánh Xèo Miền Tây**, **Cà Phê Trứng Hà Nội**,...
 - **Công cụ tìm kiếm & Lọc thông minh**: Tìm kiếm thời gian thực kết hợp bộ lọc kép theo 3 chủ đề lớn (*Du lịch Việt Nam*, *Du lịch nước Nga*, *Ẩm thực đường phố*) và 3 loại mẫu dữ liệu (*Ghi chú*, *Bình luận*, *Phản hồi*).
 - **Nhập nhanh một chạm (Quick Import)**: Nhập lập tức bất kỳ ghi chú mẫu nào vào kho dữ liệu chính thức của bạn, tự động tạo nhãn dán tương ứng và nhận phần thưởng **+20 Kim Cương thưởng** tức thì!
 
@@ -99,7 +99,7 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
 
 ## 🚀 Hướng Dẫn Sử Dụng & Trải Nghiệm
 1. **Khởi động ứng dụng**: Thưởng thức ngay giao diện trực quan với phông chữ Inter sắc nét.
-2. **Khám phá 140 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"140 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố"**, tìm kiếm **"Phở Gánh"**, **"Bánh Mì Sài Gòn"**, **"Suối Nặm Thoong"** hoặc **"Kim Đồng"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
+2. **Khám phá 140 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"140 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố"**, tìm kiếm **"Phở Gánh"**, **"Bánh Mì Sài Gòn"**, **"Suối Nặm Thoong"** hoặc **"Anh hùng Kim Đồng"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
 3. **Sử dụng Undo/Redo**: Khi viết hay chỉnh sửa ghi chú, hãy trải nghiệm 2 nút Hoàn tác/Làm lại ở góc trên trình soạn thảo để dễ dàng quản lý nội dung.
 4. **Đánh dấu Yêu thích**: Nhấn nút Ngôi sao (⭐) trên bất kỳ ghi chú hay bình luận nào để gắn sao vàng nổi bật và quản lý dễ dàng.
 5. **Theo dõi Dung lượng & Đổi quà**: Mở **"Cửa hàng Kim Cương"** để xem thanh tiến trình dung lượng sử dụng và nâng cấp cấp độ tài khoản bằng Kim Cương tích lũy.
