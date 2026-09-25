@@ -154,7 +154,7 @@ fun DiamondTopBarBadge(
                 label = "diamond_counter_anim"
             ) { count ->
                 Text(
-                    text = "${numberFormatter.format(count)} kim cương",
+                    text = "${numberFormatter.format(count)} 💎",
                     style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
@@ -228,179 +228,187 @@ fun DiamondProgressCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(14.dp)
+                .padding(14.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            // Header row with Diamond Icon, Goal & Store button
+            // Header row with Diamond Icon & Title
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    modifier = Modifier.weight(1f)
+                Box(
+                    modifier = Modifier
+                        .size(38.dp)
+                        .background(
+                            color = when (rewardState.currentTier) {
+                                StorePackageTier.PACKAGE_8 -> DiamondRuby.copy(alpha = 0.2f)
+                                StorePackageTier.PACKAGE_7 -> DiamondEmerald.copy(alpha = 0.2f)
+                                StorePackageTier.PACKAGE_6 -> DiamondIndigo.copy(alpha = 0.2f)
+                                StorePackageTier.PACKAGE_5 -> DiamondOrange.copy(alpha = 0.2f)
+                                StorePackageTier.PACKAGE_4 -> DiamondRed.copy(alpha = 0.2f)
+                                StorePackageTier.PACKAGE_3 -> DiamondTeal.copy(alpha = 0.2f)
+                                StorePackageTier.PACKAGE_2 -> DiamondPurple.copy(alpha = 0.2f)
+                                StorePackageTier.PACKAGE_1 -> DiamondGold.copy(alpha = 0.2f)
+                                else -> DiamondCyan.copy(alpha = 0.2f)
+                            },
+                            shape = CircleShape
+                        ),
+                    contentAlignment = Alignment.Center
                 ) {
-                    Box(
-                        modifier = Modifier
-                            .size(36.dp)
-                            .background(
-                                color = when (rewardState.currentTier) {
-                                    StorePackageTier.PACKAGE_8 -> DiamondRuby.copy(alpha = 0.2f)
-                                    StorePackageTier.PACKAGE_7 -> DiamondEmerald.copy(alpha = 0.2f)
-                                    StorePackageTier.PACKAGE_6 -> DiamondIndigo.copy(alpha = 0.2f)
-                                    StorePackageTier.PACKAGE_5 -> DiamondOrange.copy(alpha = 0.2f)
-                                    StorePackageTier.PACKAGE_4 -> DiamondRed.copy(alpha = 0.2f)
-                                    StorePackageTier.PACKAGE_3 -> DiamondTeal.copy(alpha = 0.2f)
-                                    StorePackageTier.PACKAGE_2 -> DiamondPurple.copy(alpha = 0.2f)
-                                    StorePackageTier.PACKAGE_1 -> DiamondGold.copy(alpha = 0.2f)
-                                    else -> DiamondCyan.copy(alpha = 0.2f)
-                                },
-                                shape = CircleShape
-                            ),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = when (rewardState.currentTier) {
-                                StorePackageTier.PACKAGE_8 -> Icons.Default.Stars
-                                StorePackageTier.PACKAGE_7 -> Icons.Default.EmojiEvents
-                                StorePackageTier.PACKAGE_6 -> Icons.Default.Stars
-                                StorePackageTier.PACKAGE_5 -> Icons.Default.Diamond
-                                StorePackageTier.PACKAGE_4 -> Icons.Default.Diamond
-                                StorePackageTier.PACKAGE_3 -> Icons.Default.FlashOn
-                                StorePackageTier.PACKAGE_2 -> Icons.Default.Stars
-                                StorePackageTier.PACKAGE_1 -> Icons.Default.EmojiEvents
-                                else -> Icons.Default.Diamond
-                            },
-                            contentDescription = "Mục tiêu kim cương",
-                            tint = when (rewardState.currentTier) {
-                                StorePackageTier.PACKAGE_8 -> DiamondRuby
-                                StorePackageTier.PACKAGE_7 -> DiamondEmerald
-                                StorePackageTier.PACKAGE_6 -> DiamondIndigo
-                                StorePackageTier.PACKAGE_5 -> DiamondOrange
-                                StorePackageTier.PACKAGE_4 -> DiamondRed
-                                StorePackageTier.PACKAGE_3 -> DiamondTeal
-                                StorePackageTier.PACKAGE_2 -> DiamondPurple
-                                StorePackageTier.PACKAGE_1 -> DiamondGold
-                                else -> DiamondCyan
-                            },
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
+                    Icon(
+                        imageVector = when (rewardState.currentTier) {
+                            StorePackageTier.PACKAGE_8 -> Icons.Default.Stars
+                            StorePackageTier.PACKAGE_7 -> Icons.Default.EmojiEvents
+                            StorePackageTier.PACKAGE_6 -> Icons.Default.Stars
+                            StorePackageTier.PACKAGE_5 -> Icons.Default.Diamond
+                            StorePackageTier.PACKAGE_4 -> Icons.Default.Diamond
+                            StorePackageTier.PACKAGE_3 -> Icons.Default.FlashOn
+                            StorePackageTier.PACKAGE_2 -> Icons.Default.Stars
+                            StorePackageTier.PACKAGE_1 -> Icons.Default.EmojiEvents
+                            else -> Icons.Default.Diamond
+                        },
+                        contentDescription = "Mục tiêu kim cương",
+                        tint = when (rewardState.currentTier) {
+                            StorePackageTier.PACKAGE_8 -> DiamondRuby
+                            StorePackageTier.PACKAGE_7 -> DiamondEmerald
+                            StorePackageTier.PACKAGE_6 -> DiamondIndigo
+                            StorePackageTier.PACKAGE_5 -> DiamondOrange
+                            StorePackageTier.PACKAGE_4 -> DiamondRed
+                            StorePackageTier.PACKAGE_3 -> DiamondTeal
+                            StorePackageTier.PACKAGE_2 -> DiamondPurple
+                            StorePackageTier.PACKAGE_1 -> DiamondGold
+                            else -> DiamondCyan
+                        },
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
 
-                    Column {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(6.dp)
-                        ) {
-                            Text(
-                                text = "${numberFormatter.format(rewardState.totalDiamonds)} kim cương",
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.onSurface
-                            )
-                            if (rewardState.currentTier != StorePackageTier.DEFAULT) {
-                                Surface(
-                                    shape = RoundedCornerShape(8.dp),
-                                    color = when (rewardState.currentTier) {
-                                        StorePackageTier.PACKAGE_8 -> DiamondRuby
-                                        StorePackageTier.PACKAGE_7 -> DiamondEmerald
-                                        StorePackageTier.PACKAGE_6 -> DiamondIndigo
-                                        StorePackageTier.PACKAGE_5 -> DiamondOrange
-                                        StorePackageTier.PACKAGE_4 -> DiamondRed
-                                        StorePackageTier.PACKAGE_3 -> DiamondTeal
-                                        StorePackageTier.PACKAGE_2 -> DiamondPurple
-                                        else -> DiamondGold
-                                    }
-                                ) {
-                                    Text(
-                                        text = rewardState.currentTier.title,
-                                        fontSize = 10.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = Color.White,
-                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                    )
+                Column(modifier = Modifier.weight(1f)) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        Text(
+                            text = "${numberFormatter.format(rewardState.totalDiamonds)} kim cương",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onSurface,
+                            maxLines = 1
+                        )
+                        if (rewardState.currentTier != StorePackageTier.DEFAULT) {
+                            Surface(
+                                shape = RoundedCornerShape(8.dp),
+                                color = when (rewardState.currentTier) {
+                                    StorePackageTier.PACKAGE_8 -> DiamondRuby
+                                    StorePackageTier.PACKAGE_7 -> DiamondEmerald
+                                    StorePackageTier.PACKAGE_6 -> DiamondIndigo
+                                    StorePackageTier.PACKAGE_5 -> DiamondOrange
+                                    StorePackageTier.PACKAGE_4 -> DiamondRed
+                                    StorePackageTier.PACKAGE_3 -> DiamondTeal
+                                    StorePackageTier.PACKAGE_2 -> DiamondPurple
+                                    else -> DiamondGold
                                 }
+                            ) {
+                                Text(
+                                    text = rewardState.currentTier.title,
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                )
                             }
                         }
+                    }
+                    Text(
+                        text = "+20 KC/ghi chú & cmt • Điểm danh: +800 KC",
+                        style = MaterialTheme.typography.bodySmall,
+                        fontSize = 11.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        maxLines = 1
+                    )
+                }
+            }
+
+            // Action Buttons Row (Leaderboard, History, Store)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                if (onOpenLeaderboard != null) {
+                    OutlinedButton(
+                        onClick = onOpenLeaderboard,
+                        shape = RoundedCornerShape(10.dp),
+                        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+                        modifier = Modifier
+                            .weight(1f)
+                            .testTag("button_open_leaderboard")
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.EmojiEvents,
+                            contentDescription = null,
+                            tint = DiamondGold,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(modifier = Modifier.width(3.dp))
                         Text(
-                            text = "+20 KC/ghi chú & cmt • Điểm danh: +800 KC",
-                            style = MaterialTheme.typography.bodySmall,
-                            fontSize = 11.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                            text = "Xếp hạng",
+                            style = MaterialTheme.typography.labelSmall,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1
                         )
                     }
                 }
 
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(6.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    if (onOpenLeaderboard != null) {
-                        OutlinedButton(
-                            onClick = onOpenLeaderboard,
-                            shape = RoundedCornerShape(12.dp),
-                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
-                            modifier = Modifier.testTag("button_open_leaderboard")
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.EmojiEvents,
-                                contentDescription = null,
-                                tint = DiamondGold,
-                                modifier = Modifier.size(15.dp)
-                            )
-                            Spacer(modifier = Modifier.width(4.dp))
-                            Text(
-                                text = "Xếp hạng",
-                                style = MaterialTheme.typography.labelSmall,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-                    }
-
-                    if (onOpenHistory != null) {
-                        OutlinedButton(
-                            onClick = onOpenHistory,
-                            shape = RoundedCornerShape(12.dp),
-                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
-                            modifier = Modifier.testTag("button_open_history")
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.History,
-                                contentDescription = null,
-                                modifier = Modifier.size(15.dp)
-                            )
-                            Spacer(modifier = Modifier.width(4.dp))
-                            Text(
-                                text = "Lịch sử",
-                                style = MaterialTheme.typography.labelSmall,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-                    }
-
-                    // Cửa Hàng Button
-                    FilledTonalButton(
-                        onClick = onOpenStore,
-                        shape = RoundedCornerShape(12.dp),
-                        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp),
-                        colors = ButtonDefaults.filledTonalButtonColors(
-                            containerColor = MaterialTheme.colorScheme.primaryContainer
-                        ),
-                        modifier = Modifier.testTag("button_open_store")
+                if (onOpenHistory != null) {
+                    OutlinedButton(
+                        onClick = onOpenHistory,
+                        shape = RoundedCornerShape(10.dp),
+                        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+                        modifier = Modifier
+                            .weight(1f)
+                            .testTag("button_open_history")
                     ) {
                         Icon(
-                            imageVector = Icons.Default.ShoppingBag,
+                            imageVector = Icons.Default.History,
                             contentDescription = null,
-                            modifier = Modifier.size(15.dp)
+                            modifier = Modifier.size(14.dp)
                         )
-                        Spacer(modifier = Modifier.width(4.dp))
+                        Spacer(modifier = Modifier.width(3.dp))
                         Text(
-                            text = "Cửa hàng",
+                            text = "Lịch sử",
                             style = MaterialTheme.typography.labelSmall,
-                            fontWeight = FontWeight.Bold
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1
                         )
                     }
+                }
+
+                // Cửa Hàng Button
+                FilledTonalButton(
+                    onClick = onOpenStore,
+                    shape = RoundedCornerShape(10.dp),
+                    contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+                    colors = ButtonDefaults.filledTonalButtonColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer
+                    ),
+                    modifier = Modifier
+                        .weight(1f)
+                        .testTag("button_open_store")
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ShoppingBag,
+                        contentDescription = null,
+                        modifier = Modifier.size(14.dp)
+                    )
+                    Spacer(modifier = Modifier.width(3.dp))
+                    Text(
+                        text = "Cửa hàng",
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1
+                    )
                 }
             }
 

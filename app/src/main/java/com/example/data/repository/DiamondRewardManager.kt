@@ -52,7 +52,7 @@ enum class StorePackageTier(
         commentsPerPage = 200,
         trashRetentionDays = 60,
         maxStorageGB = 8,
-        badgeLabel = "Mặc định (Thùng rác 60 ngày • Dung lượng 8 GB)",
+        badgeLabel = "Mặc định (60 ngày • 8 GB)",
         description = "Gói Mặc Định: Miễn phí • 8.000 cmt/ngày • 32 cmt/phút • 200 cmt/trang • 4.000 ghi chú/ngày • Thùng rác 60 ngày • Giới hạn dung lượng 8 GB"
     ),
     PACKAGE_1(
@@ -65,7 +65,7 @@ enum class StorePackageTier(
         commentsPerPage = 400,
         trashRetentionDays = 120,
         maxStorageGB = 16,
-        badgeLabel = "Gói Cấp 1 (Thùng rác 120 ngày • Dung lượng 16 GB)",
+        badgeLabel = "Cấp 1 (120 ngày • 16 GB)",
         description = "Gói Cấp 1 (8.000 💎): 16.000 cmt/ngày • 64 cmt/phút • 400 cmt/trang • 8.000 ghi chú/ngày • Thùng rác 120 ngày • Giới hạn dung lượng 16 GB"
     ),
     PACKAGE_2(
@@ -78,7 +78,7 @@ enum class StorePackageTier(
         commentsPerPage = 800,
         trashRetentionDays = 180,
         maxStorageGB = 24,
-        badgeLabel = "Gói Cấp 2 (Thùng rác 180 ngày • Dung lượng 24 GB)",
+        badgeLabel = "Cấp 2 (180 ngày • 24 GB)",
         description = "Gói Cấp 2 (16.000 💎): 32.000 cmt/ngày • 128 cmt/phút • 800 cmt/trang • 16.000 ghi chú/ngày • Thùng rác 180 ngày • Giới hạn dung lượng 24 GB"
     ),
     PACKAGE_3(
@@ -91,7 +91,7 @@ enum class StorePackageTier(
         commentsPerPage = 1_600,
         trashRetentionDays = 360,
         maxStorageGB = 32,
-        badgeLabel = "Gói Cấp 3 (Thùng rác 360 ngày - 1 năm • Dung lượng 32 GB)",
+        badgeLabel = "Cấp 3 (1 năm • 32 GB)",
         description = "Gói Cấp 3 (32.000 💎): 64.000 cmt/ngày • 256 cmt/phút • 1.600 cmt/trang • 32.000 ghi chú/ngày • Thùng rác 360 ngày (1 năm) • Giới hạn dung lượng 32 GB"
     ),
     PACKAGE_4(
@@ -104,7 +104,7 @@ enum class StorePackageTier(
         commentsPerPage = 3_200,
         trashRetentionDays = 720,
         maxStorageGB = 64,
-        badgeLabel = "Gói Cấp 4 (Thùng rác 720 ngày - 2 năm • Dung lượng 64 GB)",
+        badgeLabel = "Cấp 4 (2 năm • 64 GB)",
         description = "Gói Cấp 4 (64.000 💎): 128.000 cmt/ngày • 512 cmt/phút • 3.200 cmt/trang • 64.000 ghi chú/ngày • Thùng rác 720 ngày (2 năm) • Giới hạn dung lượng 64 GB"
     ),
     PACKAGE_5(
@@ -117,7 +117,7 @@ enum class StorePackageTier(
         commentsPerPage = 6_400,
         trashRetentionDays = 1_440,
         maxStorageGB = 128,
-        badgeLabel = "Gói Cấp 5 (Thùng rác 1.440 ngày - 4 năm • Dung lượng 128 GB)",
+        badgeLabel = "Cấp 5 (4 năm • 128 GB)",
         description = "Gói Cấp 5 (128.000 💎): 256.000 cmt/ngày • 1.024 cmt/phút • 6.400 cmt/trang • 128.000 ghi chú/ngày • Thùng rác 1.440 ngày (4 năm) • Giới hạn dung lượng 128 GB"
     ),
     PACKAGE_6(
@@ -130,7 +130,7 @@ enum class StorePackageTier(
         commentsPerPage = 12_800,
         trashRetentionDays = 2_880,
         maxStorageGB = 256,
-        badgeLabel = "Gói Cấp 6 (Thùng rác 2.880 ngày - 8 năm • Dung lượng 256 GB)",
+        badgeLabel = "Cấp 6 (8 năm • 256 GB)",
         description = "Gói Cấp 6 (256.000 💎): 512.000 cmt/ngày • 2.048 cmt/phút • 12.800 cmt/trang • 256.000 ghi chú/ngày • Thùng rác 2.880 ngày (8 năm) • Giới hạn dung lượng 256 GB"
     ),
     PACKAGE_7(
@@ -143,7 +143,7 @@ enum class StorePackageTier(
         commentsPerPage = 25_600,
         trashRetentionDays = 5_760,
         maxStorageGB = 512,
-        badgeLabel = "Gói Cấp 7 (Thùng rác 5.760 ngày - 16 năm • Dung lượng 512 GB)",
+        badgeLabel = "Cấp 7 (16 năm • 512 GB)",
         description = "Gói Cấp 7 (512.000 💎): 1.024.000 cmt/ngày • 4.096 cmt/phút • 25.600 cmt/trang • 512.000 ghi chú/ngày • Thùng rác 5.760 ngày (16 năm) • Giới hạn dung lượng 512 GB"
     ),
     PACKAGE_8(
@@ -156,7 +156,7 @@ enum class StorePackageTier(
         commentsPerPage = 51_200,
         trashRetentionDays = 11_520,
         maxStorageGB = 1_024,
-        badgeLabel = "Gói Cấp 8 VIP (Thùng rác 11.520 ngày - 32 năm • Dung lượng 1.024 GB)",
+        badgeLabel = "VIP Cấp 8 (32 năm • 1.024 GB)",
         description = "Gói Cấp 8 (VIP) (1.024.000 💎): 2.048.000 cmt/ngày • 8.192 cmt/phút • 51.200 cmt/trang • 1.024.000 ghi chú/ngày • Thùng rác 11.520 ngày (32 năm) • Giới hạn dung lượng 1.024 GB"
     );
 

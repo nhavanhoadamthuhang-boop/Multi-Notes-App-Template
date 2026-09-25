@@ -15,6 +15,9 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
   - Thêm thẻ bộ lọc riêng biệt cho chủ đề **"Ẩm thực đường phố"** với tông màu cam đặc trưng (`#FFF3E0` / `#E65100`).
 
 ### 🎨 Fixed & Improved Layout (Cải tiến & Tối ưu Bố Cục Giao Diện)
+- **Tối Ưu Hóa Hiển Thị Top App Bar & Huy Hiệu**:
+  - Tối ưu hóa `DiamondTopBarBadge` trên thanh tiêu đề bằng cách sử dụng ký hiệu `💎` thay cho chữ "kim cương", loại bỏ hoàn toàn hiện tượng chồng lấn giao diện với huy hiệu chuỗi điểm danh (`StreakBadge`).
+  - Rút gọn và chuẩn hóa nhãn mô tả gói dịch vụ (`badgeLabel`) thành các thông số ngắn gọn, súc tích (ví dụ: *"VIP Cấp 8 (32 năm • 1.024 GB)"*) giúp tránh hiện tượng tràn lề văn bản trong hộp thoại.
 - **Thiết Kế Lại Bố Cục Tổng Quan Phức Tạp (`DiamondGoalDialog`)**:
   - Xây dựng lại bảng điều khiển tổng quan (Dashboard Overview) với thẻ trung tâm hiển thị tổng số Kim Cương, tiến độ % mục tiêu và thanh tiến trình `LinearProgressIndicator` phát sáng.
   - Tích hợp thẻ chi tiết gói VIP hiện tại kèm theo hạn mức trực quan (*Bình luận/ngày, Tốc độ cmt/phút, Giới hạn ghi chú, Thùng rác*).
