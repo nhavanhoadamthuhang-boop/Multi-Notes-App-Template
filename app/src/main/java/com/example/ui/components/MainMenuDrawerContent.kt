@@ -626,9 +626,9 @@ fun MainMenuDrawerContent(
                     .testTag("menu_nav_import_pdf_url")
             )
 
-            // 140 Mẫu Ghi Chú, Bình Luận & Phản Hồi
+            // 144 Mẫu Ghi Chú, Bình Luận & Phản Hồi
             NavigationDrawerItem(
-                label = { Text("140 mẫu ghi chú, bình luận và phản hồi") },
+                label = { Text("144 mẫu ghi chú, bình luận và phản hồi") },
                 selected = false,
                 onClick = {
                     onCloseDrawer()
