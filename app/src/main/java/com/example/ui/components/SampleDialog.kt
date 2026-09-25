@@ -329,11 +329,11 @@ fun SampleDialog(
                         is SampleItem.Reply -> item.category == "Du lịch nước Nga"
                     }
                 }
-                "Ẩm thực đường phố" -> {
+                "Ẩm thực đường phố Việt Nam" -> {
                     when (item) {
-                        is SampleItem.Note -> item.category == "Ẩm thực đường phố"
-                        is SampleItem.Comment -> item.category == "Ẩm thực đường phố"
-                        is SampleItem.Reply -> item.category == "Ẩm thực đường phố"
+                        is SampleItem.Note -> item.category == "Ẩm thực đường phố Việt Nam"
+                        is SampleItem.Comment -> item.category == "Ẩm thực đường phố Việt Nam"
+                        is SampleItem.Reply -> item.category == "Ẩm thực đường phố Việt Nam"
                     }
                 }
                 else -> true
@@ -799,7 +799,7 @@ fun SampleReplyCard(
                     color = when (reply.category) {
                         "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
                         "Du lịch nước Nga" -> Color(0xFFE3F2FD)
-                        "Ẩm thực đường phố" -> Color(0xFFFFF3E0)
+                        "Ẩm thực đường phố Việt Nam" -> Color(0xFFFFF3E0)
                         else -> Color(0xFFE8F5E9)
                     }
                 ) {
@@ -810,7 +810,7 @@ fun SampleReplyCard(
                         color = when (reply.category) {
                             "Du lịch Việt Nam" -> Color(0xFF2E7D32)
                             "Du lịch nước Nga" -> Color(0xFF1565C0)
-                            "Ẩm thực đường phố" -> Color(0xFFE65100)
+                            "Ẩm thực đường phố Việt Nam" -> Color(0xFFE65100)
                             else -> Color(0xFF2E7D32)
                         },
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
