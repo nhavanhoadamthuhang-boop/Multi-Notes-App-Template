@@ -3,7 +3,7 @@
 ## 📖 Tổng Quan Dự Án
 **Ứng dụng Ghi Chú Đa Năng Thông Minh & Cộng Đồng** là một ứng dụng di động hiện đại được xây dựng hoàn toàn bằng **Kotlin** và **Jetpack Compose**, tuân thủ nghiêm ngặt các tiêu chuẩn **Material Design 3**. Ứng dụng kết hợp hoàn hảo giữa công cụ quản lý ghi chú cá nhân mạnh mẽ và hệ thống tương tác cộng đồng sinh động, tích hợp cơ chế phần thưởng kim cương, điểm danh chuỗi ngày liên tục (Streak), thanh tiến trình theo dõi dung lượng lưu trữ thực tế và bảng xếp hạng thành viên tích cực.
 
-Đặc biệt, ứng dụng hỗ trợ **Hệ thống Nhập/Xuất dữ liệu 8 định dạng toàn diện** (JSON, HTML, CSV, DOCX, PPTX, XML, XLSX, TXT) cùng kho 140 mẫu tài nguyên ghi chú, bình luận và phản hồi phong phú về Du lịch & Ẩm thực đường phố Việt Nam.
+Đặc biệt, ứng dụng hỗ trợ **Hệ thống Nhập/Xuất dữ liệu 8 định dạng toàn diện** (JSON, HTML, CSV, DOCX, PPTX, XML, XLSX, TXT) cùng kho **160 mẫu tài nguyên ghi chú, bình luận và phản hồi** phong phú về Du lịch Việt Nam, Du lịch nước Nga, Ẩm thực đường phố Việt Nam và Tư liệu lịch sử Tiểu sử các lãnh đạo Việt Nam.
 
 ---
 
@@ -20,12 +20,13 @@
 - **Yêu thích & Ghim Thảo Luận**: Cho phép gắn sao yêu thích (⭐) hoặc ghim (📌) các bình luận/phản hồi đắt giá lên đầu danh sách để cộng đồng tiện theo dõi.
 - **Giao Diện Trực Quan**: Huy hiệu phân loại vàng sữa **⭐ YÊU THÍCH** và **⭐ SAO** được thiết kế nổi bật, chuyên nghiệp.
 
-### 3. Kho 144 Mẫu Ghi Chú, Bình Luận & Phản Hồi (Du Lịch & Ẩm Thực Đường Phố)
-- **Bộ dữ liệu mẫu đa dạng**: Gồm 48 ghi chú, 48 bình luận và 48 phản hồi mẫu (Tổng cộng **144 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về nhiều chủ đề địa danh & ẩm thực:
+### 3. Kho 160 Mẫu Ghi Chú, Bình Luận & Phản Hồi Toàn Diện
+- **Bộ dữ liệu mẫu đa dạng**: Gồm 55 ghi chú, 53 bình luận và 52 phản hồi mẫu (Tổng cộng **160 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về 4 chủ đề lớn:
   - **Du lịch Việt Nam**: Khám phá danh lam thắng cảnh nổi tiếng như Sapa, Hà Giang, Vịnh Hạ Long, Hội An, Phú Quốc,... đặc biệt là thông tin chi tiết về **Khu du lịch sinh thái Suối Nặm Thoong (Cao Bằng)** hoang sơ thơ mộng và **Khu di tích lịch sử Anh hùng Kim Đồng (Cao Bằng)** linh thiêng hào hùng.
   - **Du lịch nước Nga**: Chiêm ngưỡng kiến trúc kiệt tác như Điện Kremlin (Moscow), Cung điện Mùa đông (Saint Petersburg), Hồ Baikal (Siberia), săn cực quang kỳ vĩ tại Murmansk,...
-  - **Ẩm thực đường phố Việt Nam**: Khám phá văn hóa ẩm thực độc đáo như **Phở Gánh Hà Nội**, **Bánh Mì Sài Gòn**, **Bún Bò ở Thừa Thiên Huế**, **Cơm Tấm Sài Gòn**, **Bánh Xèo Miền Tây**, **Cà Phê Trứng Hà Nội**,...
-- **Công cụ tìm kiếm & Lọc thông minh**: Tìm kiếm thời gian thực kết hợp bộ lọc kép theo 3 chủ đề lớn (*Du lịch Việt Nam*, *Du lịch nước Nga*, *Ẩm thực đường phố*) và 3 loại mẫu dữ liệu (*Ghi chú*, *Bình luận*, *Phản hồi*).
+  - **Ẩm thực đường phố Việt Nam**: Khám phá văn hóa ẩm thực độc đáo như **Phở Gánh Hà Nội**, **Bánh Mì Sài Gòn**, **Bún Bò ở Thừa Thiên Huế**, **Cơm Tấm Sài Gòn**, **Bánh Xèo Miền Tây**, **Cà Phê Trứng Hà Nội**, **Mì Quảng Quảng Nam**, **Cao Lầu Hội An**,...
+  - **Tiểu sử lãnh đạo Việt Nam (Danh mục mới)**: Tư liệu lịch sử vô giá về các vị lãnh đạo tiền bối kiệt xuất của dân tộc như *Chủ tịch Hồ Chí Minh*, *Đại tướng Võ Nguyên Giáp*, *Cố Tổng Bí thư Nguyễn Văn Linh*, *Cố Thủ tướng Phạm Văn Đồng*, *Cố Tổng Bí thư Lê Duẩn*.
+- **Công cụ tìm kiếm & Lọc thông minh**: Tìm kiếm thời gian thực kết hợp bộ lọc kép theo 4 chủ đề lớn (*Du lịch Việt Nam*, *Du lịch nước Nga*, *Ẩm thực đường phố Việt Nam*, *Tiểu sử lãnh đạo Việt Nam*) và 3 loại mẫu dữ liệu (*Ghi chú*, *Bình luận*, *Phản hồi*).
 - **Nhập nhanh một chạm (Quick Import)**: Nhập lập tức bất kỳ ghi chú mẫu nào vào kho dữ liệu chính thức của bạn, tự động tạo nhãn dán tương ứng và nhận phần thưởng **+20 Kim Cương thưởng** tức thì!
 
 ### 4. Gamification: Điểm Danh (Streak), Phần Thưởng Kim Cương & Quản Lý Dung Lượng
@@ -34,7 +35,7 @@
 - **Cửa Hàng Kim Cương & Thanh Tiến Trình Dung Lượng**:
   - Đổi các gói nâng cấp giới hạn từ **Gói Mặc Định (8 GB)** đến **Gói Cấp 8 VIP (1.024 GB)** bằng kim cương tích lũy.
   - Tích hợp **Thanh tiến trình dung lượng lưu trữ (Storage Capacity Progress Bar)** hiển thị mức dung lượng đã dùng thực tế/ước tính so với hạn mức gói hiện tại một cách trực quan.
-- **Bảng Xếp Hạng (Leaderboard)**: Vinh danh các thành viên hoạt động năng nổ nhất trên bảng vàng danh giá.
+- **Bảng Xếp Hạng (Leaderboard)**: Vinh danh các thành viên hoạt động năng nổ nhất trên bảng vàng danh giá với khối bục vinh danh Top 3 Podium Rực Rỡ.
 
 ### 5. Xuất các Ghi Chú Yêu thích ra tệp PDF (Sử dụng SDK gốc Android)
 - **Hệ thống Xuất PDF nâng cao**: Tích hợp công cụ xuất toàn bộ danh sách ghi chú yêu thích (được gắn sao ⭐) ra một tệp PDF chuyên nghiệp nhiều trang sử dụng SDK native `PdfDocument` tối giản và hiệu quả.
@@ -99,7 +100,7 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
 
 ## 🚀 Hướng Dẫn Sử Dụng & Trải Nghiệm
 1. **Khởi động ứng dụng**: Thưởng thức ngay giao diện trực quan với phông chữ Inter sắc nét.
-2. **Khám phá 144 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"144 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố Việt Nam"**, tìm kiếm **"Phở Gánh"**, **"Bánh Mì Sài Gòn"**, **"Suối Nặm Thoong"** hoặc **"Anh hùng Kim Đồng"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
+2. **Khám phá 160 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"160 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố Việt Nam"**, **"Tiểu sử lãnh đạo Việt Nam"**, tìm kiếm **"Mì Quảng"**, **"Bác Hồ"**, **"Đại tướng Võ Nguyên Giáp"** hoặc **"Phở Gánh"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
 3. **Sử dụng Undo/Redo**: Khi viết hay chỉnh sửa ghi chú, hãy trải nghiệm 2 nút Hoàn tác/Làm lại ở góc trên trình soạn thảo để dễ dàng quản lý nội dung.
 4. **Đánh dấu Yêu thích**: Nhấn nút Ngôi sao (⭐) trên bất kỳ ghi chú hay bình luận nào để gắn sao vàng nổi bật và quản lý dễ dàng.
 5. **Theo dõi Dung lượng & Đổi quà**: Mở **"Cửa hàng Kim Cương"** để xem thanh tiến trình dung lượng sử dụng và nâng cấp cấp độ tài khoản bằng Kim Cương tích lũy.
