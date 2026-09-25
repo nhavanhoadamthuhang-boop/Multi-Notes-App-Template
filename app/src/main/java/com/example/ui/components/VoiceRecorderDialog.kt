@@ -402,6 +402,7 @@ fun VoiceRecorderContent(
             val templates = listOf(
                 "Họp phòng ban sáng thứ hai",
                 "Mua sữa, táo và bánh mì",
+                "Ý kiến về đại biểu Quốc hội Nhân dân Việt Nam",
                 "Ý tưởng ứng dụng ghi chú cực hay"
             )
             templates.forEach { tmpl ->
