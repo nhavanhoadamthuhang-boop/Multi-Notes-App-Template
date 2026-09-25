@@ -88,6 +88,7 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
 
 ### 8. Thiết Kế Đẹp Mắt & Bố Cục Thích Ứng (Adaptive Layout)
 - **Kiến trúc thích ứng 4 chuẩn màn hình**: Tự động nhận diện không gian để chuyển đổi hiển thị tối ưu từ Điện thoại (Single-pane), Máy tính bảng (Master-Detail chia đôi màn hình), Laptop (Tối ưu biên lề) đến Desktop (3 cột song song chuyên nghiệp).
+- **Thiết kế Thẻ & Banner Điểm Danh Chuẩn Tỷ Lệ**: Tối ưu hóa các thẻ banner thông báo (`DiamondTrackerComponents`), sử dụng `wrapContentHeight()` và `Modifier.weight(1f)` đảm bảo các nút bấm (*Điểm danh ngay*, *Cửa hàng*, *Xếp hạng*) giữ nguyên tỷ lệ bo góc sắc nét, không bị biến dạng hay kéo giãn hàng cột trên mọi độ phân giải.
 - **Phông chữ Inter tinh tế**: Toàn bộ hệ thống được hiển thị bằng phông chữ Inter hiện đại, bo tròn các góc thẻ tinh tế, kết hợp chuyển động Material Ripple mềm mại mang lại cảm giác sang trọng.
 
 ---
@@ -113,3 +114,14 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
    - Mở Menu ứng dụng ➔ chọn **"Nhập/Xuất Dữ Liệu"**.
    - Tại mục Xuất dữ liệu: Chọn định dạng **Excel (.xlsx)** hoặc **XML (.xml)** (bên cạnh DOCX, PPTX, JSON, HTML, CSV, TXT) để tải tệp dữ liệu về thiết bị.
    - Tại mục Nhập dữ liệu: Tải lên tệp `.xml` hoặc `.xlsx` bất kỳ để ứng dụng tự động giải mã và nạp đầy đủ ghi chú & bình luận vào kho dữ liệu của bạn!
+
+---
+
+## 📦 Bản Dựng Cài Đặt (APK Download)
+Dự án cung cấp sẵn tệp tin cài đặt APK cho các thiết bị Android:
+- **Đường dẫn chính**: `apk-download/apk-multi-notes.apk`
+- **Đường dẫn thư mục gốc**: `apk-multi-notes.apk` *(Dung lượng ~33.8 MB)*
+
+### 📥 Cách tải APK về thiết bị:
+1. **Từ Trình Quản Lý Tệp AI Studio**: Mở cây thư mục bên trái, nhấp chuột phải vào `apk-multi-notes.apk` (hoặc mở thư mục `apk-download/`) và chọn **Download**.
+2. **Từ Menu Export**: Nhấn nút **Settings (⚙️)** hoặc **Export** ở góc trên bên phải thanh công cụ emulator ➔ chọn **Generate APK** hoặc **Export ZIP**.
