@@ -305,7 +305,7 @@ object PdfExportHelper {
             }
 
             // Draw Header
-            val headerText = "DANH SÁCH GHI CHÚ YÊU THÍCH"
+            val headerText = "DANH SÁCH GHI CHÚ ĐƯỢC YÊU THÍCH"
             val headerLayout = StaticLayout.Builder.obtain(headerText, 0, headerText.length, headerPaint, maxTextWidth.toInt())
                 .setAlignment(Layout.Alignment.ALIGN_NORMAL)
                 .setLineSpacing(0f, 1f)
