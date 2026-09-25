@@ -79,6 +79,8 @@ private val DEFAULT_CATEGORIES = listOf(
     "Tài chính",
     "Dự án",
     "Du lịch Việt Nam",
+    "Du lịch nước Nga",
+    "Họp báo",
     "aNotepad"
 )
 
