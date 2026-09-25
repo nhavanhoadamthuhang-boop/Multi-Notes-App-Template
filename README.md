@@ -20,9 +20,9 @@
 - **Yêu thích & Ghim Thảo Luận**: Cho phép gắn sao yêu thích (⭐) hoặc ghim (📌) các bình luận/phản hồi đắt giá lên đầu danh sách để cộng đồng tiện theo dõi.
 - **Giao Diện Trực Quan**: Huy hiệu phân loại vàng sữa **⭐ YÊU THÍCH** và **⭐ SAO** được thiết kế nổi bật, chuyên nghiệp.
 
-### 3. Kho 140 Mẫu Ghi Chú, Bình Luận & Phản Hồi (Du Lịch & Ẩm Thực Đường Phố)
+### 3. Kho 144 Mẫu Ghi Chú, Bình Luận & Phản Hồi (Du Lịch & Ẩm Thực Đường Phố)
 - **Bộ dữ liệu mẫu đa dạng**: Gồm 48 ghi chú, 48 bình luận và 48 phản hồi mẫu (Tổng cộng **144 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về nhiều chủ đề địa danh & ẩm thực:
-  - **Du lịch Việt Nam**: Khám phá danh lam thắng cảnh nổi tiếng như Sapa, Hà Giang, Vịnh Hạ Long, Hội An, Phú Quốc,... đặc biệt là thông tin chi tiết về **Khu du lịch sinh thái Suối Nặm Thoong (Cao Bằng)** hoang sơ thơ mộng và **Khu di tích lịch sử anh hùng Kim Đồng (Cao Bằng)** linh thiêng hào hùng.
+  - **Du lịch Việt Nam**: Khám phá danh lam thắng cảnh nổi tiếng như Sapa, Hà Giang, Vịnh Hạ Long, Hội An, Phú Quốc,... đặc biệt là thông tin chi tiết về **Khu du lịch sinh thái Suối Nặm Thoong (Cao Bằng)** hoang sơ thơ mộng và **Khu di tích lịch sử Anh hùng Kim Đồng (Cao Bằng)** linh thiêng hào hùng.
   - **Du lịch nước Nga**: Chiêm ngưỡng kiến trúc kiệt tác như Điện Kremlin (Moscow), Cung điện Mùa đông (Saint Petersburg), Hồ Baikal (Siberia), săn cực quang kỳ vĩ tại Murmansk,...
   - **Ẩm thực đường phố Việt Nam**: Khám phá văn hóa ẩm thực độc đáo như **Phở Gánh Hà Nội**, **Bánh Mì Sài Gòn**, **Bún Bò ở Thừa Thiên Huế**, **Cơm Tấm Sài Gòn**, **Bánh Xèo Miền Tây**, **Cà Phê Trứng Hà Nội**,...
 - **Công cụ tìm kiếm & Lọc thông minh**: Tìm kiếm thời gian thực kết hợp bộ lọc kép theo 3 chủ đề lớn (*Du lịch Việt Nam*, *Du lịch nước Nga*, *Ẩm thực đường phố*) và 3 loại mẫu dữ liệu (*Ghi chú*, *Bình luận*, *Phản hồi*).
