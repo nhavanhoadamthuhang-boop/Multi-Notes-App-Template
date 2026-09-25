@@ -53,7 +53,7 @@ sealed class SampleItem {
 }
 
 object SamplesProvider {
-    fun generate140Samples(): List<SampleItem> {
+    fun generate144Samples(): List<SampleItem> {
         val list = mutableListOf<SampleItem>()
 
         // 1. Generate 48 Notes (22 VN, 20 Russia, 6 Ẩm thực đường phố)
@@ -150,7 +150,7 @@ object SamplesProvider {
             )
         }
 
-        // 2. Generate 46 Comments (23 VN, 20 Russia, 3 Ẩm thực)
+        // 2. Generate 48 Comments (24 VN, 20 Russia, 4 Ẩm thực)
         val commentTemplates = listOf(
             "Cảnh đẹp quá! Mình nhất định phải đến đây một lần trong đời.",
             "Bài viết rất chi tiết, cảm ơn bạn đã chia sẻ kinh nghiệm quý giá này nhé!",
@@ -177,7 +177,9 @@ object SamplesProvider {
             "Có được cắm trại dựng lều dã ngoại ở gần khu vực di tích anh Kim Đồng không bạn?",
             "Món ăn đường phố này ngon đỉnh cao, ngập tràn hương vị béo ngậy đậm đà khó cưỡng!",
             "Giá thành cực kỳ bình dân sinh viên, chủ quán lại siêu vui tính nhiệt tình nữa!",
-            "Nước dùng đậm vị thanh ngọt tự nhiên, ăn một lần là nghiện luôn cả tuần!"
+            "Nước dùng đậm vị thanh ngọt tự nhiên, ăn một lần là nghiện luôn cả tuần!",
+            "Bún bò ở Thừa Thiên Huế ngon hơn thật tuyệt vời",
+            "Du lịch cáp treo lên đỉnh núi Bà Đen ở tỉnh Tây Ninh, Việt Nam thật tuyệt vời!"
         )
 
         val authors = listOf(
@@ -188,7 +190,7 @@ object SamplesProvider {
         )
 
         var commentIdCounter = 1
-        for (i in 0 until 23) {
+        for (i in 0 until 24) {
             val vnNoteTitle = vnNotes[i % vnNotes.size].first
             list.add(
                 SampleItem.Comment(
@@ -212,7 +214,7 @@ object SamplesProvider {
                 )
             )
         }
-        for (i in 0 until 3) {
+        for (i in 0 until 4) {
             val foodTitle = streetFoodNotes[i % streetFoodNotes.size].first
             list.add(
                 SampleItem.Comment(
@@ -225,7 +227,7 @@ object SamplesProvider {
             )
         }
 
-        // 3. Generate 46 Replies (23 VN, 20 Russia, 3 Ẩm thực)
+        // 3. Generate 48 Replies (24 VN, 20 Russia, 4 Ẩm thực)
         val replyTemplates = listOf(
             "Đúng vậy bạn ơi, đi một lần là nhớ mãi luôn đó!",
             "Chi phí tự túc hết tầm 3-5 triệu thôi nè, khá là tiết kiệm.",
@@ -252,11 +254,13 @@ object SamplesProvider {
             "Khu vực di tích rất trang nghiêm tôn kính nên không được phép dựng lều ăn uống đâu ạ, nhưng bạn có thể dã ngoại ở bãi cỏ xanh bên ngoài hoặc gần bờ suối nhỏ bên thung lũng rất thoáng nhé.",
             "Đúng luôn bạn ơi, quán mở bán từ sáng sớm tới tận khuya nên ghé lúc nào cũng nóng hổi thơm ngon!",
             "Thêm chút quẩy giòn và chút ớt chưng cay nồng nữa là xuất sắc không còn gì bằng nha!",
-            "Chuẩn vị gia truyền lâu năm luôn, lần nào ra đây mình cũng phải ăn 2 tô mới đã!"
+            "Chuẩn vị gia truyền lâu năm luôn, lần nào ra đây mình cũng phải ăn 2 tô mới đã!",
+            "Quá ngon miệng nhưng Bún bò ở Thừa Thiên Huế rất vui vẻ luôn!,
+            "Du lịch Sapa, đỉnh đèo Fansipan nóc nhà cao 3143 mét luôn!"
         )
 
         var replyIdCounter = 1
-        for (i in 0 until 23) {
+        for (i in 0 until 24) {
             val parentAuthor = authors[i % authors.size]
             list.add(
                 SampleItem.Reply(
@@ -280,7 +284,7 @@ object SamplesProvider {
                 )
             )
         }
-        for (i in 0 until 3) {
+        for (i in 0 until 4) {
             val parentAuthor = authors[(i + 10) % authors.size]
             list.add(
                 SampleItem.Reply(
@@ -395,7 +399,7 @@ fun SampleDialog(
                         )
                         Column {
                             Text(
-                                text = "140 mẫu ghi chú, bình luận và phản hồi",
+                                text = "144 mẫu ghi chú, bình luận và phản hồi",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
