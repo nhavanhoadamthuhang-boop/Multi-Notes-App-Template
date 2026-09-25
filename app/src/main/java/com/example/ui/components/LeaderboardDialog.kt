@@ -207,17 +207,19 @@ fun LeaderboardDialog(
                                     fontSize = 13.sp
                                 )
                             }
-                            Column {
+                            Column(modifier = Modifier.weight(1f, fill = false)) {
                                 Text(
                                     text = "Thứ hạng của bạn",
                                     style = MaterialTheme.typography.labelSmall,
-                                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                                    color = MaterialTheme.colorScheme.onPrimaryContainer,
+                                    maxLines = 1
                                 )
                                 Text(
-                                    text = "${numberFormatter.format(myUserRank.diamonds)} Kim Cương",
+                                    text = "${numberFormatter.format(myUserRank.diamonds)} KC",
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
-                                    color = MaterialTheme.colorScheme.primary
+                                    color = MaterialTheme.colorScheme.primary,
+                                    maxLines = 1
                                 )
                             }
                         }
@@ -226,11 +228,11 @@ fun LeaderboardDialog(
                             onClick = onOpenStore,
                             shape = RoundedCornerShape(10.dp),
                             colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
-                            contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp)
+                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 6.dp)
                         ) {
                             Icon(Icons.Default.Diamond, contentDescription = null, modifier = Modifier.size(14.dp))
-                            Spacer(modifier = Modifier.width(4.dp))
-                            Text("Tăng hạng", fontSize = 11.sp)
+                            Spacer(modifier = Modifier.width(3.dp))
+                            Text("Tăng hạng", fontSize = 11.sp, maxLines = 1)
                         }
                     }
                 }
@@ -380,7 +382,8 @@ private fun LeaderboardUserRow(
                                 text = "${numberFormatter.format(user.notesCount)} ghi chú",
                                 style = MaterialTheme.typography.bodySmall,
                                 fontSize = 10.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                maxLines = 1
                             )
                         }
                         Row(
@@ -397,7 +400,8 @@ private fun LeaderboardUserRow(
                                 text = "${numberFormatter.format(user.commentsCount)} cmt",
                                 style = MaterialTheme.typography.bodySmall,
                                 fontSize = 10.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                maxLines = 1
                             )
                         }
                         Row(
@@ -414,7 +418,8 @@ private fun LeaderboardUserRow(
                                 text = "${user.streakDays}d",
                                 style = MaterialTheme.typography.bodySmall,
                                 fontSize = 10.sp,
-                                color = Color(0xFFFF5722)
+                                color = Color(0xFFFF5722),
+                                maxLines = 1
                             )
                         }
                     }
@@ -439,7 +444,8 @@ private fun LeaderboardUserRow(
                         text = numberFormatter.format(user.diamonds),
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary
+                        color = MaterialTheme.colorScheme.primary,
+                        maxLines = 1
                     )
                 }
                 Text(
