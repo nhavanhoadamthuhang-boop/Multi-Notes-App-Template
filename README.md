@@ -99,7 +99,7 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
 
 ## 🚀 Hướng Dẫn Sử Dụng & Trải Nghiệm
 1. **Khởi động ứng dụng**: Thưởng thức ngay giao diện trực quan với phông chữ Inter sắc nét.
-2. **Khám phá 140 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"140 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố"**, tìm kiếm **"Phở Gánh"**, **"Bánh Mì Sài Gòn"**, **"Suối Nặm Thoong"** hoặc **"Anh hùng Kim Đồng"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
+2. **Khám phá 144 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"144 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố Việt Nam"**, tìm kiếm **"Phở Gánh"**, **"Bánh Mì Sài Gòn"**, **"Suối Nặm Thoong"** hoặc **"Anh hùng Kim Đồng"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
 3. **Sử dụng Undo/Redo**: Khi viết hay chỉnh sửa ghi chú, hãy trải nghiệm 2 nút Hoàn tác/Làm lại ở góc trên trình soạn thảo để dễ dàng quản lý nội dung.
 4. **Đánh dấu Yêu thích**: Nhấn nút Ngôi sao (⭐) trên bất kỳ ghi chú hay bình luận nào để gắn sao vàng nổi bật và quản lý dễ dàng.
 5. **Theo dõi Dung lượng & Đổi quà**: Mở **"Cửa hàng Kim Cương"** để xem thanh tiến trình dung lượng sử dụng và nâng cấp cấp độ tài khoản bằng Kim Cương tích lũy.
