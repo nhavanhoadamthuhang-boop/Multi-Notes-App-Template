@@ -81,7 +81,12 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
 - **Báo cáo kiểm tra trước khi nạp**: Phân tích cú pháp thời gian thực để báo cáo số lượng ghi chú, bình luận phát hiện được trước khi tiến hành cập nhật vào cơ sở dữ liệu.
 - **Cơ chế ghi đè an toàn**: Hỗ trợ hai chế độ nhập linh hoạt: *"Nhập thêm (Giữ nguyên dữ liệu cũ)"* hoặc *"Ghi đè hoàn toàn (Thay thế toàn bộ kho dữ liệu)"*.
 
-### 7. Thiết Kế Đẹp Mắt & Bố Cục Thích Ứng (Adaptive Layout)
+### 7. Ghi Âm Ghi Chú & Dịch Giọng Nói Trực Tiếp (Voice Note Recorder)
+- **Giao diện Ghi âm Hiện đại**: Bổ sung công cụ ghi âm giọng nói linh hoạt (`VoiceRecordDialog`) với nút Micro tròn màu tím nổi bật, đồng hồ đếm thời gian thực (`00:03`), cùng hướng dẫn thao tác *"Chạm vào Micro để bắt đầu ghi âm"*.
+- **Chuyển đổi Giọng nói thành Văn bản linh hoạt**: Tự động nhận diện và chuyển ngữ giọng nói trực tiếp vào khung nhập liệu *"Bản dịch giọng nói (Có thể chỉnh sửa)"* với tiêu đề tự động theo thời điểm ghi âm (như `Ghi chú giọng nói lúc 15:11`).
+- **Nút mẫu kiểm thử nhanh (Quick Presets for Testing)**: Hỗ trợ hai phím tắt mẫu sẵn có cho thao tác giả lập kiểm thử nhanh: *"Họp phòng ban sáng thứ hai"* và *"Mua sữa, táo và bánh mì"*.
+
+### 8. Thiết Kế Đẹp Mắt & Bố Cục Thích Ứng (Adaptive Layout)
 - **Kiến trúc thích ứng 4 chuẩn màn hình**: Tự động nhận diện không gian để chuyển đổi hiển thị tối ưu từ Điện thoại (Single-pane), Máy tính bảng (Master-Detail chia đôi màn hình), Laptop (Tối ưu biên lề) đến Desktop (3 cột song song chuyên nghiệp).
 - **Phông chữ Inter tinh tế**: Toàn bộ hệ thống được hiển thị bằng phông chữ Inter hiện đại, bo tròn các góc thẻ tinh tế, kết hợp chuyển động Material Ripple mềm mại mang lại cảm giác sang trọng.
 
@@ -100,7 +105,7 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
 
 ## 🚀 Hướng Dẫn Sử Dụng & Trải Nghiệm
 1. **Khởi động ứng dụng**: Thưởng thức ngay giao diện trực quan với phông chữ Inter sắc nét.
-2. **Khám phá 160 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"160 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố Việt Nam"**, **"Tiểu sử lãnh đạo Việt Nam"**, tìm kiếm **"Mì Quảng"**, **"Bác Hồ"**, **"Đại tướng Võ Nguyên Giáp"** hoặc **"Phở Gánh"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
+2. **Khám phá 162 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"162 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố Việt Nam"**, **"Tiểu sử lãnh đạo Việt Nam"**, tìm kiếm **"Mì Quảng"**, **"Cố TBT Nguyễn Phú Trọng"**, **"TBT Tô Lâm"**, **"Đại tướng Võ Nguyên Giáp"** hoặc **"Phở Gánh"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
 3. **Sử dụng Undo/Redo**: Khi viết hay chỉnh sửa ghi chú, hãy trải nghiệm 2 nút Hoàn tác/Làm lại ở góc trên trình soạn thảo để dễ dàng quản lý nội dung.
 4. **Đánh dấu Yêu thích**: Nhấn nút Ngôi sao (⭐) trên bất kỳ ghi chú hay bình luận nào để gắn sao vàng nổi bật và quản lý dễ dàng.
 5. **Theo dõi Dung lượng & Đổi quà**: Mở **"Cửa hàng Kim Cương"** để xem thanh tiến trình dung lượng sử dụng và nâng cấp cấp độ tài khoản bằng Kim Cương tích lũy.

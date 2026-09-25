@@ -6,6 +6,18 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 
 ---
 
+## [1.2.4] - 2026-09-25
+
+### 🎙️ Voice Note Recorder Feature Documentation (Cập Nhật Hướng Dẫn Ghi Âm Ghi Chú)
+- **Tóm tắt & Hoàn thiện tài liệu Ghi âm ghi chú (`VoiceRecordDialog.kt`)**:
+  - Giao diện ghi âm hiện đại dạng Modal Bottom Sheet với nút Micro trung tâm, đồng hồ đếm thời gian thực (`00:03`), hướng dẫn chạm micro để ghi âm.
+  - Khung xem và chỉnh sửa bản dịch giọng nói thời gian thực ("Bản dịch giọng nói - Có thể chỉnh sửa") với định dạng tiêu đề theo mốc thời gian (ví dụ: `Ghi chú giọng nói lúc 15:11`).
+  - Lựa chọn nhanh mẫu bản dịch kiểm thử (Quick testing presets) gồm: *"Họp phòng ban sáng thứ hai"* và *"Mua sữa, táo và bánh mì"*.
+- **Cập nhật tài liệu dự án (`README.md` & `CHANGELOG.md`)**:
+  - Bổ sung mục tính năng Ghi Âm Ghi Chú & Dịch Giọng Nói Trực Tiếp vào hệ thống tính năng nổi bật trong `README.md`.
+
+---
+
 ## [1.2.3] - 2026-09-25
 
 ### 🇻🇳 Integrated Vietnamese Leaders Biographies (Tích Hợp Tiểu Sử Cố TBT Nguyễn Phú Trọng & TBT Tô Lâm)
