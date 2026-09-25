@@ -70,7 +70,7 @@ object SamplesProvider {
             Triple("Nha Trang - Thiên đường biển gọi", "Tham quan VinWonders trên đảo Hòn Tre náo nhiệt, lặn ngắm san hô tại hòn Mun, thưởng thức hải sản tươi ngon ngay tại cảng biển.", "Nha Trang, Khánh Hòa"),
             Triple("Đà Lạt - Thành phố ngàn hoa thơ mộng", "Thưởng ngoạn hồ Tuyền Lâm bảng lảng sương sớm, check-in thung lũng Tình Yêu, nhâm nhi cà phê nóng giữa rừng thông bạt ngàn đón gió lạnh.", "Đà Lạt, Lâm Đồng"),
             Triple("Mũi Né - Đồi cát bay lộng gió", "Trải nghiệm lái xe địa hình trên đồi cát trắng mịn màng, dạo bước Suối Tiên với vách đất sét đỏ rực rỡ rực rỡ dưới nắng vàng.", "Mũi Né, Bình Thuận"),
-            Triple("Sài Gòn - Nhịp sống năng động 24h", "Ghé thăm Nhà thờ Đức Bà, Bưu điện Thành phố cổ kính, uống cà phê bệt vỉa hè và ngắm toàn cảnh Sài Gòn lấp lánh từ tòa nhà Bitexco.", "Sài Gòn, TP.HCM"),
+            Triple("Sài Gòn - Nhịp sống năng động 24h", "Ghé thăm Nhà thờ Đức Bà, Bưu điện Thành phố cổ kính, uống cà phê bệt vỉa hè và ngắm toàn cảnh Sài Gòn lấp lánh từ tòa nhà Bitexco.", "Sài Gòn, Thành phố Hồ Chí Minh"),
             Triple("Cần Thơ - Chợ nổi Cái Răng sông nước", "Thức dậy từ sớm đón bình minh trên chợ nổi Cái Răng, thưởng thức hủ tiếu lắc độc đáo ngay trên ghe thuyền sóng nước Miền Tây.", "Cần Thơ"),
             Triple("Phú Quốc - Đảo Ngọc hoàng hôn rực rỡ", "Tắm biển bãi Sao cát trắng như kem, tham quan Grand World không ngủ, ngắm hoàng hôn buông xuống đẹp đến nghẹt thở tại Sunset Sanato.", "Phú Quốc, Kiên Giang"),
             Triple("Côn Đảo - Uy nghiêm và hoang sơ", "Thắp hương mộ chị Võ Thị Sáu linh thiêng lúc nửa đêm, hòa mình vào bãi Đầm Trầu hoang sơ yên bình và tham quan di tích nhà tù lịch sử.", "Côn Đảo, Bà Rịa Vũng Tàu"),
@@ -78,7 +78,7 @@ object SamplesProvider {
             Triple("Mai Châu - Bản Lác thung lũng thanh bình", "Đạp xe giữa những cánh đồng lúa xanh mướt mải, thưởng thức xôi nếp nương thơm dẻo và hòa mình vào điệu múa sạp rộn ràng của người Thái.", "Mai Châu, Hòa Bình"),
             Triple("Tây Ninh - Chinh phục đỉnh núi Bà Đen", "Hành trình đi cáp treo hiện đại lên nóc nhà Đông Nam Bộ, chiêm bái tượng Phật Bà Tây Bổ Đà Sơn uy nghiêm ẩn hiện trong mây mờ.", "Tây Ninh"),
             Triple("Khu du lịch sinh thái Suối Nặm Thoong - Cao Bằng", "Cách trung tâm thành phố Cao Bằng khoảng 25km, nổi bật với dòng suối trong vắt mát rượi chảy lượn quanh vách núi rừng kỳ vĩ. Điểm dã ngoại dã ngoại cắm trại lý tưởng thuộc Công viên địa chất toàn cầu UNESCO Non nước Cao Bằng, kết hợp nhà sàn mộc mạc thưởng thức lợn quay mác mật, cá suối nướng thơm ngon.", "Suối Nặm Thoong, Cao Bằng"),
-            Triple("Khu di tích lịch sử anh hùng Kim Đồng - Cao Bằng", "Nằm tại làng Nà Mạ, xã Trường Hà, huyện Hà Quảng, là 'địa chỉ đỏ' thiêng liêng tưởng nhớ người đội trưởng đầu tiên của Đội TNTP Hồ Chí Minh. Khuôn viên rộng 12ha trang nghiêm dưới chân núi Tèo Lài với tượng đài Kim Đồng tay nâng chim bồ câu, đền thờ, nhà trưng bày lịch sử và hang Nộc Én.", "Di tích Kim Đồng, Cao Bằng"),
+            Triple("Khu di tích lịch sử anh hùng Kim Đồng - Cao Bằng", "Nằm tại làng Nà Mạ, xã Trường Hà, huyện Hà Quảng, là 'địa chỉ đỏ' thiêng liêng tưởng nhớ người đội trưởng đầu tiên của Đội Thanh Niên Tiền Phong Hồ Chí Minh. Khuôn viên rộng 12ha trang nghiêm dưới chân núi Tèo Lài với tượng đài Kim Đồng tay nâng chim bồ câu, đền thờ, nhà trưng bày lịch sử và hang Nộc Én.", "Di tích Kim Đồng, Cao Bằng"),
             Triple("Phú Yên - Hoa vàng trên cỏ xanh", "Check-in gành Đá Đĩa độc nhất vô nhị với các khối đá lục giác xếp chồng, ngắm bình minh sớm nhất tại hải đăng Đại Lãnh cực Đông.", "Phú Yên")
         )
 
@@ -144,7 +144,7 @@ object SamplesProvider {
                     id = noteIdCounter++,
                     title = title,
                     content = desc,
-                    category = "Ẩm thực đường phố",
+                    category = "Ẩm thực đường phố Việt Nam",
                     tags = "#amthuc, #streetfood, #${place.lowercase().replace(" ", "")}"
                 )
             )
