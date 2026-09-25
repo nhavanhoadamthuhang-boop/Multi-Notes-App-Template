@@ -15,6 +15,10 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
   - Thêm thẻ bộ lọc riêng biệt cho chủ đề **"Ẩm thực đường phố"** với tông màu cam đặc trưng (`#FFF3E0` / `#E65100`).
 
 ### 🎨 Fixed & Improved Layout (Cải tiến & Tối ưu Bố Cục Giao Diện)
+- **Tối Ưu Hóa Bố Cục Thẻ Điểm Danh (`DailyCheckInCard`)**:
+  - Chuyển đổi cấu trúc thẻ Điểm danh Mỗi Ngày từ hàng ngang sang dạng cột đứng linh hoạt (`Column`), giúp biểu tượng, tiêu đề, nút bấm và nội dung chi tiết hiển thị gọn gàng, không bị co kéo hay ép dọc ký tự trên màn hình hẹp.
+- **Tối ưu hóa Nút Chọn Tệp Tin (`MultiFilesImportExportDialog.kt`)**:
+  - Cải tiến và rút gọn nhãn nút chọn tệp tin nhập dữ liệu (`Chọn tệp tin dữ liệu (JSON, HTML, CSV, TXT)`) với kích thước chữ `12.sp` và `maxLines = 1`, loại bỏ hoàn toàn hiện tượng cụt chữ/tràn lề khi hiển thị trên các dòng thiết bị di động.
 - **Tối Ưu Hóa Hiển Thị Top App Bar & Huy Hiệu**:
   - Tối ưu hóa `DiamondTopBarBadge` trên thanh tiêu đề bằng cách sử dụng ký hiệu `💎` thay cho chữ "kim cương", loại bỏ hoàn toàn hiện tượng chồng lấn giao diện với huy hiệu chuỗi điểm danh (`StreakBadge`).
   - Rút gọn và chuẩn hóa nhãn mô tả gói dịch vụ (`badgeLabel`) thành các thông số ngắn gọn, súc tích (ví dụ: *"VIP Cấp 8 (32 năm • 1.024 GB)"*) giúp tránh hiện tượng tràn lề văn bản trong hộp thoại.

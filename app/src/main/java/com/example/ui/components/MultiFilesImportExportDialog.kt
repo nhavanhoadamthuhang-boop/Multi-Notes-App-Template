@@ -810,13 +810,18 @@ fun MultiFilesImportExportDialog(
                             },
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .height(50.dp)
+                                .height(52.dp)
                                 .testTag("btn_select_json_file"),
                             shape = RoundedCornerShape(12.dp)
                         ) {
-                            Icon(Icons.Default.FolderOpen, contentDescription = null)
+                            Icon(Icons.Default.FolderOpen, contentDescription = null, modifier = Modifier.size(18.dp))
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text("Chọn tệp tin dữ liệu (.json, .html, .csv, .docx, .pptx, .txt)", fontWeight = FontWeight.Bold)
+                            Text(
+                                text = "Chọn tệp tin dữ liệu (JSON, HTML, CSV, TXT)",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp,
+                                maxLines = 1
+                            )
                         }
 
                         // Or Paste text directly

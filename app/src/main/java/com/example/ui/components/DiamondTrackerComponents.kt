@@ -714,123 +714,124 @@ fun DailyCheckInCard(
                 DiamondGold
         )
     ) {
-        Row(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(14.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Row(
+                modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp),
-                modifier = Modifier.weight(1f)
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Box(
-                    modifier = Modifier
-                        .size(42.dp)
-                        .background(
-                            color = if (hasCheckedIn) Color(0xFFE8F5E9) else DiamondGold.copy(alpha = 0.2f),
-                            shape = CircleShape
-                        ),
-                    contentAlignment = Alignment.Center
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp),
+                    modifier = Modifier.weight(1f)
                 ) {
-                    Icon(
-                        imageVector = if (hasCheckedIn) Icons.Default.CheckCircle else Icons.Default.Stars,
-                        contentDescription = "Điểm danh mỗi ngày",
-                        tint = if (hasCheckedIn) Color(0xFF2E7D32) else DiamondGold,
-                        modifier = Modifier.size(24.dp)
-                    )
-                }
-
-                Column {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    Box(
+                        modifier = Modifier
+                            .size(38.dp)
+                            .background(
+                                color = if (hasCheckedIn) Color(0xFFE8F5E9) else DiamondGold.copy(alpha = 0.2f),
+                                shape = CircleShape
+                            ),
+                        contentAlignment = Alignment.Center
                     ) {
-                        Text(
-                            text = "Điểm Danh Mỗi Ngày",
-                            style = MaterialTheme.typography.titleSmall,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.onSurface
+                        Icon(
+                            imageVector = if (hasCheckedIn) Icons.Default.CheckCircle else Icons.Default.Stars,
+                            contentDescription = "Điểm danh mỗi ngày",
+                            tint = if (hasCheckedIn) Color(0xFF2E7D32) else DiamondGold,
+                            modifier = Modifier.size(20.dp)
                         )
-                        Surface(
-                            shape = RoundedCornerShape(8.dp),
-                            color = if (hasCheckedIn) Color(0xFFC8E6C9) else DiamondGold
+                    }
+
+                    Column {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
                         ) {
                             Text(
-                                text = "+800 KC",
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.ExtraBold,
-                                color = if (hasCheckedIn) Color(0xFF1B5E20) else Color.White,
-                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                text = "Điểm Danh Mỗi Ngày",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                            Surface(
+                                shape = RoundedCornerShape(6.dp),
+                                color = if (hasCheckedIn) Color(0xFFC8E6C9) else DiamondGold
+                            ) {
+                                Text(
+                                    text = "+800 KC",
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.ExtraBold,
+                                    color = if (hasCheckedIn) Color(0xFF1B5E20) else Color.White,
+                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                )
+                            }
+                        }
+                    }
+                }
+
+                if (!hasCheckedIn) {
+                    Button(
+                        onClick = onClaimCheckIn,
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = DiamondGold),
+                        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
+                        modifier = Modifier.testTag("btn_claim_daily_checkin")
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Diamond,
+                            contentDescription = null,
+                            tint = Color.White,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = "Điểm danh",
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                            fontSize = 11.sp
+                        )
+                    }
+                } else {
+                    Surface(
+                        shape = RoundedCornerShape(10.dp),
+                        color = Color(0xFFE8F5E9)
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Check,
+                                contentDescription = null,
+                                tint = Color(0xFF2E7D32),
+                                modifier = Modifier.size(12.dp)
+                            )
+                            Text(
+                                text = "Đã nhận",
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFF2E7D32)
                             )
                         }
                     }
-
-                    Spacer(modifier = Modifier.height(2.dp))
-
-                    Text(
-                        text = if (hasCheckedIn)
-                            "Bạn đã điểm danh hôm nay! Gói Mặc Định active: 8.000 ghi chú/ngày • 32 cmt/phút • 200 cmt/trang • Thùng rác 60 ngày."
-                        else
-                            "Điểm danh nhận ngay +800 KC & Gói Mặc Định: 8.000 ghi chú/ngày • 32 cmt/phút • 200 cmt/trang • Thùng rác 60 ngày!",
-                        style = MaterialTheme.typography.bodySmall,
-                        fontSize = 11.sp,
-                        color = if (hasCheckedIn) Color(0xFF2E7D32) else MaterialTheme.colorScheme.onSurfaceVariant
-                    )
                 }
             }
 
-            Spacer(modifier = Modifier.width(8.dp))
-
-            if (!hasCheckedIn) {
-                Button(
-                    onClick = onClaimCheckIn,
-                    shape = RoundedCornerShape(12.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = DiamondGold),
-                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
-                    modifier = Modifier.testTag("btn_claim_daily_checkin")
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Diamond,
-                        contentDescription = null,
-                        tint = Color.White,
-                        modifier = Modifier.size(16.dp)
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = "Điểm danh",
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White,
-                        fontSize = 12.sp
-                    )
-                }
-            } else {
-                Surface(
-                    shape = RoundedCornerShape(12.dp),
-                    color = Color(0xFFE8F5E9)
-                ) {
-                    Row(
-                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(4.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Check,
-                            contentDescription = null,
-                            tint = Color(0xFF2E7D32),
-                            modifier = Modifier.size(14.dp)
-                        )
-                        Text(
-                            text = "Đã nhận",
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color(0xFF2E7D32)
-                        )
-                    }
-                }
-            }
+            Text(
+                text = if (hasCheckedIn)
+                    "Bạn đã điểm danh hôm nay! Gói Mặc Định active: 8.000 ghi chú/ngày • 32 cmt/phút • 200 cmt/trang • Thùng rác 60 ngày."
+                else
+                    "Điểm danh nhận ngay +800 KC & Gói Mặc Định: 8.000 ghi chú/ngày • 32 cmt/phút • 200 cmt/trang • Thùng rác 60 ngày!",
+                style = MaterialTheme.typography.bodySmall,
+                fontSize = 11.sp,
+                color = if (hasCheckedIn) Color(0xFF2E7D32) else MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }
