@@ -1,7 +1,7 @@
-# Ứng dụng Ghi Chú Thông Minh & Cộng Đồng Ghi Chú - Thảo Luận (Smart Notes & Community App)
+# Ứng dụng Ghi Chú Đa Năng Thông Minh & Cộng Đồng Ghi Chú - Thảo Luận (Smart Notes & Community App)
 
 ## 📖 Tổng Quan Dự Án
-**Ứng dụng Ghi Chú Thông Minh & Cộng Đồng** là một ứng dụng di động hiện đại được xây dựng hoàn toàn bằng **Kotlin** và **Jetpack Compose**, tuân thủ nghiêm ngặt các tiêu chuẩn **Material Design 3**. Ứng dụng kết hợp hoàn hảo giữa công cụ quản lý ghi chú cá nhân mạnh mẽ và hệ thống tương tác cộng đồng sinh động, tích hợp cơ chế phần thưởng kim cương, điểm danh chuỗi ngày liên tục (Streak), thanh tiến trình theo dõi dung lượng lưu trữ thực tế và bảng xếp hạng thành viên tích cực.
+**Ứng dụng Ghi Chú Đa Năng Thông Minh & Cộng Đồng** là một ứng dụng di động hiện đại được xây dựng hoàn toàn bằng **Kotlin** và **Jetpack Compose**, tuân thủ nghiêm ngặt các tiêu chuẩn **Material Design 3**. Ứng dụng kết hợp hoàn hảo giữa công cụ quản lý ghi chú cá nhân mạnh mẽ và hệ thống tương tác cộng đồng sinh động, tích hợp cơ chế phần thưởng kim cương, điểm danh chuỗi ngày liên tục (Streak), thanh tiến trình theo dõi dung lượng lưu trữ thực tế và bảng xếp hạng thành viên tích cực.
 
 Đặc biệt, ứng dụng hỗ trợ **Hệ thống Nhập/Xuất dữ liệu 8 định dạng toàn diện** (JSON, HTML, CSV, DOCX, PPTX, XML, XLSX, TXT) cùng kho 140 mẫu tài nguyên ghi chú, bình luận và phản hồi phong phú về Du lịch & Ẩm thực đường phố Việt Nam.
 
