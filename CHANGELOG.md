@@ -9,9 +9,9 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 ## [1.2.0] - 2026-09-25
 
 ### ✨ Added (Thêm mới)
-- **Mở rộng kho dữ liệu mẫu lên 140 mẫu (Du Lịch & Ẩm Thực Đường Phố)**:
+- **Mở rộng kho dữ liệu mẫu lên 144 mẫu (Du Lịch & Ẩm Thực Đường Phố)**:
   - Thêm danh mục mới **"Ẩm thực đường phố"** với các món ăn biểu tượng Việt Nam: *Phở Gánh Hà Nội, Bánh Mì Sài Gòn, Bún Bò Huế, Cơm Tấm Sài Gòn, Bánh Xèo Miền Tây, Cà Phê Trứng Hà Nội,...*
-  - Cơ cấu tổng kho mẫu gồm 48 Ghi chú, 46 Bình luận và 46 Phản hồi.
+  - Cơ cấu tổng kho mẫu gồm 48 Ghi chú, 48 Bình luận và 48 Phản hồi.
   - Thêm thẻ bộ lọc riêng biệt cho chủ đề **"Ẩm thực đường phố"** với tông màu cam đặc trưng (`#FFF3E0` / `#E65100`).
 
 ### 🎨 Fixed & Improved Layout (Cải tiến & Tối ưu Bố Cục Giao Diện)
