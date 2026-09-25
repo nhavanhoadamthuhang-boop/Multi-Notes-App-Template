@@ -11,9 +11,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.core.content.FileProvider
 import java.io.File
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -463,32 +465,32 @@ fun MultiFilesImportExportDialog(
                             color = MaterialTheme.colorScheme.onSurface
                         )
                         Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .horizontalScroll(rememberScrollState()),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
                             formatOptions.forEach { format ->
                                 val isSelected = selectedFormat == format
-                                Box(
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .clip(RoundedCornerShape(10.dp))
-                                        .background(
-                                            if (isSelected) MaterialTheme.colorScheme.primary
-                                            else MaterialTheme.colorScheme.surfaceVariant
-                                        )
-                                        .clickable {
-                                            selectedFormat = format
-                                            exportSuccessMessage = null
-                                        }
-                                        .padding(vertical = 10.dp),
-                                    contentAlignment = Alignment.Center
+                                Surface(
+                                    selected = isSelected,
+                                    onClick = {
+                                        selectedFormat = format
+                                        exportSuccessMessage = null
+                                    },
+                                    shape = RoundedCornerShape(12.dp),
+                                    color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                                    border = BorderStroke(
+                                        1.dp,
+                                        if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+                                    )
                                 ) {
                                     Text(
                                         text = format,
-                                        color = if (isSelected) MaterialTheme.colorScheme.onPrimary
-                                        else MaterialTheme.colorScheme.onSurfaceVariant,
+                                        color = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant,
                                         style = MaterialTheme.typography.labelLarge,
-                                        fontWeight = FontWeight.Bold
+                                        fontWeight = FontWeight.Bold,
+                                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp)
                                     )
                                 }
                             }
@@ -827,29 +829,29 @@ fun MultiFilesImportExportDialog(
                             )
                             Spacer(modifier = Modifier.height(4.dp))
                             Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .horizontalScroll(rememberScrollState()),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
                             ) {
-                                listOf("JSON", "HTML", "CSV", "TXT").forEach { pasteOpt ->
+                                listOf("JSON", "XML", "HTML", "CSV", "TXT").forEach { pasteOpt ->
                                     val isSelected = pasteFormat == pasteOpt
-                                    Box(
-                                        modifier = Modifier
-                                            .weight(1f)
-                                            .clip(RoundedCornerShape(8.dp))
-                                            .background(
-                                                if (isSelected) MaterialTheme.colorScheme.secondary
-                                                else MaterialTheme.colorScheme.surfaceVariant
-                                            )
-                                            .clickable { pasteFormat = pasteOpt }
-                                            .padding(vertical = 8.dp),
-                                        contentAlignment = Alignment.Center
+                                    Surface(
+                                        selected = isSelected,
+                                        onClick = { pasteFormat = pasteOpt },
+                                        shape = RoundedCornerShape(10.dp),
+                                        color = if (isSelected) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                                        border = BorderStroke(
+                                            1.dp,
+                                            if (isSelected) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+                                        )
                                     ) {
                                         Text(
                                             text = pasteOpt,
-                                            color = if (isSelected) MaterialTheme.colorScheme.onSecondary
-                                            else MaterialTheme.colorScheme.onSurfaceVariant,
-                                            style = MaterialTheme.typography.bodyMedium,
-                                            fontWeight = FontWeight.Bold
+                                            color = if (isSelected) MaterialTheme.colorScheme.onSecondary else MaterialTheme.colorScheme.onSurfaceVariant,
+                                            style = MaterialTheme.typography.labelMedium,
+                                            fontWeight = FontWeight.Bold,
+                                            modifier = Modifier.padding(horizontal = 14.dp, vertical = 8.dp)
                                         )
                                     }
                                 }
@@ -865,6 +867,7 @@ fun MultiFilesImportExportDialog(
                                 if (newText.isNotBlank()) {
                                     val result = when (pasteFormat) {
                                         "JSON" -> JsonBackupHelper.parseJson(newText)
+                                        "XML" -> com.example.data.backup.MultiFormatBackupHelper.parseXml(newText)
                                         "TXT" -> com.example.data.backup.MultiFormatBackupHelper.parseTxt(newText)
                                         "HTML" -> com.example.data.backup.MultiFormatBackupHelper.parseHtml(newText)
                                         "CSV" -> com.example.data.backup.MultiFormatBackupHelper.parseCsv(newText)
