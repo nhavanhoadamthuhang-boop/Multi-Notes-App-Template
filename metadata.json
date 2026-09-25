@@ -1,0 +1,6 @@
+{
+  "name": "Ghi Chú Đa Năng",
+  "description": "Ứng dụng ghi chú thông minh tích hợp bảng xếp hạng kim cương, điểm danh streak, quản lý bình luận và bố cục thích ứng tối ưu cho điện thoại, máy tính bảng, laptop và máy tính để bàn.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

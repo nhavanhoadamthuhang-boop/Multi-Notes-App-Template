@@ -1,0 +1,753 @@
+package com.example.ui.components
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
+import com.example.data.local.NoteEntity
+import com.example.data.local.CommentEntity
+
+sealed class SampleItem {
+    data class Note(
+        val id: Int,
+        val title: String,
+        val content: String,
+        val category: String,
+        val tags: String
+    ) : SampleItem()
+
+    data class Comment(
+        val id: Int,
+        val author: String,
+        val content: String,
+        val noteTitle: String,
+        val category: String
+    ) : SampleItem()
+
+    data class Reply(
+        val id: Int,
+        val author: String,
+        val content: String,
+        val parentCommentContent: String,
+        val category: String
+    ) : SampleItem()
+}
+
+object SamplesProvider {
+    fun generate128Samples(): List<SampleItem> {
+        val list = mutableListOf<SampleItem>()
+
+        // 1. Generate 40 Notes (20 VN, 20 Russia)
+        val vnNotes = listOf(
+            Triple("Hành trình khám phá Hà Giang mộng mơ", "Khám phá dốc Thẩm Mã, cột cờ Lũng Cú và dòng sông Nho Quế xanh biếc thơ mộng. Thời điểm lý tưởng nhất là mùa hoa tam giác mạch từ tháng 10 đến tháng 12.", "Hà Giang, Tây Bắc"),
+            Triple("Review chi tiết Sapa 3 ngày 2 đêm", "Chinh phục đỉnh Fansipan - nóc nhà Đông Dương bằng cáp treo, check-in bản Cát Cát của người H’Mông, thưởng thức đồ nướng Sapa thơm phức trong sương mờ.", "Sapa, Lào Cai"),
+            Triple("Kinh nghiệm du thuyền 5 sao Vịnh Hạ Long", "Hành trình len lỏi qua hàng ngàn hòn đảo đá vôi kỳ vĩ, tham quan hang Sửng Sốt, chèo thuyền kayak tại hang Luồn và ngắm hoàng hôn rực rỡ từ boong tàu.", "Hạ Long, Quảng Ninh"),
+            Triple("Ninh Bình - Tràng An non nước hữu tình", "Chèo thuyền dọc dòng sông Sào Khê qua các hang động kỳ bí, leo 500 bậc đá lên đỉnh hang Múa ngắm trọn vẹn thung lũng lúa vàng Tam Cốc bát ngát.", "Tràng An, Ninh Bình"),
+            Triple("Phong Nha Kẻ Bàng - Kỳ quan trong lòng đất", "Khám phá động Thiên Đường tráng lệ với hệ thống thạch nhũ lung linh, trải nghiệm đu dây zipline tại sông Chày hang Tối đầy phấn khích.", "Phong Nha, Quảng Bình"),
+            Triple("Cố đô Huế - Vẻ đẹp trầm mặc cổ kính", "Tham quan Đại Nội hoàng tráng, viếng lăng Khải Định, lăng Tự Đức cổ kính, lắng nghe ca Huế trên sông Hương và thưởng thức bún bò Huế chuẩn vị.", "Huế"),
+            Triple("Đà Nẵng - Thành phố của những cây cầu", "Check-in Cầu Vàng nổi tiếng trên Bà Nà Hills, tắm biển Mỹ Khê cát trắng mịn, ngắm Cầu Rồng phun lửa phun nước lung linh vào cuối tuần.", "Đà Nẵng"),
+            Triple("Hội An - Hoài niệm phố cổ đèn lồng", "Dạo bước qua Chùa Cầu cổ kính, đi thuyền thả hoa đăng lung linh trên dòng sông Hoài thơ mộng, thưởng thức món cao lầu và nước mót mát lành.", "Hội An, Quảng Nam"),
+            Triple("Quy Nhơn - Kỳ Co Eo Gió hoang sơ", "Đắm mình trong làn nước xanh ngọc bích tại bãi tắm Kỳ Co, ngắm vách đá dựng đứng kỳ vĩ tại Eo Gió - nơi đón hoàng hôn đẹp nhất Việt Nam.", "Quy Nhơn, Bình Định"),
+            Triple("Nha Trang - Thiên đường biển gọi", "Tham quan VinWonders trên đảo Hòn Tre náo nhiệt, lặn ngắm san hô tại hòn Mun, thưởng thức hải sản tươi ngon ngay tại cảng biển.", "Nha Trang, Khánh Hòa"),
+            Triple("Đà Lạt - Thành phố ngàn hoa thơ mộng", "Thưởng ngoạn hồ Tuyền Lâm bảng lảng sương sớm, check-in thung lũng Tình Yêu, nhâm nhi cà phê nóng giữa rừng thông bạt ngàn đón gió lạnh.", "Đà Lạt, Lâm Đồng"),
+            Triple("Mũi Né - Đồi cát bay lộng gió", "Trải nghiệm lái xe địa hình trên đồi cát trắng mịn màng, dạo bước Suối Tiên với vách đất sét đỏ rực rỡ rực rỡ dưới nắng vàng.", "Mũi Né, Bình Thuận"),
+            Triple("Sài Gòn - Nhịp sống năng động 24h", "Ghé thăm Nhà thờ Đức Bà, Bưu điện Thành phố cổ kính, uống cà phê bệt vỉa hè và ngắm toàn cảnh Sài Gòn lấp lánh từ tòa nhà Bitexco.", "Sài Gòn, TP.HCM"),
+            Triple("Cần Thơ - Chợ nổi Cái Răng sông nước", "Thức dậy từ sớm đón bình minh trên chợ nổi Cái Răng, thưởng thức hủ tiếu lắc độc đáo ngay trên ghe thuyền sóng nước Miền Tây.", "Cần Thơ"),
+            Triple("Phú Quốc - Đảo Ngọc hoàng hôn rực rỡ", "Tắm biển bãi Sao cát trắng như kem, tham quan Grand World không ngủ, ngắm hoàng hôn buông xuống đẹp đến nghẹt thở tại Sunset Sanato.", "Phú Quốc, Kiên Giang"),
+            Triple("Côn Đảo - Uy nghiêm và hoang sơ", "Thắp hương mộ chị Võ Thị Sáu linh thiêng lúc nửa đêm, hòa mình vào bãi Đầm Trầu hoang sơ yên bình và tham quan di tích nhà tù lịch sử.", "Côn Đảo, Bà Rịa Vũng Tàu"),
+            Triple("Cao Bằng - Thác Bản Giốc hùng vĩ biên thùy", "Thác nước tự nhiên lớn nhất Đông Nam Á đổ nước trắng xóa bạt ngàn, tham quan suối Lê Nin trong vắt như gương và hang Pác Bó lịch sử.", "Cao Bằng"),
+            Triple("Mai Châu - Bản Lác thung lũng thanh bình", "Đạp xe giữa những cánh đồng lúa xanh mướt mải, thưởng thức xôi nếp nương thơm dẻo và hòa mình vào điệu múa sạp rộn ràng của người Thái.", "Mai Châu, Hòa Bình"),
+            Triple("Tây Ninh - Chinh phục đỉnh núi Bà Đen", "Hành trình đi cáp treo hiện đại lên nóc nhà Đông Nam Bộ, chiêm bái tượng Phật Bà Tây Bổ Đà Sơn uy nghiêm ẩn hiện trong mây mờ.", "Tây Ninh"),
+            Triple("Khu du lịch sinh thái Suối Nặm Thoong - Cao Bằng", "Cách trung tâm thành phố Cao Bằng 25km, nổi bật với dòng suối trong vắt mát rượi chảy lượn quanh vách núi rừng kỳ vĩ. Điểm dã ngoại dã ngoại cắm trại lý tưởng thuộc Công viên địa chất toàn cầu UNESCO Non nước Cao Bằng, kết hợp nhà sàn mộc mạc thưởng thức lợn quay mác mật, cá suối nướng thơm ngon.", "Suối Nặm Thoong, Cao Bằng"),
+            Triple("Khu di tích lịch sử anh hùng Kim Đồng - Cao Bằng", "Nằm tại làng Nà Mạ, xã Trường Hà, huyện Hà Quảng, là 'địa chỉ đỏ' thiêng liêng tưởng nhớ người đội trưởng đầu tiên của Đội TNTP Hồ Chí Minh. Khuôn viên rộng 12ha trang nghiêm dưới chân núi Tèo Lài với tượng đài Kim Đồng tay nâng chim bồ câu, đền thờ, nhà trưng bày lịch sử và hang Nộc Én.", "Di tích Kim Đồng, Cao Bằng"),
+            Triple("Phú Yên - Hoa vàng trên cỏ xanh", "Check-in gành Đá Đĩa độc nhất vô nhị với các khối đá lục giác xếp chồng, ngắm bình minh sớm nhất tại hải đăng Đại Lãnh cực Đông.", "Phú Yên")
+        )
+
+        val ruNotes = listOf(
+            Triple("Quảng trường Đỏ Moscow - Trái tim nước Nga", "Tận mắt chiêm ngưỡng điện Kremlin uy nghiêm, nhà thờ Saint Basil với những mái vòm củ hành rực rỡ như cổ tích và bảo tàng lịch sử quốc gia.", "Moscow"),
+            Triple("Saint Petersburg - Thành phố của những cung điện", "Khám phá bảo tàng Hermitage tráng lệ, Cung điện Mùa đông nguy nga của Sa hoàng và dạo thuyền trên sông Neva thơ mộng ngắm cầu mở.", "Saint Petersburg"),
+            Triple("Hồ Baikal Siberia - Viên ngọc xanh vĩnh cửu", "Hồ nước ngọt sâu nhất thế giới với làn nước trong suốt như pha lê. Vào mùa đông, hồ đóng băng tạo thành những đường rạn nứt tuyệt mỹ.", "Baikal, Siberia"),
+            Triple("Kazan - Sự giao thoa văn hóa Á-Âu", "Khám phá thủ phủ của nước cộng hòa Tatarstan với thánh đường Hồi giáo Kul Sharif lộng lẫy nằm ngay cạnh nhà thờ Chính thống giáo cổ kính.", "Kazan"),
+            Triple("Vladivostok - Thành phố cảng Viễn Đông", "Điểm cuối của tuyến đường sắt xuyên Siberia huyền thoại, đi cáp treo ngắm vịnh Sừng Vàng và thưởng thức cua hoàng đế siêu tươi ngon.", "Vladivostok"),
+            Triple("Sochi - Thủ đô mùa hè bên bờ Biển Đen", "Thành phố nghỉ dưỡng xinh đẹp với những bãi biển ấm áp tuyệt vời, rặng palm xanh mướt và khu trượt tuyết đẳng cấp Olympic Krasnaya Polyana.", "Sochi"),
+            Triple("Vành đai Vàng nước Nga - Golden Ring", "Hành trình qua các thị trấn cổ kính như Suzdal, Vladimir đầy nhà thờ mái vòm vàng rực rỡ, cảm nhận nhịp sống Nga xưa yên bình.", "Golden Ring"),
+            Triple("Đảo Kizhi - Tuyệt tác kiến trúc gỗ không đinh", "Nằm giữa hồ Onega, hòn đảo nổi tiếng với hai nhà thờ bằng gỗ thông độc đáo được dựng hoàn toàn thủ công không cần dùng tới một chiếc đinh nào.", "Kizhi, Karelia"),
+            Triple("Dãy núi Caucasus - Hùng vĩ biên thùy", "Nơi có đỉnh Elbrus cao nhất châu Âu quanh năm tuyết phủ trắng xóa, là thiên đường cho những tín đồ leo núi và đam mê mạo hiểm.", "Caucasus"),
+            Triple("Kamchatka - Thung lũng mạch nước phun kỳ bí", "Vùng đất của lửa và băng với hàng trăm núi lửa đang hoạt động, suối nước nóng bốc hơi nghi ngút giữa núi tuyết và gấu nâu săn cá hồi.", "Kamchatka"),
+            Triple("Yekaterinburg - Ranh giới Á Âu huyền thoại", "Check-in tại đài tưởng niệm cột mốc phân chia hai châu lục Á - Âu, tham quan nhà thờ Đổ Máu linh thiêng nơi gia đình Sa hoàng cuối cùng tạ thế.", "Yekaterinburg"),
+            Triple("Nizhny Novgorod - Pháo đài cổ bên sông Volga", "Ghé thăm điện Kremlin Nizhny Novgorod sừng sững trên đồi cao, dạo bước phố đi bộ Pokrovskaya ngắm các tòa nhà kiến trúc gỗ cổ tuyệt đẹp.", "Nizhny Novgorod"),
+            Triple("Murmansk - Săn Bắc Cực Quang huyền diệu", "Nằm sâu trong vòng Bắc Cực, đây là nơi ngắm những dải lụa ánh sáng xanh cực quang huyền ảo nhảy múa trên bầu trời đêm đông lạnh giá.", "Murmansk"),
+            Triple("Cung điện Peterhof - Versailles của nước Nga", "Quần thể cung điện và đài phun nước hoành tráng bậc nhất thế giới hướng ra vịnh Phần Lan, biểu tượng cho quyền lực Sa hoàng Peter Đại đế.", "Peterhof"),
+            Triple("Đồi Chim Sẻ - Toàn cảnh thủ đô Moscow", "Điểm ngắm cảnh cao nhất thủ đô ngắm trọn vẹn sân vận động Luzhniki, trường đại học Lomonosov (MSU) vĩ đại và nhịp sống nhộn nhịp bên sông.", "Moscow"),
+            Triple("Nhà thờ Saint Basil - Kiệt tác kiến trúc Nga", "Công trình biểu tượng quốc gia với 9 tháp mái vòm màu sắc sặc sỡ, được Sa hoàng Ivan bạo chúa xây dựng để kỷ niệm chiến thắng Kazan năm 1552.", "Moscow"),
+            Triple("Cung điện Catherine - Căn phòng hổ phách huyền thoại", "Tọa lạc tại Tsarskoye Selo, cung điện sở hữu phòng hổ phách quý giá lộng lẫy được chế tác cực kỳ tinh xảo từ hàng tấn đá hổ phách tự nhiên.", "Pushkin"),
+            Triple("Bảo tàng Hermitage - Kho tàng nghệ thuật nhân loại", "Một trong những bảo tàng lớn và cổ nhất thế giới với hơn 3 triệu tác phẩm nghệ thuật vô giá từ thời tiền sử đến hiện đại.", "Saint Petersburg"),
+            Triple("Siberia - Vùng đất băng giá huyền thoại", "Trải nghiệm cái lạnh kỷ lục tại Oymyakon - ngôi làng lạnh nhất thế giới có người sinh sống, đi xe chó kéo vượt qua những cánh rừng taiga phủ tuyết.", "Siberia"),
+            Triple("Dãy núi Altay - Thiên đường sinh thái hoang sơ", "Dòng sông Katun xanh màu ngọc bích chảy len lỏi giữa rừng thông, không khí trong lành nguyên sơ thích hợp cho các chuyến đi chữa lành.", "Altay")
+        )
+
+        // Add 40 Notes
+        var noteIdCounter = 1
+        vnNotes.forEach { (title, desc, place) ->
+            list.add(
+                SampleItem.Note(
+                    id = noteIdCounter++,
+                    title = title,
+                    content = desc,
+                    category = "Du lịch Việt Nam",
+                    tags = "#vietnam, #travel, #${place.lowercase().replace(" ", "").replace(",", "")}"
+                )
+            )
+        }
+        ruNotes.forEach { (title, desc, place) ->
+            list.add(
+                SampleItem.Note(
+                    id = noteIdCounter++,
+                    title = title,
+                    content = desc,
+                    category = "Du lịch nước Nga",
+                    tags = "#russia, #travel, #${place.lowercase().replace(" ", "").replace(",", "")}"
+                )
+            )
+        }
+
+        // 2. Generate 40 Comments (20 VN, 20 Russia)
+        val commentTemplates = listOf(
+            "Cảnh đẹp quá! Mình nhất định phải đến đây một lần trong đời.",
+            "Bài viết rất chi tiết, cảm ơn bạn đã chia sẻ kinh nghiệm quý giá này nhé!",
+            "Chi phí trọn gói cho chuyến đi này khoảng bao nhiêu tiền vậy chủ thớt ơi?",
+            "Có cần phải xin visa trước lâu không bạn? Thủ tục có phức tạp lắm không?",
+            "Mình vừa đi tuần trước xong, đồ ăn ở đây siêu ngon mà người dân lại cực kỳ mến khách.",
+            "Mùa nào đi là đẹp nhất hả bạn? Mình đang lên kế hoạch cho cả gia đình.",
+            "Ảnh chụp góc nào cũng đẹp như tranh vẽ vậy, bạn dùng điện thoại hay máy ảnh thế?",
+            "Nhìn yên bình quá, rất thích hợp để đi nghỉ dưỡng và chữa lành tâm hồn.",
+            "Bạn có gợi ý homestay hay khách sạn nào giá cả hợp lý gần trung tâm không?",
+            "Một trải nghiệm tuyệt vời! Cảm ơn bài review rất có tâm của bạn.",
+            "Đọc bài viết xong chỉ muốn xách ba lô lên và đi ngay lập tức thôi!",
+            "Kiến trúc ở đây thật sự quá vĩ đại và cổ kính, nhìn rất ấn tượng.",
+            "Chi phí hải sản hay ăn uống ở đây có bị đắt đỏ hay chặt chém gì không bạn?",
+            "Có chỗ nào chơi phù hợp cho trẻ em nhỏ đi cùng không ạ?",
+            "Tuyệt vời quá! Cảnh sắc thiên nhiên nước mình không thua kém gì nước ngoài cả.",
+            "Địa điểm này đi tự túc dễ không bạn hay bắt buộc phải đi theo tour?",
+            "Nơi này chụp ảnh sống ảo thì đúng là đỉnh của chóp luôn rồi!",
+            "Cảm giác được hòa mình vào không gian tuyết trắng / biển xanh thật là sướng.",
+            "Thời tiết lúc bạn đi có lạnh lắm không, cần chuẩn bị trang phục thế nào?",
+            "Suối Nặm Thoong này có an toàn cho trẻ em bơi lội và vui chơi không bạn nhỉ?",
+            "Cảm động quá, đây thực sự là địa chỉ đỏ giáo dục truyền thống cách mạng cực kỳ ý nghĩa cho thế hệ măng non.",
+            "Biển Phú Yên xanh ngắt trong veo, bãi cỏ rộng thênh thang tha hồ chạy nhảy nhé!",
+            "Có được cắm trại dựng lều dã ngoại ở gần khu vực di tích anh Kim Đồng không bạn?"
+        )
+
+        val authors = listOf(
+            "Minh Anh", "Thanh Hằng", "Khánh Nam", "Quỳnh Chi", "Hoàng Long",
+            "Thu Trang", "Duy Mạnh", "Hương Giang", "Tuấn Kiệt", "Bảo Ngọc",
+            "Đức Huy", "Hồng Nhung", "Viết Tiến", "Ngọc Diệp", "Quốc Anh",
+            "Phương Linh", "Văn Hải", "Thanh Thảo", "Minh Đức", "Mai Phương"
+        )
+
+        var commentIdCounter = 1
+        for (i in 0 until 23) {
+            val vnNoteTitle = vnNotes[i % vnNotes.size].first
+            list.add(
+                SampleItem.Comment(
+                    id = commentIdCounter++,
+                    author = authors[i % authors.size],
+                    content = "Dành cho chuyến đi [${vnNoteTitle}]: ${commentTemplates[i]}",
+                    noteTitle = vnNoteTitle,
+                    category = "Du lịch Việt Nam"
+                )
+            )
+        }
+        for (i in 0 until 20) {
+            val ruNoteTitle = ruNotes[i].first
+            list.add(
+                SampleItem.Comment(
+                    id = commentIdCounter++,
+                    author = authors[(i + 5) % authors.size],
+                    content = "Dành cho chuyến đi [${ruNoteTitle}]: ${commentTemplates[i]}",
+                    noteTitle = ruNoteTitle,
+                    category = "Du lịch nước Nga"
+                )
+            )
+        }
+
+        // 3. Generate 40 Replies (20 VN, 20 Russia)
+        val replyTemplates = listOf(
+            "Đúng vậy bạn ơi, đi một lần là nhớ mãi luôn đó!",
+            "Chi phí tự túc hết tầm 3-5 triệu thôi nè, khá là tiết kiệm.",
+            "E-visa hiện tại làm online cực kỳ nhanh gọn, chỉ mất khoảng 3 ngày thôi bạn.",
+            "Bạn nên chuẩn bị quần áo ấm nha, mùa đông nhiệt độ xuống rất thấp đó.",
+            "Đồ ăn ở đây rất hợp khẩu vị, giá cả cực kỳ bình dân không lo chặt chém nha.",
+            "Cảm ơn bạn! Mình chụp hoàn toàn bằng điện thoại đời thường thôi nè.",
+            "Tháng 9 - tháng 10 mùa thu vàng là thời điểm lãng mạn nhất để đi nhé.",
+            "Tự túc hoàn toàn dễ dàng bạn nhé, đường sá đi lại giờ rất thuận tiện.",
+            "Gần trung tâm có rất nhiều homestay xinh xắn giá chỉ từ 300k/đêm thôi.",
+            "Nhất định phải thử món đặc sản địa phương ở đây nha, ngon quên sầu!",
+            "Chuẩn luôn ạ, không gian ở đây rộng rãi, mát mẻ, các bé tha hồ chạy nhảy.",
+            "Đồng ý với bạn, kiến trúc chạm khắc tinh xảo vô cùng, nhìn trực tiếp ngỡ ngàng luôn.",
+            "Cảm ơn bạn đã quan tâm! Chúc bạn có chuyến đi thật vui vẻ và an toàn nha.",
+            "Xách ba lô lên đi thôi bạn ơi, tuổi trẻ phải đi và trải nghiệm chứ!",
+            "Bạn có thể đặt trước dịch vụ trên mạng để có giá ưu đãi hơn nha.",
+            "Cảnh sắc tự nhiên hùng vĩ vô cùng, đi rồi mới thấy nước mình đẹp thế nào.",
+            "Cảm giác được hít thở bầu không khí trong lành ở đây thật sự rất sảng khoái.",
+            "Cứ chuẩn bị tâm lý thoải mái và một chiếc điện thoại đầy pin để chụp ảnh nhé!",
+            "Đúng rồi bạn, người dân cực kỳ thân thiện, nhiệt tình chỉ đường lắm luôn.",
+            "Vào mùa cạn nước suối Nặm Thoong nông và chảy rất êm ả, trong vắt nên trẻ em bơi lội và tắm mát dã ngoại cực kỳ an toàn nha, tuy nhiên tránh đi vào những ngày mưa lũ nước sẽ dâng cao và chảy xiết hơn!",
+            "Dạ đúng ạ, được dâng hương tưởng nhớ người anh hùng nhỏ tuổi trước tượng đài trang nghiêm lộng gió thật sự vô cùng xúc động và tự hào!",
+            "Phú Yên cực kỳ hoang sơ và bình dị luôn đó bạn ơi, chi phí lại vô cùng rẻ nữa!",
+            "Khu vực di tích rất trang nghiêm tôn kính nên không được phép dựng lều ăn uống đâu ạ, nhưng bạn có thể dã ngoại ở bãi cỏ xanh bên ngoài hoặc gần bờ suối nhỏ bên thung lũng rất thoáng nhé."
+        )
+
+        var replyIdCounter = 1
+        for (i in 0 until 23) {
+            val parentAuthor = authors[i % authors.size]
+            list.add(
+                SampleItem.Reply(
+                    id = replyIdCounter++,
+                    author = authors[(i + 3) % authors.size],
+                    content = "Trả lời @$parentAuthor: ${replyTemplates[i]}",
+                    parentCommentContent = commentTemplates[i],
+                    category = "Du lịch Việt Nam"
+                )
+            )
+        }
+        for (i in 0 until 20) {
+            val parentAuthor = authors[(i + 5) % authors.size]
+            list.add(
+                SampleItem.Reply(
+                    id = replyIdCounter++,
+                    author = authors[(i + 8) % authors.size],
+                    content = "Trả lời @$parentAuthor: ${replyTemplates[i]}",
+                    parentCommentContent = commentTemplates[i],
+                    category = "Du lịch nước Nga"
+                )
+            )
+        }
+
+        return list
+    }
+}
+
+@Composable
+fun SampleDialog(
+    onImportNote: (title: String, content: String, category: String, tags: String) -> Unit,
+    onDismiss: () -> Unit
+) {
+    val allSamples = remember { SamplesProvider.generate128Samples() }
+    var searchQuery by remember { mutableStateOf("") }
+    var selectedCategoryFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga"
+    var selectedTypeFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Ghi chú", "Bình luận", "Phản hồi"
+
+    val filteredSamples = remember(searchQuery, selectedCategoryFilter, selectedTypeFilter) {
+        allSamples.filter { item ->
+            // Category filter
+            val matchesCategory = when (selectedCategoryFilter) {
+                "Du lịch Việt Nam" -> {
+                    when (item) {
+                        is SampleItem.Note -> item.category == "Du lịch Việt Nam"
+                        is SampleItem.Comment -> item.category == "Du lịch Việt Nam"
+                        is SampleItem.Reply -> item.category == "Du lịch Việt Nam"
+                    }
+                }
+                "Du lịch nước Nga" -> {
+                    when (item) {
+                        is SampleItem.Note -> item.category == "Du lịch nước Nga"
+                        is SampleItem.Comment -> item.category == "Du lịch nước Nga"
+                        is SampleItem.Reply -> item.category == "Du lịch nước Nga"
+                    }
+                }
+                else -> true
+            }
+
+            // Type filter
+            val matchesType = when (selectedTypeFilter) {
+                "Ghi chú" -> item is SampleItem.Note
+                "Bình luận" -> item is SampleItem.Comment
+                "Phản hồi" -> item is SampleItem.Reply
+                else -> true
+            }
+
+            // Search query
+            val matchesSearch = if (searchQuery.isBlank()) {
+                true
+            } else {
+                val q = searchQuery.lowercase()
+                when (item) {
+                    is SampleItem.Note -> item.title.lowercase().contains(q) || item.content.lowercase().contains(q) || item.tags.lowercase().contains(q)
+                    is SampleItem.Comment -> item.author.lowercase().contains(q) || item.content.lowercase().contains(q) || item.noteTitle.lowercase().contains(q)
+                    is SampleItem.Reply -> item.author.lowercase().contains(q) || item.content.lowercase().contains(q) || item.parentCommentContent.lowercase().contains(q)
+                }
+            }
+
+            matchesCategory && matchesType && matchesSearch
+        }
+    }
+
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        Surface(
+            modifier = Modifier
+                .fillMaxWidth(0.95f)
+                .fillMaxHeight(0.90f)
+                .testTag("samples_dialog_surface"),
+            shape = RoundedCornerShape(24.dp),
+            color = MaterialTheme.colorScheme.surface,
+            tonalElevation = 6.dp
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(24.dp)
+            ) {
+                // Header
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.CardGiftcard,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(32.dp)
+                        )
+                        Column {
+                            Text(
+                                text = "128 mẫu ghi chú, bình luận và phản hồi",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / 128",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                    IconButton(onClick = onDismiss, modifier = Modifier.testTag("btn_close_samples")) {
+                        Icon(imageVector = Icons.Default.Close, contentDescription = "Đóng")
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                // Search Bar
+                OutlinedTextField(
+                    value = searchQuery,
+                    onValueChange = { searchQuery = it },
+                    placeholder = { Text("Tìm kiếm tiêu đề, tác giả, nội dung mẫu...") },
+                    leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
+                    trailingIcon = {
+                        if (searchQuery.isNotEmpty()) {
+                            IconButton(onClick = { searchQuery = "" }) {
+                                Icon(Icons.Default.Clear, contentDescription = "Xóa")
+                            }
+                        }
+                    },
+                    singleLine = true,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .testTag("travel_samples_search_input"),
+                    shape = RoundedCornerShape(12.dp)
+                )
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                // Filters Row: Category Filter
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "Chủ đề:",
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    listOf("Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga").forEach { cat ->
+                        FilterChip(
+                            selected = selectedCategoryFilter == cat,
+                            onClick = { selectedCategoryFilter = cat },
+                            label = { Text(cat, fontSize = 12.sp) }
+                        )
+                    }
+                }
+
+                // Filters Row: Type Filter
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "Loại mẫu:",
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    listOf("Tất cả", "Ghi chú", "Bình luận", "Phản hồi").forEach { type ->
+                        FilterChip(
+                            selected = selectedTypeFilter == type,
+                            onClick = { selectedTypeFilter = type },
+                            label = { Text(type, fontSize = 12.sp) }
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                // Samples List
+                LazyColumn(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    if (filteredSamples.isEmpty()) {
+                        item {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 40.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = "Không tìm thấy mẫu nào khớp với bộ lọc hiện tại.",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                        }
+                    }
+
+                    items(filteredSamples) { sample ->
+                        when (sample) {
+                            is SampleItem.Note -> {
+                                SampleNoteCard(
+                                    note = sample,
+                                    onImport = {
+                                        onImportNote(sample.title, sample.content, sample.category, sample.tags)
+                                    }
+                                )
+                            }
+                            is SampleItem.Comment -> {
+                                SampleCommentCard(comment = sample)
+                            }
+                            is SampleItem.Reply -> {
+                                SampleReplyCard(reply = sample)
+                            }
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+                
+                // Bottom Quick Action
+                Surface(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp),
+                    color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(20.dp)
+                        )
+                        Text(
+                            text = "Mẹo: Đối với các mẫu Ghi chú, bạn có thể nhấn nút Nhập nhanh để lưu ngay ghi chú đó vào danh sách của bạn và nhận +20 Kim Cương!",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer,
+                            lineHeight = 16.sp
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun SampleNoteCard(
+    note: SampleItem.Note,
+    onImport: () -> Unit
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f)
+        )
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.Top
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    Surface(
+                        shape = RoundedCornerShape(6.dp),
+                        color = if (note.category == "Du lịch Việt Nam") Color(0xFFE8F5E9) else Color(0xFFE3F2FD)
+                    ) {
+                        Text(
+                            text = note.category,
+                            style = MaterialTheme.typography.labelSmall,
+                            fontWeight = FontWeight.Bold,
+                            color = if (note.category == "Du lịch Việt Nam") Color(0xFF2E7D32) else Color(0xFF1565C0),
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                        )
+                    }
+                    Surface(
+                        shape = RoundedCornerShape(6.dp),
+                        color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+                    ) {
+                        Text(
+                            text = "GHI CHÚ MẪU",
+                            style = MaterialTheme.typography.labelSmall,
+                            fontWeight = FontWeight.ExtraBold,
+                            color = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                        )
+                    }
+                }
+                
+                Button(
+                    onClick = onImport,
+                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary
+                    ),
+                    modifier = Modifier.height(32.dp).testTag("btn_import_sample_${note.id}")
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Add,
+                        contentDescription = null,
+                        modifier = Modifier.size(14.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text("Nhập nhanh", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                }
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = note.title,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            Text(
+                text = note.content,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                maxLines = 4,
+                overflow = TextOverflow.Ellipsis
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = note.tags,
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.Bold
+            )
+        }
+    }
+}
+
+@Composable
+fun SampleCommentCard(
+    comment: SampleItem.Comment
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.2f)
+        )
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                Surface(
+                    shape = RoundedCornerShape(6.dp),
+                    color = if (comment.category == "Du lịch Việt Nam") Color(0xFFE8F5E9) else Color(0xFFE3F2FD)
+                ) {
+                    Text(
+                        text = comment.category,
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = if (comment.category == "Du lịch Việt Nam") Color(0xFF2E7D32) else Color(0xFF1565C0),
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                    )
+                }
+                Surface(
+                    shape = RoundedCornerShape(6.dp),
+                    color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                ) {
+                    Text(
+                        text = "BÌNH LUẬN MẪU",
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.secondary,
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.AccountCircle,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.secondary,
+                    modifier = Modifier.size(20.dp)
+                )
+                Text(
+                    text = comment.author,
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            Text(
+                text = comment.content,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+    }
+}
+
+@Composable
+fun SampleReplyCard(
+    reply: SampleItem.Reply
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.1f)
+        )
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                Surface(
+                    shape = RoundedCornerShape(6.dp),
+                    color = if (reply.category == "Du lịch Việt Nam") Color(0xFFE8F5E9) else Color(0xFFE3F2FD)
+                ) {
+                    Text(
+                        text = reply.category,
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = if (reply.category == "Du lịch Việt Nam") Color(0xFF2E7D32) else Color(0xFF1565C0),
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                    )
+                }
+                Surface(
+                    shape = RoundedCornerShape(6.dp),
+                    color = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.1f)
+                ) {
+                    Text(
+                        text = "PHẢN HỒI MẪU",
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.tertiary,
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Face,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.tertiary,
+                    modifier = Modifier.size(20.dp)
+                )
+                Text(
+                    text = reply.author,
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            Text(
+                text = reply.content,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Surface(
+                shape = RoundedCornerShape(6.dp),
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f)
+            ) {
+                Text(
+                    text = "Trả lời cho bình luận gốc: \"${reply.parentCommentContent}\"",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
+                    modifier = Modifier.padding(8.dp)
+                )
+            }
+        }
+    }
+}

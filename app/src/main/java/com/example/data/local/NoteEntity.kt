@@ -1,0 +1,33 @@
+package com.example.data.local
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "notes")
+data class NoteEntity(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val title: String,
+    val description: String,
+    val isPinned: Boolean = false,
+    val isBookmarked: Boolean = false,
+    val isCompleted: Boolean = false,
+    val isArchived: Boolean = false,
+    val createdAt: Long = System.currentTimeMillis(),
+    val updatedAt: Long = System.currentTimeMillis(),
+    val colorIndex: Int = 0,
+    val category: String = "",
+    val tags: String = "",
+    val imageUri: String? = null,
+    val audioUri: String? = null,
+    val audioDuration: Long? = null,
+    val deletedAt: Long? = null
+) {
+    val isDeleted: Boolean
+        get() = deletedAt != null
+
+    val tagList: List<String>
+        get() = tags.split(",")
+            .map { it.trim().removePrefix("#") }
+            .filter { it.isNotBlank() }
+}
