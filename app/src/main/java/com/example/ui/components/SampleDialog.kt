@@ -222,7 +222,7 @@ object SamplesProvider {
                     author = authors[(i + 10) % authors.size],
                     content = "Trải nghiệm ẩm thực [${foodTitle}]: ${commentTemplates[23 + i]}",
                     noteTitle = foodTitle,
-                    category = "Ẩm thực đường phố"
+                    category = "Ẩm thực đường phố Việt Nam"
                 )
             )
         }
@@ -255,7 +255,7 @@ object SamplesProvider {
             "Đúng luôn bạn ơi, quán mở bán từ sáng sớm tới tận khuya nên ghé lúc nào cũng nóng hổi thơm ngon!",
             "Thêm chút quẩy giòn và chút ớt chưng cay nồng nữa là xuất sắc không còn gì bằng nha!",
             "Chuẩn vị gia truyền lâu năm luôn, lần nào ra đây mình cũng phải ăn 2 tô mới đã!",
-            "Quá ngon miệng nhưng Bún bò ở Thừa Thiên Huế rất vui vẻ luôn!,
+            "Quá ngon miệng nhưng Bún bò ở Thừa Thiên Huế rất vui vẻ luôn!",
             "Du lịch Sapa, đỉnh đèo Fansipan nóc nhà cao 3143 mét luôn!"
         )
 
@@ -292,7 +292,7 @@ object SamplesProvider {
                     author = authors[(i + 12) % authors.size],
                     content = "Trả lời @$parentAuthor: ${replyTemplates[23 + i]}",
                     parentCommentContent = commentTemplates[23 + i],
-                    category = "Ẩm thực đường phố"
+                    category = "Ẩm thực đường phố Việt Nam"
                 )
             )
         }
@@ -306,9 +306,9 @@ fun SampleDialog(
     onImportNote: (title: String, content: String, category: String, tags: String) -> Unit,
     onDismiss: () -> Unit
 ) {
-    val allSamples = remember { SamplesProvider.generate140Samples() }
+    val allSamples = remember { SamplesProvider.generate144Samples() }
     var searchQuery by remember { mutableStateOf("") }
-    var selectedCategoryFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga", "Ẩm thực đường phố"
+    var selectedCategoryFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga", "Ẩm thực đường phố Việt Nam"
     var selectedTypeFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Ghi chú", "Bình luận", "Phản hồi"
 
     val filteredSamples = remember(searchQuery, selectedCategoryFilter, selectedTypeFilter) {
@@ -404,7 +404,7 @@ fun SampleDialog(
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / 140",
+                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / 144",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -468,7 +468,7 @@ fun SampleDialog(
                                     .horizontalScroll(rememberScrollState()),
                                 horizontalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
-                                listOf("Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga", "Ẩm thực đường phố").forEach { cat ->
+                                listOf("Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga", "Ẩm thực đường phố Việt Nam").forEach { cat ->
                                     FilterChip(
                                         selected = selectedCategoryFilter == cat,
                                         onClick = { selectedCategoryFilter = cat },
@@ -615,7 +615,7 @@ fun SampleNoteCard(
                         color = when (note.category) {
                             "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
                             "Du lịch nước Nga" -> Color(0xFFE3F2FD)
-                            "Ẩm thực đường phố" -> Color(0xFFFFF3E0)
+                            "Ẩm thực đường phố Việt Nam" -> Color(0xFFFFF3E0)
                             else -> Color(0xFFE8F5E9)
                         }
                     ) {
@@ -626,7 +626,7 @@ fun SampleNoteCard(
                             color = when (note.category) {
                                 "Du lịch Việt Nam" -> Color(0xFF2E7D32)
                                 "Du lịch nước Nga" -> Color(0xFF1565C0)
-                                "Ẩm thực đường phố" -> Color(0xFFE65100)
+                                "Ẩm thực đường phố Việt Nam" -> Color(0xFFE65100)
                                 else -> Color(0xFF2E7D32)
                             },
                             modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
@@ -716,7 +716,7 @@ fun SampleCommentCard(
                     color = when (comment.category) {
                         "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
                         "Du lịch nước Nga" -> Color(0xFFE3F2FD)
-                        "Ẩm thực đường phố" -> Color(0xFFFFF3E0)
+                        "Ẩm thực đường phố Việt Nam" -> Color(0xFFFFF3E0)
                         else -> Color(0xFFE8F5E9)
                     }
                 ) {
@@ -727,7 +727,7 @@ fun SampleCommentCard(
                         color = when (comment.category) {
                             "Du lịch Việt Nam" -> Color(0xFF2E7D32)
                             "Du lịch nước Nga" -> Color(0xFF1565C0)
-                            "Ẩm thực đường phố" -> Color(0xFFE65100)
+                            "Ẩm thực đường phố Việt Nam" -> Color(0xFFE65100)
                             else -> Color(0xFF2E7D32)
                         },
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
