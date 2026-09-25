@@ -15,6 +15,8 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
   - Thêm thẻ bộ lọc riêng biệt cho chủ đề **"Ẩm thực đường phố"** với tông màu cam đặc trưng (`#FFF3E0` / `#E65100`).
 
 ### 🎨 Fixed & Improved Layout (Cải tiến & Tối ưu Bố Cục Giao Diện)
+- **Tối Ưu Hóa Nút Kích Hoạt Gói Mua (`StorePackageCard`)**:
+  - Giới hạn kích thước chữ `11.sp` và `maxLines = 1` cho các nút kích hoạt / mua gói VIP trong Cửa Hàng, loại bỏ hoàn toàn hiện tượng ngắt dòng hoặc tràn lề ký tự trên nền đỏ.
 - **Tối Ưu Hóa Bố Cục Thẻ Điểm Danh (`DailyCheckInCard`)**:
   - Chuyển đổi cấu trúc thẻ Điểm danh Mỗi Ngày từ hàng ngang sang dạng cột đứng linh hoạt (`Column`), giúp biểu tượng, tiêu đề, nút bấm và nội dung chi tiết hiển thị gọn gàng, không bị co kéo hay ép dọc ký tự trên màn hình hẹp.
 - **Tối ưu hóa Nút Chọn Tệp Tin (`MultiFilesImportExportDialog.kt`)**:

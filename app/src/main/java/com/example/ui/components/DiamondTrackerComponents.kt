@@ -1650,8 +1650,10 @@ private fun StorePackageCard(
                             "Kích hoạt gói (${numberFormatter.format(tier.diamondPrice)} 💎)"
                         else
                             "Cần thêm ${numberFormatter.format(tier.diamondPrice - userDiamonds)} 💎 để mua",
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.Bold
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                        overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
                     )
                 }
             }
