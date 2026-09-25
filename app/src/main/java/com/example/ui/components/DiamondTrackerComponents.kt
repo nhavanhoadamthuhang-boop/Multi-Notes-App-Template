@@ -18,6 +18,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -414,7 +416,7 @@ fun DiamondProgressCard(
 
             // Quick Daily Check-In Banner inside card if not checked in
             if (!rewardState.hasCheckedInToday && onClaimCheckIn != null) {
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(modifier = Modifier.height(8.dp))
                 Surface(
                     onClick = onClaimCheckIn,
                     shape = RoundedCornerShape(12.dp),
@@ -422,30 +424,44 @@ fun DiamondProgressCard(
                     border = BorderStroke(1.dp, DiamondGold.copy(alpha = 0.8f)),
                     modifier = Modifier
                         .fillMaxWidth()
+                        .wrapContentHeight()
                         .testTag("banner_claim_checkin_inside_card")
                 ) {
                     Row(
-                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 8.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 12.dp, vertical = 8.dp),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            modifier = Modifier.weight(1f)
                         ) {
-                            Icon(
-                                imageVector = Icons.Default.Stars,
-                                contentDescription = null,
-                                tint = DiamondGold,
-                                modifier = Modifier.size(18.dp)
-                            )
+                            Box(
+                                modifier = Modifier
+                                    .size(26.dp)
+                                    .background(DiamondGold.copy(alpha = 0.25f), CircleShape),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Stars,
+                                    contentDescription = null,
+                                    tint = DiamondGold,
+                                    modifier = Modifier.size(16.dp)
+                                )
+                            }
                             Text(
                                 text = "Điểm danh hôm nay để nhận +800 kim cương!",
                                 style = MaterialTheme.typography.labelMedium,
                                 fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.onSurface
+                                color = MaterialTheme.colorScheme.onSurface,
+                                maxLines = 1,
+                                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
                             )
                         }
+                        Spacer(modifier = Modifier.width(8.dp))
                         Surface(
                             shape = RoundedCornerShape(8.dp),
                             color = DiamondGold
@@ -455,7 +471,7 @@ fun DiamondProgressCard(
                                 fontSize = 11.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = Color.White,
-                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
                             )
                         }
                     }

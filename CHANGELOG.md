@@ -6,6 +6,16 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 
 ---
 
+## [1.2.5] - 2026-09-25
+
+### 🎨 Fixed Check-In Banner Layout & UI Proportions (Sửa Lỗi Bố Cục Thẻ Điểm Danh)
+- **Tóm tắt & Khắc phục bố cục banner điểm danh (`DiamondTrackerComponents.kt`)**:
+  - Sửa lỗi thẻ banner điểm danh bị kéo giãn chiều cao bất hợp lý, làm dẹt dải nút "Điểm danh ngay" thành vạch màu vàng dọc ở mép phải.
+  - Áp dụng `wrapContentHeight()` và bộ căn chỉnh `Modifier.weight(1f)` cho phần văn bản, đảm bảo nút bấm *"Điểm danh ngay"* giữ nguyên tỷ lệ bo góc 8.dp chuẩn, không bị biến dạng hay giãn dòng.
+  - Tối ưu khoảng cách căn lề (padding 12.dp horizontal / 8.dp vertical) và bổ sung icon ngôi sao `✪` nổi bật trên nền badge tròn màu vàng kim.
+
+---
+
 ## [1.2.4] - 2026-09-25
 
 ### 🎙️ Voice Note Recorder Feature Documentation (Cập Nhật Hướng Dẫn Ghi Âm Ghi Chú)
