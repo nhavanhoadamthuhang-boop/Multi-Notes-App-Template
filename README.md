@@ -3,7 +3,7 @@
 ## 📖 Tổng Quan Dự Án
 **Ứng dụng Ghi Chú Đa Năng Thông Minh & Cộng Đồng** là một ứng dụng di động hiện đại được xây dựng hoàn toàn bằng **Kotlin** và **Jetpack Compose**, tuân thủ nghiêm ngặt các tiêu chuẩn **Material Design 3**. Ứng dụng kết hợp hoàn hảo giữa công cụ quản lý ghi chú cá nhân mạnh mẽ và hệ thống tương tác cộng đồng sinh động, tích hợp cơ chế phần thưởng kim cương, điểm danh chuỗi ngày liên tục (Streak), thanh tiến trình theo dõi dung lượng lưu trữ thực tế và bảng xếp hạng thành viên tích cực.
 
-Đặc biệt, ứng dụng hỗ trợ **Hệ thống Nhập/Xuất dữ liệu 8 định dạng toàn diện** (JSON, HTML, CSV, DOCX, PPTX, XML, XLSX, TXT) cùng kho **160 mẫu tài nguyên ghi chú, bình luận và phản hồi** phong phú về Du lịch Việt Nam, Du lịch nước Nga, Ẩm thực đường phố Việt Nam và Tư liệu lịch sử Tiểu sử các lãnh đạo Việt Nam.
+Đặc biệt, ứng dụng hỗ trợ **Hệ thống Nhập/Xuất dữ liệu 8 định dạng toàn diện** (JSON, HTML, CSV, DOCX, PPTX, XML, XLSX, TXT) cùng kho **162 mẫu tài nguyên ghi chú, bình luận và phản hồi** phong phú về Du lịch Việt Nam, Du lịch nước Nga, Ẩm thực đường phố Việt Nam và Tư liệu lịch sử Tiểu sử các lãnh đạo Việt Nam.
 
 ---
 
@@ -20,12 +20,12 @@
 - **Yêu thích & Ghim Thảo Luận**: Cho phép gắn sao yêu thích (⭐) hoặc ghim (📌) các bình luận/phản hồi đắt giá lên đầu danh sách để cộng đồng tiện theo dõi.
 - **Giao Diện Trực Quan**: Huy hiệu phân loại vàng sữa **⭐ YÊU THÍCH** và **⭐ SAO** được thiết kế nổi bật, chuyên nghiệp.
 
-### 3. Kho 160 Mẫu Ghi Chú, Bình Luận & Phản Hồi Toàn Diện
-- **Bộ dữ liệu mẫu đa dạng**: Gồm 55 ghi chú, 53 bình luận và 52 phản hồi mẫu (Tổng cộng **160 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về 4 chủ đề lớn:
+### 3. Kho 162 Mẫu Ghi Chú, Bình Luận & Phản Hồi Toàn Diện
+- **Bộ dữ liệu mẫu đa dạng**: Gồm 57 ghi chú, 53 bình luận và 52 phản hồi mẫu (Tổng cộng **162 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về 4 chủ đề lớn:
   - **Du lịch Việt Nam**: Khám phá danh lam thắng cảnh nổi tiếng như Sapa, Hà Giang, Vịnh Hạ Long, Hội An, Phú Quốc,... đặc biệt là thông tin chi tiết về **Khu du lịch sinh thái Suối Nặm Thoong (Cao Bằng)** hoang sơ thơ mộng và **Khu di tích lịch sử Anh hùng Kim Đồng (Cao Bằng)** linh thiêng hào hùng.
   - **Du lịch nước Nga**: Chiêm ngưỡng kiến trúc kiệt tác như Điện Kremlin (Moscow), Cung điện Mùa đông (Saint Petersburg), Hồ Baikal (Siberia), săn cực quang kỳ vĩ tại Murmansk,...
   - **Ẩm thực đường phố Việt Nam**: Khám phá văn hóa ẩm thực độc đáo như **Phở Gánh Hà Nội**, **Bánh Mì Sài Gòn**, **Bún Bò ở Thừa Thiên Huế**, **Cơm Tấm Sài Gòn**, **Bánh Xèo Miền Tây**, **Cà Phê Trứng Hà Nội**, **Mì Quảng Quảng Nam**, **Cao Lầu Hội An**,...
-  - **Tiểu sử lãnh đạo Việt Nam (Danh mục mới)**: Tư liệu lịch sử vô giá về các vị lãnh đạo tiền bối kiệt xuất của dân tộc như *Chủ tịch Hồ Chí Minh*, *Đại tướng Võ Nguyên Giáp*, *Cố Tổng Bí thư Nguyễn Văn Linh*, *Cố Thủ tướng Phạm Văn Đồng*, *Cố Tổng Bí thư Lê Duẩn*.
+  - **Tiểu sử lãnh đạo Việt Nam (Danh mục mới)**: Tư liệu lịch sử vô giá về các vị lãnh đạo tiền bối kiệt xuất của dân tộc như *Chủ tịch Hồ Chí Minh*, *Đại tướng Võ Nguyên Giáp*, **Cố Tổng Bí thư Nguyễn Phú Trọng** (*Ngọn cờ chỉnh đốn Đảng & Ngoại giao cây tre Việt Nam*), **Tổng Bí thư Tô Lâm** (*Chuyển đổi số quốc gia & Kỷ nguyên vươn mình của dân tộc*), *Cố Tổng Bí thư Nguyễn Văn Linh*, *Cố Thủ tướng Phạm Văn Đồng*, *Cố Tổng Bí thư Lê Duẩn*.
 - **Công cụ tìm kiếm & Lọc thông minh**: Tìm kiếm thời gian thực kết hợp bộ lọc kép theo 4 chủ đề lớn (*Du lịch Việt Nam*, *Du lịch nước Nga*, *Ẩm thực đường phố Việt Nam*, *Tiểu sử lãnh đạo Việt Nam*) và 3 loại mẫu dữ liệu (*Ghi chú*, *Bình luận*, *Phản hồi*).
 - **Nhập nhanh một chạm (Quick Import)**: Nhập lập tức bất kỳ ghi chú mẫu nào vào kho dữ liệu chính thức của bạn, tự động tạo nhãn dán tương ứng và nhận phần thưởng **+20 Kim Cương thưởng** tức thì!
 

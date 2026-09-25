@@ -6,6 +6,17 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 
 ---
 
+## [1.2.3] - 2026-09-25
+
+### 🇻🇳 Integrated Vietnamese Leaders Biographies (Tích Hợp Tiểu Sử Cố TBT Nguyễn Phú Trọng & TBT Tô Lâm)
+- **Bổ sung tư liệu lịch sử về Cố TBT Nguyễn Phú Trọng & TBT Tô Lâm**:
+  - **Cố Tổng Bí thư Nguyễn Phú Trọng**: Tóm tắt hành trình lãnh đạo kiên trung, tấm gương đạo đức cách mạng liêm chính, công cuộc chỉnh đốn Đảng "không có vùng cấm" và trường phái *"Ngoại giao cây tre Việt Nam"*.
+  - **Tổng Bí thư Tô Lâm**: Tóm tắt bước đột phá chiến lược Đề án 06 về chuyển đổi số quốc gia, tinh gọn bộ máy và tầm nhìn *"Kỷ nguyên vươn mình của dân tộc"*.
+- **Cập nhật tổng số mẫu tài nguyên lên 162 mẫu**:
+  - Tự động hiển thị chính xác tổng số lượng mẫu và kết quả lọc thời gian thực trong giao diện `SampleDialog`.
+
+---
+
 ## [1.2.2] - 2026-09-25
 
 ### ✨ Expanded Sample Data to 160 Items (Nâng Kho Mẫu Lên 160 Mẫu)

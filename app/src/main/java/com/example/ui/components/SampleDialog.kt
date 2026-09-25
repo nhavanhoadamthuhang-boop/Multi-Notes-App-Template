@@ -119,6 +119,8 @@ object SamplesProvider {
         val leaderNotes = listOf(
             Triple("Chủ tịch Hồ Chí Minh - Vị lãnh tụ kính yêu của dân tộc", "Sinh năm 1890 tại Kim Liên, Nam Đàn, Nghệ An. Bác Hồ là người anh hùng giải phóng dân tộc, danh nhân văn hóa thế giới, đã ra đi tìm đường cứu nước năm 1911 và đọc Bản Tuyên ngôn Độc lập khai sinh nước Việt Nam Dân chủ Cộng hòa ngày 2/9/1945.", "Nghệ An, Hà Nội"),
             Triple("Đại tướng Võ Nguyên Giáp - Người anh cả của QĐND Việt Nam", "Vị tướng tài ba thiên tài quân sự, chỉ huy trực tiếp chiến dịch Điện Biên Phủ 1954 lừng lẫy năm châu, chấn động địa cầu và chiến dịch Hồ Chí Minh lịch sử năm 1975 giải phóng hoàn toàn miền Nam, thống nhất đất nước.", "Quảng Bình, Hà Nội"),
+            Triple("Cố Tổng Bí thư Nguyễn Phú Trọng - Ngọn cờ chỉnh đốn Đảng & Ngoại giao cây tre", "Tổng Bí thư ĐCSVN (2011-2024). Người lãnh đạo kiên trung, tấm gương sáng về đạo đức cách mạng giản dị, liêm chính. Tác giả của công cuộc đấu tranh phòng chống tham nhũng 'không có vùng cấm' và trường phái 'Ngoại giao cây tre Việt Nam' nâng cao vị thế đất nước trên trường quốc tế.", "Hà Nội"),
+            Triple("Tổng Bí thư Tô Lâm - Đột phá Chuyển đổi số & Kỷ nguyên vươn mình", "Tổng Bí thư ĐCSVN từ 8/2024, Chủ tịch nước CHXHCNVN (từ 5/2024). Người chỉ đạo quyết liệt Đề án 06 về chuyển đổi số quốc gia, đẩy mạnh tinh gọn bộ máy nhà nước, đưa đất nước vững bước tiến vào kỷ nguyên mới phát triển nhanh, hiện đại và thịnh vượng.", "Hưng Yên, Hà Nội"),
             Triple("Cố Tổng Bí thư Nguyễn Văn Linh - Người mở đường Đổi Mới", "Nhà lãnh đạo kiên trung, sáng tạo, gắn liền với công cuộc Đổi Mới đất nước từ Đại hội VI (1986) với những bài viết nổi tiếng 'Những việc cần làm ngay' mang lại luồng sinh khí mới cho nền kinh tế xã hội.", "Hưng Yên, TPHCM"),
             Triple("Cố Thủ tướng Phạm Văn Đồng - Nhà ngoại giao xuất sắc", "Người học trò xuất sắc của Chủ tịch Hồ Chí Minh, Thủ tướng tại vị lâu nhất Việt Nam (1955-1987). Ông là nhà văn hóa, nhà ngoại giao kiệt xuất, Trưởng đoàn đàm phán Hiệp định Giơ-ne-vơ 1954.", "Quảng Ngãi, Hà Nội"),
             Triple("Cố Tổng Bí thư Lê Duẩn - Lãnh đạo kiên cường cách mạng", "Nhà lý luận xuất sắc, chiến sĩ cách mạng kiên trung có đóng góp to lớn vào đường lối chỉ đạo cuộc kháng chiến chống Mỹ cứu nước, giải phóng miền Nam thống nhất Tổ quốc.", "Quảng Trị, Hà Nội")
@@ -453,12 +455,12 @@ fun SampleDialog(
                         )
                         Column {
                             Text(
-                                text = "160 mẫu ghi chú, bình luận và phản hồi",
+                                text = "${allSamples.size} mẫu ghi chú, bình luận và phản hồi",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / 160",
+                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / ${allSamples.size}",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
