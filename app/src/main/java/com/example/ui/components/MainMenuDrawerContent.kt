@@ -626,9 +626,9 @@ fun MainMenuDrawerContent(
                     .testTag("menu_nav_import_pdf_url")
             )
 
-            // 128 Mẫu Ghi Chú, Bình Luận & Phản Hồi
+            // 140 Mẫu Ghi Chú, Bình Luận & Phản Hồi
             NavigationDrawerItem(
-                label = { Text("128 mẫu ghi chú, bình luận và phản hồi") },
+                label = { Text("140 mẫu ghi chú, bình luận và phản hồi") },
                 selected = false,
                 onClick = {
                     onCloseDrawer()
@@ -647,7 +647,7 @@ fun MainMenuDrawerContent(
                         color = MaterialTheme.colorScheme.primaryContainer
                     ) {
                         Text(
-                            text = "128 Mẫu",
+                            text = "140 Mẫu",
                             style = MaterialTheme.typography.labelSmall,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onPrimaryContainer,

@@ -50,10 +50,10 @@ sealed class SampleItem {
 }
 
 object SamplesProvider {
-    fun generate128Samples(): List<SampleItem> {
+    fun generate140Samples(): List<SampleItem> {
         val list = mutableListOf<SampleItem>()
 
-        // 1. Generate 40 Notes (20 VN, 20 Russia)
+        // 1. Generate 48 Notes (22 VN, 20 Russia, 6 Ẩm thực đường phố)
         val vnNotes = listOf(
             Triple("Hành trình khám phá Hà Giang mộng mơ", "Khám phá dốc Thẩm Mã, cột cờ Lũng Cú và dòng sông Nho Quế xanh biếc thơ mộng. Thời điểm lý tưởng nhất là mùa hoa tam giác mạch từ tháng 10 đến tháng 12.", "Hà Giang, Tây Bắc"),
             Triple("Review chi tiết Sapa 3 ngày 2 đêm", "Chinh phục đỉnh Fansipan - nóc nhà Đông Dương bằng cáp treo, check-in bản Cát Cát của người H’Mông, thưởng thức đồ nướng Sapa thơm phức trong sương mờ.", "Sapa, Lào Cai"),
@@ -102,7 +102,16 @@ object SamplesProvider {
             Triple("Dãy núi Altay - Thiên đường sinh thái hoang sơ", "Dòng sông Katun xanh màu ngọc bích chảy len lỏi giữa rừng thông, không khí trong lành nguyên sơ thích hợp cho các chuyến đi chữa lành.", "Altay")
         )
 
-        // Add 40 Notes
+        val streetFoodNotes = listOf(
+            Triple("Phở Gánh Hà Nội - Tinh hoa ẩm thực phố cổ", "Tô phở nóng hổi thơm nức mùi hành hoa, bánh phở mềm dẻo cùng nước dùng ngọt thanh từ xương ống ninh kỹ. Trải nghiệm ngồi ghế nhựa vỉa hè đón bình minh Hà Nội thật sự khó quên.", "Hà Nội"),
+            Triple("Bánh Mì Sài Gòn - Vua ẩm thực đường phố thế giới", "Vỏ bánh mì giòn rụm kẹp pate gan thơm béo, chả lụa, thịt xá xíu, dưa góp chua ngọt cùng chút ớt cay nồng. Món ăn nhanh đậm đà đầy đủ dưỡng chất.", "Sài Gòn"),
+            Triple("Bún Bò Huế - Hương vị đậm đà xứ Cố đô", "Sợi bún toàn mềm dẻo trong nước dùng sóng sánh màu dầu điều thơm nức sả ớt, ăn kèm huyết luộc, giò heo, chả cua và đĩa rau sống bắp chuối thái mỏng.", "Huế"),
+            Triple("Cơm Tấm Sài Gòn - Sườn bì chả mỡ hành", "Hạt cơm tấm thơm dẻo ăn kèm miếng sườn nướng mỡ hành đậm đà, bì chả giòn sần sật, trứng ốp la lòng đào và chén nước mắm kẹo ớt hiểm.", "Sài Gòn"),
+            Triple("Bánh Xèo Miền Tây - Giòn rụm ngập tràn nhân tôm thịt", "Bánh xèo vàng ươm thơm lừng nước cốt dừa, nhân tôm đất, thịt ba chỉ và giá đỗ. Cuộn cùng bánh tráng, rau rừng chấm nước mắm tỏi ớt chua ngọt.", "Miền Tây"),
+            Triple("Cà Phê Trứng Hà Nội - Sóng sánh vị béo ngậy ngọt ngào", "Lớp kem trứng đánh bông mịn như mây béo ngậy đắng nhẹ quyện cùng cà phê phin đậm đà thơm nức, thức uống biểu tượng của thủ đô.", "Hà Nội")
+        )
+
+        // Add 48 Notes
         var noteIdCounter = 1
         vnNotes.forEach { (title, desc, place) ->
             list.add(
@@ -126,8 +135,19 @@ object SamplesProvider {
                 )
             )
         }
+        streetFoodNotes.forEach { (title, desc, place) ->
+            list.add(
+                SampleItem.Note(
+                    id = noteIdCounter++,
+                    title = title,
+                    content = desc,
+                    category = "Ẩm thực đường phố",
+                    tags = "#amthuc, #streetfood, #${place.lowercase().replace(" ", "")}"
+                )
+            )
+        }
 
-        // 2. Generate 40 Comments (20 VN, 20 Russia)
+        // 2. Generate 46 Comments (23 VN, 20 Russia, 3 Ẩm thực)
         val commentTemplates = listOf(
             "Cảnh đẹp quá! Mình nhất định phải đến đây một lần trong đời.",
             "Bài viết rất chi tiết, cảm ơn bạn đã chia sẻ kinh nghiệm quý giá này nhé!",
@@ -151,7 +171,10 @@ object SamplesProvider {
             "Suối Nặm Thoong này có an toàn cho trẻ em bơi lội và vui chơi không bạn nhỉ?",
             "Cảm động quá, đây thực sự là địa chỉ đỏ giáo dục truyền thống cách mạng cực kỳ ý nghĩa cho thế hệ măng non.",
             "Biển Phú Yên xanh ngắt trong veo, bãi cỏ rộng thênh thang tha hồ chạy nhảy nhé!",
-            "Có được cắm trại dựng lều dã ngoại ở gần khu vực di tích anh Kim Đồng không bạn?"
+            "Có được cắm trại dựng lều dã ngoại ở gần khu vực di tích anh Kim Đồng không bạn?",
+            "Món ăn đường phố này ngon đỉnh cao, ngập tràn hương vị béo ngậy đậm đà khó cưỡng!",
+            "Giá thành cực kỳ bình dân sinh viên, chủ quán lại siêu vui tính nhiệt tình nữa!",
+            "Nước dùng đậm vị thanh ngọt tự nhiên, ăn một lần là nghiện luôn cả tuần!"
         )
 
         val authors = listOf(
@@ -186,8 +209,20 @@ object SamplesProvider {
                 )
             )
         }
+        for (i in 0 until 3) {
+            val foodTitle = streetFoodNotes[i % streetFoodNotes.size].first
+            list.add(
+                SampleItem.Comment(
+                    id = commentIdCounter++,
+                    author = authors[(i + 10) % authors.size],
+                    content = "Trải nghiệm ẩm thực [${foodTitle}]: ${commentTemplates[23 + i]}",
+                    noteTitle = foodTitle,
+                    category = "Ẩm thực đường phố"
+                )
+            )
+        }
 
-        // 3. Generate 40 Replies (20 VN, 20 Russia)
+        // 3. Generate 46 Replies (23 VN, 20 Russia, 3 Ẩm thực)
         val replyTemplates = listOf(
             "Đúng vậy bạn ơi, đi một lần là nhớ mãi luôn đó!",
             "Chi phí tự túc hết tầm 3-5 triệu thôi nè, khá là tiết kiệm.",
@@ -211,7 +246,10 @@ object SamplesProvider {
             "Vào mùa cạn nước suối Nặm Thoong nông và chảy rất êm ả, trong vắt nên trẻ em bơi lội và tắm mát dã ngoại cực kỳ an toàn nha, tuy nhiên tránh đi vào những ngày mưa lũ nước sẽ dâng cao và chảy xiết hơn!",
             "Dạ đúng ạ, được dâng hương tưởng nhớ người anh hùng nhỏ tuổi trước tượng đài trang nghiêm lộng gió thật sự vô cùng xúc động và tự hào!",
             "Phú Yên cực kỳ hoang sơ và bình dị luôn đó bạn ơi, chi phí lại vô cùng rẻ nữa!",
-            "Khu vực di tích rất trang nghiêm tôn kính nên không được phép dựng lều ăn uống đâu ạ, nhưng bạn có thể dã ngoại ở bãi cỏ xanh bên ngoài hoặc gần bờ suối nhỏ bên thung lũng rất thoáng nhé."
+            "Khu vực di tích rất trang nghiêm tôn kính nên không được phép dựng lều ăn uống đâu ạ, nhưng bạn có thể dã ngoại ở bãi cỏ xanh bên ngoài hoặc gần bờ suối nhỏ bên thung lũng rất thoáng nhé.",
+            "Đúng luôn bạn ơi, quán mở bán từ sáng sớm tới tận khuya nên ghé lúc nào cũng nóng hổi thơm ngon!",
+            "Thêm chút quẩy giòn và chút ớt chưng cay nồng nữa là xuất sắc không còn gì bằng nha!",
+            "Chuẩn vị gia truyền lâu năm luôn, lần nào ra đây mình cũng phải ăn 2 tô mới đã!"
         )
 
         var replyIdCounter = 1
@@ -239,6 +277,18 @@ object SamplesProvider {
                 )
             )
         }
+        for (i in 0 until 3) {
+            val parentAuthor = authors[(i + 10) % authors.size]
+            list.add(
+                SampleItem.Reply(
+                    id = replyIdCounter++,
+                    author = authors[(i + 12) % authors.size],
+                    content = "Trả lời @$parentAuthor: ${replyTemplates[23 + i]}",
+                    parentCommentContent = commentTemplates[23 + i],
+                    category = "Ẩm thực đường phố"
+                )
+            )
+        }
 
         return list
     }
@@ -249,9 +299,9 @@ fun SampleDialog(
     onImportNote: (title: String, content: String, category: String, tags: String) -> Unit,
     onDismiss: () -> Unit
 ) {
-    val allSamples = remember { SamplesProvider.generate128Samples() }
+    val allSamples = remember { SamplesProvider.generate140Samples() }
     var searchQuery by remember { mutableStateOf("") }
-    var selectedCategoryFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga"
+    var selectedCategoryFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga", "Ẩm thực đường phố"
     var selectedTypeFilter by remember { mutableStateOf("Tất cả") } // "Tất cả", "Ghi chú", "Bình luận", "Phản hồi"
 
     val filteredSamples = remember(searchQuery, selectedCategoryFilter, selectedTypeFilter) {
@@ -270,6 +320,13 @@ fun SampleDialog(
                         is SampleItem.Note -> item.category == "Du lịch nước Nga"
                         is SampleItem.Comment -> item.category == "Du lịch nước Nga"
                         is SampleItem.Reply -> item.category == "Du lịch nước Nga"
+                    }
+                }
+                "Ẩm thực đường phố" -> {
+                    when (item) {
+                        is SampleItem.Note -> item.category == "Ẩm thực đường phố"
+                        is SampleItem.Comment -> item.category == "Ẩm thực đường phố"
+                        is SampleItem.Reply -> item.category == "Ẩm thực đường phố"
                     }
                 }
                 else -> true
@@ -335,12 +392,12 @@ fun SampleDialog(
                         )
                         Column {
                             Text(
-                                text = "128 mẫu ghi chú, bình luận và phản hồi",
+                                text = "140 mẫu ghi chú, bình luận và phản hồi",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / 128",
+                                text = "Tổng số mẫu lọc được: ${filteredSamples.size} / 140",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -387,7 +444,7 @@ fun SampleDialog(
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary
                     )
-                    listOf("Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga").forEach { cat ->
+                    listOf("Tất cả", "Du lịch Việt Nam", "Du lịch nước Nga", "Ẩm thực đường phố").forEach { cat ->
                         FilterChip(
                             selected = selectedCategoryFilter == cat,
                             onClick = { selectedCategoryFilter = cat },
@@ -519,13 +576,23 @@ fun SampleNoteCard(
                 ) {
                     Surface(
                         shape = RoundedCornerShape(6.dp),
-                        color = if (note.category == "Du lịch Việt Nam") Color(0xFFE8F5E9) else Color(0xFFE3F2FD)
+                        color = when (note.category) {
+                            "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
+                            "Du lịch nước Nga" -> Color(0xFFE3F2FD)
+                            "Ẩm thực đường phố" -> Color(0xFFFFF3E0)
+                            else -> Color(0xFFE8F5E9)
+                        }
                     ) {
                         Text(
                             text = note.category,
                             style = MaterialTheme.typography.labelSmall,
                             fontWeight = FontWeight.Bold,
-                            color = if (note.category == "Du lịch Việt Nam") Color(0xFF2E7D32) else Color(0xFF1565C0),
+                            color = when (note.category) {
+                                "Du lịch Việt Nam" -> Color(0xFF2E7D32)
+                                "Du lịch nước Nga" -> Color(0xFF1565C0)
+                                "Ẩm thực đường phố" -> Color(0xFFE65100)
+                                else -> Color(0xFF2E7D32)
+                            },
                             modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
                         )
                     }
@@ -610,13 +677,23 @@ fun SampleCommentCard(
             ) {
                 Surface(
                     shape = RoundedCornerShape(6.dp),
-                    color = if (comment.category == "Du lịch Việt Nam") Color(0xFFE8F5E9) else Color(0xFFE3F2FD)
+                    color = when (comment.category) {
+                        "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
+                        "Du lịch nước Nga" -> Color(0xFFE3F2FD)
+                        "Ẩm thực đường phố" -> Color(0xFFFFF3E0)
+                        else -> Color(0xFFE8F5E9)
+                    }
                 ) {
                     Text(
                         text = comment.category,
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Bold,
-                        color = if (comment.category == "Du lịch Việt Nam") Color(0xFF2E7D32) else Color(0xFF1565C0),
+                        color = when (comment.category) {
+                            "Du lịch Việt Nam" -> Color(0xFF2E7D32)
+                            "Du lịch nước Nga" -> Color(0xFF1565C0)
+                            "Ẩm thực đường phố" -> Color(0xFFE65100)
+                            else -> Color(0xFF2E7D32)
+                        },
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
                     )
                 }
@@ -683,13 +760,23 @@ fun SampleReplyCard(
             ) {
                 Surface(
                     shape = RoundedCornerShape(6.dp),
-                    color = if (reply.category == "Du lịch Việt Nam") Color(0xFFE8F5E9) else Color(0xFFE3F2FD)
+                    color = when (reply.category) {
+                        "Du lịch Việt Nam" -> Color(0xFFE8F5E9)
+                        "Du lịch nước Nga" -> Color(0xFFE3F2FD)
+                        "Ẩm thực đường phố" -> Color(0xFFFFF3E0)
+                        else -> Color(0xFFE8F5E9)
+                    }
                 ) {
                     Text(
                         text = reply.category,
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Bold,
-                        color = if (reply.category == "Du lịch Việt Nam") Color(0xFF2E7D32) else Color(0xFF1565C0),
+                        color = when (reply.category) {
+                            "Du lịch Việt Nam" -> Color(0xFF2E7D32)
+                            "Du lịch nước Nga" -> Color(0xFF1565C0)
+                            "Ẩm thực đường phố" -> Color(0xFFE65100)
+                            else -> Color(0xFF2E7D32)
+                        },
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
                     )
                 }

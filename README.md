@@ -3,7 +3,7 @@
 ## 📖 Tổng Quan Dự Án
 **Ứng dụng Ghi Chú Thông Minh & Cộng Đồng** là một ứng dụng di động hiện đại được xây dựng hoàn toàn bằng **Kotlin** và **Jetpack Compose**, tuân thủ nghiêm ngặt các tiêu chuẩn **Material Design 3**. Ứng dụng kết hợp hoàn hảo giữa công cụ quản lý ghi chú cá nhân mạnh mẽ và hệ thống tương tác cộng đồng sinh động, tích hợp cơ chế phần thưởng kim cương, điểm danh chuỗi ngày liên tục (Streak), thanh tiến trình theo dõi dung lượng lưu trữ thực tế và bảng xếp hạng thành viên tích cực.
 
-Đặc biệt, ứng dụng hỗ trợ **Hệ thống Nhập/Xuất dữ liệu 8 định dạng toàn diện** (JSON, HTML, CSV, DOCX, PPTX, XML, XLSX, TXT) cùng kho 128 mẫu tài nguyên ghi chú, bình luận và phản hồi phong phú.
+Đặc biệt, ứng dụng hỗ trợ **Hệ thống Nhập/Xuất dữ liệu 8 định dạng toàn diện** (JSON, HTML, CSV, DOCX, PPTX, XML, XLSX, TXT) cùng kho 140 mẫu tài nguyên ghi chú, bình luận và phản hồi phong phú về Du lịch & Ẩm thực đường phố Việt Nam.
 
 ---
 
@@ -20,11 +20,12 @@
 - **Yêu thích & Ghim Thảo Luận**: Cho phép gắn sao yêu thích (⭐) hoặc ghim (📌) các bình luận/phản hồi đắt giá lên đầu danh sách để cộng đồng tiện theo dõi.
 - **Giao Diện Trực Quan**: Huy hiệu phân loại vàng sữa **⭐ YÊU THÍCH** và **⭐ SAO** được thiết kế nổi bật, chuyên nghiệp.
 
-### 3. Kho 128 Mẫu Ghi Chú, Bình Luận & Phản Hồi
-- **Bộ dữ liệu mẫu đa dạng**: Gồm 42 ghi chú, 43 bình luận và 43 phản hồi mẫu (Tổng cộng 128 mẫu) được soạn thảo cực kỳ chi tiết, phong phú về nhiều chủ đề và địa danh nổi tiếng.
+### 3. Kho 140 Mẫu Ghi Chú, Bình Luận & Phản Hồi (Du Lịch & Ẩm Thực Đường Phố)
+- **Bộ dữ liệu mẫu đa dạng**: Gồm 48 ghi chú, 46 bình luận và 46 phản hồi mẫu (Tổng cộng **140 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về nhiều chủ đề địa danh & ẩm thực:
   - **Du lịch Việt Nam**: Khám phá danh lam thắng cảnh nổi tiếng như Sapa, Hà Giang, Vịnh Hạ Long, Hội An, Phú Quốc,... đặc biệt là thông tin chi tiết về **Khu du lịch sinh thái Suối Nặm Thoong (Cao Bằng)** hoang sơ thơ mộng và **Khu di tích lịch sử anh hùng Kim Đồng (Cao Bằng)** linh thiêng hào hùng.
   - **Du lịch nước Nga**: Chiêm ngưỡng kiến trúc kiệt tác như Điện Kremlin (Moscow), Cung điện Mùa đông (Saint Petersburg), Hồ Baikal (Siberia), săn cực quang kỳ vĩ tại Murmansk,...
-- **Công cụ tìm kiếm & Lọc thông minh**: Tìm kiếm thời gian thực kết hợp bộ lọc kép theo chủ đề và loại mẫu dữ liệu (Ghi chú, Bình luận, Phản hồi).
+  - **Ẩm thực đường phố Việt Nam**: Khám phá văn hóa ẩm thực độc đáo như **Phở Gánh Hà Nội**, **Bánh Mì Sài Gòn**, **Bún Bò Huế**, **Cơm Tấm Sài Gòn**, **Bánh Xèo Miền Tây**, **Cà Phê Trứng Hà Nội**,...
+- **Công cụ tìm kiếm & Lọc thông minh**: Tìm kiếm thời gian thực kết hợp bộ lọc kép theo 3 chủ đề lớn (*Du lịch Việt Nam*, *Du lịch nước Nga*, *Ẩm thực đường phố*) và 3 loại mẫu dữ liệu (*Ghi chú*, *Bình luận*, *Phản hồi*).
 - **Nhập nhanh một chạm (Quick Import)**: Nhập lập tức bất kỳ ghi chú mẫu nào vào kho dữ liệu chính thức của bạn, tự động tạo nhãn dán tương ứng và nhận phần thưởng **+20 Kim Cương thưởng** tức thì!
 
 ### 4. Gamification: Điểm Danh (Streak), Phần Thưởng Kim Cương & Quản Lý Dung Lượng
@@ -51,7 +52,7 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
      - **Sheet 3 (Phản hồi)**: ID, ID Bình luận cha, ID Ghi chú, Tiêu đề Ghi chú, Tác giả, Phản hồi cho ai, Nội dung phản hồi, Thời gian tạo.
    - Dễ dàng mở và phân tích dữ liệu trên Microsoft Excel, Google Sheets, WPS Office hoặc LibreOffice Calc mà không bị lỗi font tiếng Việt.
 
-2. **XML (.xml) - Cấu Trúc Dữ LiệuChuẩn Quốc Tế**:
+2. **XML (.xml) - Cấu Trúc Dữ Liệu Chuẩn Quốc Tế**:
    - Định dạng dữ liệu thẻ XML chuẩn hóa (`<notes_backup>`, `<note>`, `<comments>`, `<comment>`, `<reply>`).
    - Lưu trữ toàn bộ cây dữ liệu phân cấp ghi chú, bình luận và phản hồi nguyên vẹn thuộc tính, phục vụ trao đổi dữ liệu giữa các phần mềm hoặc khôi phục hệ thống.
 
@@ -98,7 +99,7 @@ Cho phép người dùng sao lưu, xuất tệp và nạp lại toàn bộ hoặ
 
 ## 🚀 Hướng Dẫn Sử Dụng & Trải Nghiệm
 1. **Khởi động ứng dụng**: Thưởng thức ngay giao diện trực quan với phông chữ Inter sắc nét.
-2. **Khám phá 128 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"128 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, thử tìm kiếm **"Suối Nặm Thoong"** hoặc **"Kim Đồng"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
+2. **Khám phá 140 mẫu ghi chú, bình luận và phản hồi**: Mở Drawer bên trái, chọn **"140 mẫu ghi chú, bình luận và phản hồi"** (`SampleDialog`) để dạo chơi qua các mẫu dữ liệu phong phú, chọn lọc theo chủ đề **"Ẩm thực đường phố"**, tìm kiếm **"Phở Gánh"**, **"Bánh Mì Sài Gòn"**, **"Suối Nặm Thoong"** hoặc **"Kim Đồng"** rồi nhấn **"Nhập nhanh"** để nhận quà kim cương.
 3. **Sử dụng Undo/Redo**: Khi viết hay chỉnh sửa ghi chú, hãy trải nghiệm 2 nút Hoàn tác/Làm lại ở góc trên trình soạn thảo để dễ dàng quản lý nội dung.
 4. **Đánh dấu Yêu thích**: Nhấn nút Ngôi sao (⭐) trên bất kỳ ghi chú hay bình luận nào để gắn sao vàng nổi bật và quản lý dễ dàng.
 5. **Theo dõi Dung lượng & Đổi quà**: Mở **"Cửa hàng Kim Cương"** để xem thanh tiến trình dung lượng sử dụng và nâng cấp cấp độ tài khoản bằng Kim Cương tích lũy.
