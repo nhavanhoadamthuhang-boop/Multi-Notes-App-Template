@@ -15,6 +15,13 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
   - Thêm thẻ bộ lọc riêng biệt cho chủ đề **"Ẩm thực đường phố"** với tông màu cam đặc trưng (`#FFF3E0` / `#E65100`).
 
 ### 🎨 Fixed & Improved Layout (Cải tiến & Tối ưu Bố Cục Giao Diện)
+- **Thiết Kế Lại Bố Cục Tổng Quan Phức Tạp (`DiamondGoalDialog`)**:
+  - Xây dựng lại bảng điều khiển tổng quan (Dashboard Overview) với thẻ trung tâm hiển thị tổng số Kim Cương, tiến độ % mục tiêu và thanh tiến trình `LinearProgressIndicator` phát sáng.
+  - Tích hợp thẻ chi tiết gói VIP hiện tại kèm theo hạn mức trực quan (*Bình luận/ngày, Tốc độ cmt/phút, Giới hạn ghi chú, Thùng rác*).
+  - Tích hợp thẻ quy đổi dữ liệu đóng góp (*20 Kim Cương/Mục*) và nút chuyển nhanh đến cửa hàng.
+- **Thiết Kế Lại Bố Cục Nạp Kim Cương Nhanh Phức Tạp (`DiamondStoreDialog`)**:
+  - Thay thế các hàng nút bấm đơn điệu bằng **Bảng lưới bề mặt cao cấp (Rich Surface Grid 2x4)** cho các gói nạp nhanh từ `+8k` đến `+1.024k` kim cương.
+  - Mỗi thẻ nạp có biểu tượng Kim Cương vàng, nhãn mệnh giá đậm nét và phụ chú cấp độ rõ ràng (*Khởi động, Phổ biến, Chuyên nghiệp, VIP Pro, Tối thượng*).
 - **Thiết Kế Lại Bố Cục Bảng Xếp Hạng (`LeaderboardDialog.kt`)**:
   - Tích hợp **Khối Bục Bảng Vàng (Top 3 Podium View)** dành cho Top 1 (Vàng - Trung tâm), Top 2 (Bạc - Trái) và Top 3 (Đồng - Phải) với biểu tượng cúp vinh danh, tên thành viên và số lượng Kim Cương trực quan.
   - Tối ưu hóa Thẻ thứ hạng cá nhân (`#Rank Badge`) rực rỡ kèm nút "Tăng hạng" mở nhanh Cửa hàng.
