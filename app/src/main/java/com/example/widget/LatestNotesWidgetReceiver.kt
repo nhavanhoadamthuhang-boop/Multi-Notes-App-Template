@@ -50,7 +50,7 @@ class LatestNotesWidgetReceiver : AppWidgetProvider() {
 
             // Update UI on main thread is not needed for RemoteViews, but we need to notify AppWidgetManager
             if (latestNote != null) {
-                views.setTextViewText(R.id.widget_note_title, latestNote.title.takeIf { it.isNotBlank() } ?: "Ghi chú không tên")
+                views.setTextViewText(R.id.widget_note_title, latestNote.title.takeIf { it.isNotBlank() } ?: "Ghi chú không có tên")
                 views.setTextViewText(R.id.widget_note_content, latestNote.description.takeIf { it.isNotBlank() } ?: "Trống")
             } else {
                 views.setTextViewText(R.id.widget_note_title, "Không có ghi chú")
