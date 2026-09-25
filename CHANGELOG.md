@@ -63,8 +63,6 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
   - **Excel (.xlsx)**: Tạo tệp Bảng tính Microsoft Excel OpenXML với 3 Worksheets riêng biệt (Ghi chú, Bình luận gốc, Phản hồi lồng nhau).
   - **XML (.xml)**: Xuất và nạp lại cấu trúc cây dữ liệu thẻ XML chuẩn hóa (`<notes_backup>`, `<note>`, `<comments>`, `<comment>`, `<reply>`).
   - Bổ sung trình nạp dữ liệu tự động kiểm tra định dạng và chế độ dán mã nguồn trực tiếp.
-- **Tạo Quy Trình Tự Động Biển Dịch GitHub Actions (`.github/workflows/android-build.yml`)**:
-  - Tự động biên dịch APK và khởi tạo GitHub Release đính kèm `app-debug.apk` mỗi khi tạo thẻ `v*` trên repository.
 
 ---
 
