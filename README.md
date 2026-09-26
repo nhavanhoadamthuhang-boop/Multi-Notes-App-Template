@@ -13,12 +13,12 @@
 - **Tạo & Chỉnh Sửa Ghi Chú**: Hỗ trợ tiêu đề, nội dung chi tiết, nhãn phân loại (Labels) tùy chỉnh sinh động và trạng thái ghim (Pinned) lên đầu danh sách.
 - **Tính năng Hoàn tác / Làm lại (Undo & Redo)**: Tích hợp công cụ khôi phục thay đổi thông minh trong trình soạn thảo ghi chú, giúp dễ dàng đảo ngược hoặc áp dụng lại các chỉnh sửa văn bản gần nhất một cách an toàn.
 - **Bộ đếm Từ & Ký tự Động**: Hiển thị thời gian thực (Real-time) số lượng từ và số lượng ký tự trực quan ngay dưới ô nhập mô tả trong trình soạn thảo, giúp người dùng dễ dàng theo dõi và kiểm soát dung lượng văn bản của mình.
-- **Yêu thích bằng Ngôi sao Vàng (⭐ Favorite/Star Feature)**: Đánh dấu các ghi chú quan trọng nhất của bạn bằng ngôi sao vàng hoàng kim sang trọng. Đồng thời, hỗ trợ lọc nhanh toàn bộ các ghi chú đã gắn sao chỉ với một chạm từ thanh công cụ chính.
+- **Yêu thích bằng Ngôi sao Vàng (Favorite/Star Feature)**: Đánh dấu các ghi chú quan trọng nhất của bạn bằng ngôi sao vàng hoàng kim sang trọng (`Icons.Filled.Star`). Đồng thời, hỗ trợ lọc nhanh toàn bộ các ghi chú đã gắn sao chỉ với một chạm từ thanh công cụ chính.
 
 ### 2. Hệ Thống Bình Luận & Thảo Luận Tương Tác Đa Tầng
 - **Thảo Luận Đa Tầng**: Mỗi ghi chú đều hỗ trợ hệ thống bình luận sâu nhiều cấp (bình luận chính và các phản hồi - replies) tạo nên không gian trao đổi sống động.
-- **Yêu thích & Ghim Thảo Luận**: Cho phép gắn sao yêu thích (⭐) hoặc ghim (📌) các bình luận/phản hồi đắt giá lên đầu danh sách để cộng đồng tiện theo dõi.
-- **Giao Diện Trực Quan**: Huy hiệu phân loại vàng sữa **⭐ YÊU THÍCH** và **⭐ SAO** được thiết kế nổi bật, chuyên nghiệp.
+- **Yêu thích & Ghim Thảo Luận**: Cho phép gắn sao yêu thích hoặc ghim các bình luận/phản hồi đắt giá lên đầu danh sách để cộng đồng tiện theo dõi (`Icons.Filled.PushPin` & `Icons.Filled.Star`).
+- **Giao Diện Trực Quan**: Huy hiệu phân loại vàng sữa **YÊU THÍCH** và **ĐÃ GHIM** được thiết kế nổi bật, chuyên nghiệp.
 
 ### 3. Kho 162 Mẫu Ghi Chú, Bình Luận & Phản Hồi Toàn Diện
 - **Bộ dữ liệu mẫu đa dạng**: Gồm 57 ghi chú, 53 bình luận và 52 phản hồi mẫu (Tổng cộng **162 mẫu**) được soạn thảo cực kỳ chi tiết, phong phú về 4 chủ đề lớn:
@@ -26,7 +26,7 @@
   - **Du lịch nước Nga**: Chiêm ngưỡng kiến trúc kiệt tác như Điện Kremlin (Moscow), Cung điện Mùa đông (Saint Petersburg), Hồ Baikal (Siberia), săn cực quang kỳ vĩ tại Murmansk,...
   - **Ẩm thực đường phố Việt Nam**: Khám phá văn hóa ẩm thực độc đáo như **Phở Gánh Hà Nội**, **Bánh Mì Sài Gòn**, **Bún Bò ở Thừa Thiên Huế**, **Cơm Tấm Sài Gòn**, **Bánh Xèo Miền Tây**, **Cà Phê Trứng Hà Nội**, **Mì Quảng Quảng Nam**, **Cao Lầu Hội An**,...
   - **Tiểu sử lãnh đạo Việt Nam (Danh mục mới)**: Tư liệu lịch sử vô giá về các vị lãnh đạo tiền bối kiệt xuất của dân tộc như *Chủ tịch Hồ Chí Minh*, *Đại tướng Võ Nguyên Giáp*, **Cố Tổng Bí thư Nguyễn Phú Trọng** (*Ngọn cờ chỉnh đốn Đảng & Ngoại giao cây tre Việt Nam*), **Tổng Bí thư Tô Lâm** (*Chuyển đổi số quốc gia & Kỷ nguyên vươn mình của dân tộc*), *Cố Tổng Bí thư Nguyễn Văn Linh*, *Cố Thủ tướng Phạm Văn Đồng*, *Cố Tổng Bí thư Lê Duẩn*.
-- **Giao diện Banner Thẻ Mẫu & Bộ đếm Lọc Động**: Tích hợp thẻ header màu lam sẫm nổi bật với biểu tượng hộp quà tím 🎁, hiển thị tiêu đề *"162 mẫu ghi chú, bình luận và phản hồi"* cùng chỉ số thống kê kết quả lọc thời gian thực *"Tổng số mẫu lọc được: 162 / 162"*.
+- **Giao diện Banner Thẻ Mẫu & Bộ đếm Lọc Động**: Tích hợp thẻ header màu lam sẫm nổi bật với biểu tượng quà tặng Material Icons (`Icons.Default.CardGiftcard`), hiển thị tiêu đề *"162 mẫu ghi chú, bình luận và phản hồi"* cùng chỉ số thống kê kết quả lọc thời gian thực *"Tổng số mẫu lọc được: 162 / 162"*.
 - **Công cụ tìm kiếm & Lọc thông minh**: Tìm kiếm thời gian thực kết hợp bộ lọc kép theo 4 chủ đề lớn (*Du lịch Việt Nam*, *Du lịch nước Nga*, *Ẩm thực đường phố Việt Nam*, *Tiểu sử lãnh đạo Việt Nam*) và 3 loại mẫu dữ liệu (*Ghi chú*, *Bình luận*, *Phản hồi*).
 - **Nhập nhanh một chạm (Quick Import)**: Nhập lập tức bất kỳ ghi chú mẫu nào vào kho dữ liệu chính thức của bạn, tự động tạo nhãn dán tương ứng và nhận phần thưởng **+20 Kim Cương thưởng** tức thì!
 
