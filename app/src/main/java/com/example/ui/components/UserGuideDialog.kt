@@ -110,8 +110,8 @@ private val GUIDE_STEPS = listOf(
         icon = Icons.Default.Bookmark,
         accentColor = Color(0xFFE65100), // Orange / Amber
         keyPoints = listOf(
-            "Nhấn biểu tượng 📌 Ghim để cố định ghi chú quan trọng luôn hiển thị trên đầu danh sách.",
-            "Nhấn biểu tượng 🔖 Đánh dấu (Bookmark) để lưu vào danh sách quan tâm đặc biệt.",
+            "Nhấn biểu tượng Ghim để cố định ghi chú quan trọng luôn hiển thị trên đầu danh sách.",
+            "Nhấn biểu tượng Đánh dấu (Bookmark) để lưu vào danh sách quan tâm đặc biệt.",
             "Sử dụng Chip lọc 'Đã đánh dấu' ở thanh danh mục để xem riêng các ghi chú được bookmark.",
             "Ghi chú được ghim sẽ có viền vàng nổi bật giúp nhận diện tức thì."
         ),

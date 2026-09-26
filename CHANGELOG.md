@@ -8,6 +8,11 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 
 ## [1.2.6] - 2026-09-25
 
+### 🎨 Material Icons Standardization (Chuẩn Hóa Biểu Tượng Material Icons)
+- **Chuẩn hóa toàn bộ biểu tượng trên giao diện**:
+  - Thay thế các biểu tượng cảm xúc dạng ký tự text emoji (`🎁`, `💎`, `📌`, `🔖`, v.v.) bằng các icon dạng Vector chuẩn **Material Icons** của Jetpack Compose (`Icons.Default.CardGiftcard`, `Icons.Default.Diamond`, `Icons.Filled.PushPin`, `Icons.Default.Bookmark`, `Icons.Default.Stars`, `Icons.Default.Savings`, v.v.).
+  - Giúp giao diện ứng dụng hiển thị sắc nét, đồng nhất phong cách Material Design 3 trên tất cả các mật độ màn hình và thiết bị Android.
+
 ### 🎁 Sample Library Header Banner & Filter Counter (Banner Thư viện Mẫu & Bộ đếm Lọc Dữ Liệu)
 - **Tóm tắt Giao diện Banner Kho Mẫu Dữ Liệu (`Screenshot_2026_0926_070504.png`)**:
   - Giao diện thẻ header thông báo kho tài nguyên mẫu với icon hộp quà màu tím 🎁, tiêu đề *"162 mẫu ghi chú, bình luận và phản hồi"*.

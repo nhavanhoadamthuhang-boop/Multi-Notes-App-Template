@@ -156,7 +156,7 @@ fun DiamondTopBarBadge(
                 label = "diamond_counter_anim"
             ) { count ->
                 Text(
-                    text = "${numberFormatter.format(count)} 💎",
+                    text = "${numberFormatter.format(count)} KC",
                     style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
@@ -1044,7 +1044,7 @@ fun DiamondGoalDialog(
                         }
 
                         Text(
-                            text = "• Quy đổi 1 ghi chú mới = 20 viên kim cương 💎\n• Quy đổi 1 bình luận mới = 20 viên kim cương 💎\n• Quy đổi 1 phản hồi mới = 20 viên kim cương 💎\n• Tổng số mục đã đóng góp: ${numberFormatter.format(rewardState.totalNotesCreatedAllTime)} ghi chú, ${numberFormatter.format(rewardState.totalCommentsAllTime)} bình luận & phản hồi.",
+                            text = "• Quy đổi 1 ghi chú mới = +20 viên Kim Cương\n• Quy đổi 1 bình luận mới = +20 viên Kim Cương\n• Quy đổi 1 phản hồi mới = +20 viên Kim Cương\n• Tổng số mục đã đóng góp: ${numberFormatter.format(rewardState.totalNotesCreatedAllTime)} ghi chú, ${numberFormatter.format(rewardState.totalCommentsAllTime)} bình luận & phản hồi.",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -1058,7 +1058,7 @@ fun DiamondGoalDialog(
                             ) {
                                 Icon(Icons.Default.Savings, contentDescription = null, modifier = Modifier.size(16.dp))
                                 Spacer(modifier = Modifier.width(6.dp))
-                                Text("Quy đổi dữ liệu hiện có (+20 💎/mục)", fontWeight = FontWeight.Bold, fontSize = 12.sp)
+                                Text("Quy đổi dữ liệu hiện có (+20 KC/mục)", fontWeight = FontWeight.Bold, fontSize = 12.sp)
                             }
                         }
                     }
@@ -1236,7 +1236,7 @@ fun DiamondStoreDialog(
                                 modifier = Modifier.size(20.dp)
                             )
                             Text(
-                                text = "Quy Đổi Nội Dung: 20 💎 / Mục",
+                                text = "Quy Đổi Nội Dung: 20 Kim Cương / Mục",
                                 style = MaterialTheme.typography.titleSmall,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onSurface
@@ -1244,7 +1244,7 @@ fun DiamondStoreDialog(
                         }
 
                         Text(
-                            text = "• Quy đổi 1 ghi chú mới = +20 viên kim cương 💎\n• Quy đổi 1 bình luận mới = +20 viên kim cương 💎\n• Quy đổi 1 phản hồi mới = +20 viên kim cương 💎",
+                            text = "• Quy đổi 1 ghi chú mới = +20 viên Kim Cương\n• Quy đổi 1 bình luận mới = +20 viên Kim Cương\n• Quy đổi 1 phản hồi mới = +20 viên Kim Cương",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -1257,7 +1257,7 @@ fun DiamondStoreDialog(
                             ) {
                                 Icon(Icons.Default.Savings, contentDescription = null, modifier = Modifier.size(16.dp))
                                 Spacer(modifier = Modifier.width(6.dp))
-                                Text("Quy đổi dữ liệu hiện có (+20 💎/mục)", fontWeight = FontWeight.Bold, fontSize = 12.sp)
+                                Text("Quy đổi dữ liệu hiện có (+20 KC/mục)", fontWeight = FontWeight.Bold, fontSize = 12.sp)
                             }
                         }
                     }
@@ -1665,9 +1665,9 @@ private fun StorePackageCard(
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = if (canAfford)
-                            "Kích hoạt gói (${numberFormatter.format(tier.diamondPrice)} 💎)"
+                            "Kích hoạt gói (${numberFormatter.format(tier.diamondPrice)} KC)"
                         else
-                            "Cần thêm ${numberFormatter.format(tier.diamondPrice - userDiamonds)} 💎 để mua",
+                            "Cần thêm ${numberFormatter.format(tier.diamondPrice - userDiamonds)} KC để mua",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
                         maxLines = 1,
