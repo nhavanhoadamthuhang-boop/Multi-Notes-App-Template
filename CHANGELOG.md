@@ -8,6 +8,11 @@ Toàn bộ các thay đổi, tính năng mới, cải tiến giao diện và s�
 
 ## [1.2.6] - 2026-09-25
 
+### 🎁 Sample Library Header Banner & Filter Counter (Banner Thư viện Mẫu & Bộ đếm Lọc Dữ Liệu)
+- **Tóm tắt Giao diện Banner Kho Mẫu Dữ Liệu (`Screenshot_2026_0926_070504.png`)**:
+  - Giao diện thẻ header thông báo kho tài nguyên mẫu với icon hộp quà màu tím 🎁, tiêu đề *"162 mẫu ghi chú, bình luận và phản hồi"*.
+  - Bổ sung bộ đếm lọc thời gian thực *"Tổng số mẫu lọc được: 162 / 162"* giúp người dùng dễ dàng nắm bắt số lượng tài nguyên đang được hiển thị khi tìm kiếm hoặc lọc theo chủ đề (*Du lịch Việt Nam*, *Du lịch nước Nga*, *Ẩm thực đường phố Việt Nam*, *Tiểu sử lãnh đạo Việt Nam*).
+
 ### 🎙️ Fixed Voice Recorder Quick Presets Layout (Khắc Phục Bố Cục Nút Mẫu Dịch Nhanh Ghi Âm)
 - **Tóm tắt & Khắc phục giao diện nút mẫu dịch nhanh (`VoiceRecorderDialog.kt`)**:
   - Sửa lỗi nút mẫu kiểm thử thứ hai (`"Mua sữa, táo và bánh mì"`) bị dồn ép thành hộp xám rất cao gồm 3 dòng chữ, làm mất cân đối trầm trọng so với các nút xung quanh.
